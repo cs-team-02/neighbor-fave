@@ -11,7 +11,7 @@ To use this as boilerplate, you'll need to take the following steps:
 * Now you will have to add the fs-app-template as a remote and merge it into your own repository.
 
 ```
-git remote add boilermaker https://github.com/FullstackAcademy/fs-app-template.git
+git remote add boilermaker git@github.com:FullstackAcademy/fs-app-template.git
 git fetch boilermaker
 git merge boilermaker/main
 git branch -m master main
