@@ -4,4 +4,3 @@ public/bundle.js.map
 .DS_Store
 npm-debug.log
 yarn-error.log
-package-lock.json
