@@ -1,3 +1,8 @@
+.leaflet-container {
+  width: 100vw;
+  height: 50vh;
+}
+
 body {
   font-family: sans-serif;
 }
