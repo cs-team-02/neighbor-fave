@@ -26,7 +26,7 @@ class Routes extends Component {
             {/* create a component for Single Favor View
             and Link to each single favor in every marker's popup */}
             <Route path="/mapView" component={Map}></Route>
-            <Route path="/favors/1" component={SingleFavorView}></Route>
+            <Route path="/favors/:id" component={SingleFavorView}></Route>
             <Route path="/home" component={Home} />
             <Redirect to="/home" />
           </Switch>

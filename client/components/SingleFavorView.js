@@ -1,11 +1,50 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+const dummyFavor = {
+  id: 1,
+  name: "cup of flour",
+  description:
+    "hello neighbors! I need a cup of flour. It must be gluten free and it needs to happen before noon today. Urgent! It's for a competitive bake-off",
+  status: "Open",
+  author: "Janet",
+  lat: 51.615,
+  long: -0.09,
+  bids: [
+    {
+      id: 1,
+      volunteer_id: 2,
+      status: "pending",
+    },
+    {
+      id: 2,
+      volunteer_id: 1,
+      status: "pending",
+    },
+  ],
+};
 const SingleFavor = () => {
+  // will use this id (from URL param, from route rendering the component)
+  // to fetch this favor from the database and put it on app state as
+  // THE singleFavor.
+
+  // then we can use the singleFavor on state to populate this view
+  // with all details of the favor (name, description, status, author, pending bids)
+  // const id = this.props.match.params.id;
   return (
     <div>
-      <h1>Name of favor</h1>
-      <Link to="/mapView">Back to map view</Link>
+      <h1>Favor: {dummyFavor.name}</h1>
+      <h2>Status: {dummyFavor.status}</h2>
+      <h2>Description: {dummyFavor.description}</h2>
+      <h2>Author: {dummyFavor.author}</h2>
+      <h2>{dummyFavor.bids.length} Pending bids</h2>
+
+      <button>Offer help with {dummyFavor.name}</button>
+      <br />
+      <br />
+      <Link to="/mapView">
+        <button>Back to map view</button>
+      </Link>
     </div>
   );
 };
