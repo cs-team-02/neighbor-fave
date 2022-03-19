@@ -16,7 +16,7 @@ const ListView = () => {
     <div>
       {dummyData.map((favor) => {
         return (
-          <Link to="/favor/1" key={favor.id}>
+          <Link to="/favors/1" key={favor.id}>
             <p>{favor.name}</p>
           </Link>
         );
