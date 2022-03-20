@@ -58,22 +58,26 @@ const SingleFavor = () => {
       <br />
       <br />
       <span> Status: {status} </span>
-      <button
-        onClick={() => {
-          if (status === "Open") {
-            console.log("status is open");
-            setStatus("Closed");
-          } else {
-            console.log("status is closed");
-            setStatus("Open");
-          }
-        }}
-      >
-        {" "}
-        {status === "Open" ? "Resolve" : "Reopen"}{" "}
-      </button>
+      {authorOrVolunteer === "author" ? (
+        <button
+          onClick={() => {
+            if (status === "Open") {
+              console.log("status is open");
+              setStatus("Closed");
+            } else {
+              console.log("status is closed");
+              setStatus("Open");
+            }
+          }}
+        >
+          {" "}
+          {status === "Open" ? "Resolve" : "Reopen"}{" "}
+        </button>
+      ) : (
+        <div></div>
+      )}
 
-      <h2>Description: {dummyFavor.description}</h2>
+      <h3>Description: {dummyFavor.description}</h3>
       <h2>Author: {dummyFavor.author}</h2>
       <h2>{dummyFavor.bids.length} Pending bids</h2>
 
@@ -81,14 +85,19 @@ const SingleFavor = () => {
         dummyFavor.bids.map((bid) => {
           return (
             <div key={bid.id}>
-              Bid from User #{bid.volunteer_id}: {bid.description}{" "}
               <button
                 onClick={() =>
                   console.log(`accepted offer from user # ${bid.volunteer_id}`)
                 }
               >
                 Accept offer
-              </button>
+              </button>{" "}
+              from User #{bid.volunteer_id}:
+              <div>
+                <br />
+                {bid.description}
+              </div>
+              <br />
             </div>
           );
         })
@@ -109,7 +118,6 @@ const SingleFavor = () => {
         </div>
       )}
 
-      <br />
       <br />
       <Link to="/mapView">
         <button>Back to map view</button>
