@@ -14,6 +14,19 @@ const User = db.define('user', {
   password: {
     type: Sequelize.STRING,
   },
+  isAuthor: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false,
+  },
+  ImageURL: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    defaultValue: '',
+  },
+  address: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
 });
 
 module.exports = User;
