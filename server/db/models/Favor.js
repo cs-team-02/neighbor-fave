@@ -1,4 +1,4 @@
-const { STRING } = require('sequelize');
+// const { STRING } = require('sequelize');
 const Sequelize = require('sequelize');
 const db = require('../db');
 
