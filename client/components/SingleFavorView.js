@@ -37,6 +37,7 @@ const SingleFavor = () => {
 
   const [status, setStatus] = useState("");
   const [bidState, setBidState] = useState(false);
+  const [authorOrVolunteer, setAuthorOrVolunteer] = useState("volunteer");
 
   useEffect(() => {
     setStatus(dummyFavor.status);
@@ -45,6 +46,17 @@ const SingleFavor = () => {
   return (
     <div>
       <h1>Favor: {dummyFavor.name}</h1>
+      <button
+        onClick={() => {
+          setAuthorOrVolunteer(
+            authorOrVolunteer === "volunteer" ? "author" : "volunteer"
+          );
+        }}
+      >
+        Toggle Author/Volunteer View
+      </button>
+      <br />
+      <br />
       <span> Status: {status} </span>
       <button
         onClick={() => {
@@ -65,33 +77,38 @@ const SingleFavor = () => {
       <h2>Author: {dummyFavor.author}</h2>
       <h2>{dummyFavor.bids.length} Pending bids</h2>
 
-      <h3>Only show these bids for Author:</h3>
-      {dummyFavor.bids.map((bid) => {
-        return (
-          <div key={bid.id}>
-            Bid from User #{bid.volunteer_id}: {bid.description}{" "}
-            <button
-              onClick={() =>
-                console.log(`accepted offer from user # ${bid.volunteer_id}`)
-              }
-            >
-              Accept offer
-            </button>
-          </div>
-        );
-      })}
-      <button
-        onClick={() => {
-          setBidState(true);
-        }}
-      >
-        Offer help with {dummyFavor.name}
-      </button>
-      <br />
-      <br />
-      {/* update the following condition to : bidState true AND logged in user is NOT the author
-      THEN display the CreateBid component (form) */}
-      {bidState ? <CreateBid favor={dummyFavor} /> : <div></div>}
+      {authorOrVolunteer === "author" ? (
+        dummyFavor.bids.map((bid) => {
+          return (
+            <div key={bid.id}>
+              Bid from User #{bid.volunteer_id}: {bid.description}{" "}
+              <button
+                onClick={() =>
+                  console.log(`accepted offer from user # ${bid.volunteer_id}`)
+                }
+              >
+                Accept offer
+              </button>
+            </div>
+          );
+        })
+      ) : (
+        <div>
+          <button
+            onClick={() => {
+              setBidState(true);
+            }}
+          >
+            Offer help with {dummyFavor.name}
+          </button>
+          <br />
+          <br />
+          {/* update the following condition to : bidState true AND logged in user is NOT the author
+        THEN display the CreateBid component (form) */}
+          {bidState ? <CreateBid favor={dummyFavor} /> : <div></div>}
+        </div>
+      )}
+
       <br />
       <br />
       <Link to="/mapView">
