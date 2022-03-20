@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import CreateBid from "./CreateBid.js";
 
 const dummyFavor = {
   id: 1,
@@ -13,11 +14,13 @@ const dummyFavor = {
   bids: [
     {
       id: 1,
+      description: "I can do it today!",
       volunteer_id: 2,
       status: "pending",
     },
     {
       id: 2,
+      description: "I may be able to help, but not until tomorrow",
       volunteer_id: 1,
       status: "pending",
     },
@@ -33,6 +36,7 @@ const SingleFavor = () => {
   // const id = this.props.match.params.id;
 
   const [status, setStatus] = useState("");
+  const [bidState, setBidState] = useState(false);
 
   useEffect(() => {
     setStatus(dummyFavor.status);
@@ -61,10 +65,35 @@ const SingleFavor = () => {
       <h2>Author: {dummyFavor.author}</h2>
       <h2>{dummyFavor.bids.length} Pending bids</h2>
 
-      <button>Offer help with {dummyFavor.name}</button>
+      <h3>Only show these bids for Author:</h3>
+      {dummyFavor.bids.map((bid) => {
+        return (
+          <div key={bid.id}>
+            Bid from User #{bid.volunteer_id}: {bid.description}{" "}
+            <button
+              onClick={() =>
+                console.log(`accepted offer from user # ${bid.volunteer_id}`)
+              }
+            >
+              Accept offer
+            </button>
+          </div>
+        );
+      })}
+      <button
+        onClick={() => {
+          setBidState(true);
+        }}
+      >
+        Offer help with {dummyFavor.name}
+      </button>
       <br />
       <br />
-
+      {/* update the following condition to : bidState true AND logged in user is NOT the author
+      THEN display the CreateBid component (form) */}
+      {bidState ? <CreateBid favor={dummyFavor} /> : <div></div>}
+      <br />
+      <br />
       <Link to="/mapView">
         <button>Back to map view</button>
       </Link>
