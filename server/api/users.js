@@ -1,17 +1,33 @@
-const router = require('express').Router()
-const { models: { User }} = require('../db')
-module.exports = router
+const router = require("express").Router();
+const {
+  models: { User },
+} = require("../db");
+module.exports = router;
 
-router.get('/', async (req, res, next) => {
+// GET /api/users
+router.get("/", async (req, res, next) => {
   try {
     const users = await User.findAll({
       // explicitly select only the id and username fields - even though
       // users' passwords are encrypted, it won't help if we just
       // send everything to anyone who asks!
-      attributes: ['id', 'username']
-    })
-    res.json(users)
+      attributes: ["id", "username"],
+    });
+    res.json(users);
   } catch (err) {
-    next(err)
+    next(err);
   }
-})
+});
+
+// GET /api/users/:userId    --- get one user, and attach their favors and bids
+router.get("/:userId", async (req, res, next) => {
+  const user = await User.findByPk(req.params.userId, {
+    include: [{ model: Favor }, { model: Bid }],
+  });
+
+  // if eager loading can't include these models, then instead query DB for
+  // all favors where authorId is this userId,
+  // and all bids where volunteerId is this userId
+  // get both of these as arrays and attach them to the retrieved user instance
+  // and THEN res.send back the user instance object
+});

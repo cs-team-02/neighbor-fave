@@ -1,8 +1,8 @@
 // const { STRING } = require('sequelize');
-const Sequelize = require('sequelize');
-const db = require('../db');
+const Sequelize = require("sequelize");
+const db = require("../db");
 
-const Favor = db.define('favor', {
+const Favor = db.define("favor", {
   title: {
     type: Sequelize.STRING,
     unique: true,
@@ -14,10 +14,10 @@ const Favor = db.define('favor', {
   ImageURL: {
     type: Sequelize.TEXT,
     allowNull: false,
-    defaultValue: '',
+    defaultValue: "",
   },
   description: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   status: {
