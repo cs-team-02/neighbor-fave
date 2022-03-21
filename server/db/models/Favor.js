@@ -24,11 +24,8 @@ const Favor = db.define('favor', {
     type: Sequelize.BOOLEAN,
     defaultValue: false,
   },
-  dateCreated: {
+  favorDate: {
     type: Sequelize.DATEONLY,
-    validate: {
-      notEmpty: true,
-    },
   },
 });
 
