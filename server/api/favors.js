@@ -5,8 +5,23 @@ const {
 module.exports = router;
 
 // GET /api/favors
-router.get('/');
 //  get all favors
+router.get('/', async (req, res, next) => {
+  try {
+    const favors = await Favor.findAll({
+      where: {
+        status: true,
+      },
+      include: {
+        model: User,
+        include: { model: Bid },
+      },
+    });
+    res.json(favors);
+  } catch (err) {
+    next(err);
+  }
+});
 
 // GET /api/favors/:favorId
 router.get('/:favorId', async (req, res, next) => {
@@ -29,7 +44,13 @@ router.get('/:favorId/bids');
 router.get('/:favorId/bids/:bidId/comments');
 
 // POST /api/favors    --- add a favor
-router.post('/');
+router.post('/', async (req, res, next) => {
+  try {
+    res.status(201).send(await Favor.create(req.body));
+  } catch (error) {
+    next(error);
+  }
+});
 
 // PUT /api/favors/:favorId    --- edit a favor
 router.put('/:favorId');

@@ -3,9 +3,13 @@ import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import auth from './auth';
-import singleFavorReducer from './SingleFavor';
+import favors from './favors';
 
-const reducer = combineReducers({ auth, favor: singleFavorReducer });
+const reducer = combineReducers({
+  auth,
+  favors,
+  favor: singleFavorReducer,
+});
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }))
 );
