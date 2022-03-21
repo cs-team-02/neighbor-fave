@@ -8,6 +8,7 @@ import favors from './favors';
 const reducer = combineReducers({
   auth,
   favors,
+  favor: singleFavorReducer,
 });
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }))

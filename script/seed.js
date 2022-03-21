@@ -1,31 +1,38 @@
-'use strict'
-const favors = require('./favData')
-const users = require('./userData')
-const {db, models: {User, Favor} } = require('../server/db')
+'use strict';
+const { favors, bids } = require('./favData');
+const users = require('./userData');
+const {
+  db,
+  models: { User, Favor, Bid },
+} = require('../server/db');
 
 /**
  * seed - this function clears the database, updates tables to
  *      match the models, and populates the database.
  */
 async function seed() {
-  await db.sync({ force: true }) // clears db and matches models to tables
-  console.log('db synced!')
+  await db.sync({ force: true }); // clears db and matches models to tables
+  console.log('db synced!');
 
   // Creating Users
-await Promise.all(
-  users.map((user) => {
-    return User.create(user)
-  })
-  )
-   // Creating Favors
+  await Promise.all(
+    users.map((user) => {
+      return User.create(user);
+    })
+  );
+  // Creating Favors
   await Promise.all(
     favors.map((favor) => {
-      return Favor.create(favor)
+      return Favor.create(favor);
     })
-    )
+  );
+  await Promise.all(
+    bids.map((bid) => {
+      return Bid.create(bid);
+    })
+  );
 
-  
-  console.log(`seeded successfully`)
+  console.log(`seeded successfully`);
 }
 
 /*
@@ -34,16 +41,16 @@ await Promise.all(
  The `seed` function is concerned only with modifying the database.
 */
 async function runSeed() {
-  console.log('seeding...')
+  console.log('seeding...');
   try {
-    await seed()
+    await seed();
   } catch (err) {
-    console.error(err)
-    process.exitCode = 1
+    console.error(err);
+    process.exitCode = 1;
   } finally {
-    console.log('closing db connection')
-    await db.close()
-    console.log('db connection closed')
+    console.log('closing db connection');
+    await db.close();
+    console.log('db connection closed');
   }
 }
 
@@ -53,8 +60,8 @@ async function runSeed() {
   any errors that might occur inside of `seed`.
 */
 if (module === require.main) {
-  runSeed()
+  runSeed();
 }
 
 // we export the seed function for testing purposes (see `./seed.spec.js`)
-module.exports = seed
+module.exports = seed;

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const {
-  models: { Favor, User, Bid },
+  models: { Favor, User, Bid, Comment },
 } = require('../db');
 module.exports = router;
 
@@ -25,12 +25,14 @@ router.get('/', async (req, res, next) => {
 
 // GET /api/favors/:favorId
 router.get('/:favorId', async (req, res, next) => {
-  const favor = await Favor.findByPk(req.params.favorId, {
-    include: [
-      { model: User, as: 'Author' },
-      { model: Bid, include: { model: Comment } },
-    ],
-  });
+  try {
+    const favor = await Favor.findByPk(req.params.favorId, {
+      include: [{ model: User }, { model: Bid, include: { model: Comment } }],
+    });
+    res.send(favor);
+  } catch (error) {
+    console.log(error);
+  }
 });
 // OR, if not all of these nested "includes" work, then:
 // get one favor, eager load its author.

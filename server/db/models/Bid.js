@@ -1,14 +1,14 @@
-const Sequelize = require("sequelize");
-const db = require("../db");
+const Sequelize = require('sequelize');
+const db = require('../db');
 
-const Bid = db.define("bid", {
-  timestamp: {
-    type: Sequelize.DATE(6), //=> this gets the date and time
-    allowNull: false,
-    validate: {
-      notEmpty: true,
-    },
-  },
+const Bid = db.define('bid', {
+  // timestamp: {
+  //   type: Sequelize.DATE(6), //=> this gets the date and time
+  //   allowNull: false,
+  //   validate: {
+  //     notEmpty: true,
+  //   },
+  // },
   description: {
     type: Sequelize.TEXT,
     allowNull: false,
@@ -17,7 +17,7 @@ const Bid = db.define("bid", {
     },
   },
   status: {
-    type: Sequelize.BOOLEAN,
+    type: Sequelize.STRING,
     defaultValue: false,
   },
 });
