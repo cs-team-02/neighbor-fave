@@ -12,7 +12,7 @@ const Favor = db.define('favor', {
     },
   },
   ImageURL: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
     defaultValue: '',
   },

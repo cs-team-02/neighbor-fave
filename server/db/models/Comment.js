@@ -10,7 +10,7 @@ const Comment = db.define('comment', {
     },
   },
   content: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
   },
 });
 module.exports = Comment;

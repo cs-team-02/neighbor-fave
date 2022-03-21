@@ -10,7 +10,7 @@ const Bid = db.define('bid', {
     },
   },
   description: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
     validate: {
       notEmpty: true,
