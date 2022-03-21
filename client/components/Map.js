@@ -8,7 +8,7 @@ import ListView from "./ListView";
 const userLocation = [51.615, -0.09];
 
 const dummyData = [
-  { id: 1, name: "mow our lawn please", lat: 51.615, long: -0.09 },
+  { id: 1, name: "mow my lawn please", lat: 51.615, long: -0.09 },
   { id: 2, name: "cup of flour", lat: 51.605, long: -0.09 },
   { id: 3, name: "shovel driveway", lat: 51.611, long: -0.09 },
   { id: 4, name: "help moving couch", lat: 51.611, long: -0.1 },
