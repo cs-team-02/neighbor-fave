@@ -13,8 +13,8 @@ async function seed() {
 
   // Creating Users
 await Promise.all(
-  favors.map((favor) => {
-    return Favor.create(favor)
+  users.map((user) => {
+    return User.create(user)
   })
   )
    // Creating Favors
