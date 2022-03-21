@@ -17,7 +17,7 @@ const Favor = db.define('favor', {
     defaultValue: '',
   },
   description: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   status: {
