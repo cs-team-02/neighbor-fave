@@ -8,16 +8,16 @@ const Favor = require('./models/Favor');
 const Comment = require('./models/Comment');
 //associations could go here!
 
-User.hasMany(Favor);
-Favor.hasOne(User);
-Favor.hasMany(Bid);
-Bid.hasOne(Favor);
-Bid.hasOne(User);
-User.hasMany(Bid);
-Bid.hasMany(Comment);
-Comment.hasOne(Bid);
-Comment.hasOne(User);
-User.hasMany(Comment);
+// User.hasMany(Favor);
+// Favor.hasOne(User);
+// Favor.hasMany(Bid);
+// Bid.hasOne(Favor);
+// Bid.hasOne(User);
+// User.hasMany(Bid);
+// Bid.hasMany(Comment);
+// Comment.hasOne(Bid);
+// Comment.hasOne(User);
+// User.hasMany(Comment);
 module.exports = {
   db,
   models: {
