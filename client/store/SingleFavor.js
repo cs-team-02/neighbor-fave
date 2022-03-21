@@ -16,10 +16,10 @@ export const _getSingleFavor = (favor) => {
 export const fetchSingleFavor = (id) => {
   return async (dispatch) => {
     try {
-      const { data } = await axios.get(`/api/favor/${id}`);
+      const { data } = await axios.get(`/api/favors/${id}`);
       dispatch(_getSingleFavor(data));
     } catch (error) {
-      console.log(err);
+      console.log(error);
     }
   };
 };
