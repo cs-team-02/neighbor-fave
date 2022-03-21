@@ -1,7 +1,7 @@
-const Sequelize = require('sequelize');
-const db = require('../db');
+const Sequelize = require("sequelize");
+const db = require("../db");
 
-const Comment = db.define('comment', {
+const Comment = db.define("comment", {
   timestamp: {
     type: Sequelize.DATE(6),
     allowNull: false,

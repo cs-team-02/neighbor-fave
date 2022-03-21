@@ -1,23 +1,23 @@
 //this is the access point for all things database related!
 
-const db = require('./db');
+const db = require("./db");
 
-const User = require('./models/User');
-const Bid = require('./models/Bid');
-const Favor = require('./models/Favor');
-const Comment = require('./models/Comment');
+const User = require("./models/User");
+const Bid = require("./models/Bid");
+const Favor = require("./models/Favor");
+const Comment = require("./models/Comment");
 //associations could go here!
 
-// User.hasMany(Favor);
-// Favor.hasOne(User);
-// Favor.hasMany(Bid);
-// Bid.hasOne(Favor);
-// Bid.hasOne(User);
-// User.hasMany(Bid);
-// Bid.hasMany(Comment);
-// Comment.hasOne(Bid);
-// Comment.hasOne(User);
-// User.hasMany(Comment);
+User.hasMany(Favor);
+Favor.belongsTo(User, { foreignKey: "authorId" });
+Favor.hasMany(Bid);
+Bid.belongsTo(Favor);
+User.hasMany(Bid);
+Bid.belongsTo(User, { foreignKey: "volunteerId" });
+Bid.hasMany(Comment);
+Comment.belongsTo(Bid, { foreignKey: "creatorId" });
+User.hasMany(Comment);
+Comment.belongsTo(User);
 module.exports = {
   db,
   models: {
