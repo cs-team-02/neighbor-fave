@@ -23,7 +23,7 @@ export class AllFavorsList extends React.Component {
         <div>
           <Map favors={this.props.favors} />
           {favorsArr.map((favor) => (
-            <div>
+            <div key={favor.id}>
               <hr />
               <div>Favor needed: {favor.favorDate}</div>
               <div>
