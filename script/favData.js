@@ -10,7 +10,7 @@ const favors = [
     favorDate: "2022-03-09",
     authorId: "1",
     lat: 51.615,
-    lng: -0.09
+    lng: -0.09,
   },
   {
     title: "New Printer Setup",
@@ -21,7 +21,7 @@ const favors = [
     favorDate: "2022-03-15",
     authorId: "3",
     lat: 51.605,
-    lng: -0.09
+    lng: -0.09,
   },
   {
     title: "Broken Mailbox",
@@ -33,7 +33,7 @@ const favors = [
     favorDate: "2022-03-06",
     authorId: "2",
     lat: 51.611,
-    lng: -0.1
+    lng: -0.1,
   },
   {
     title: "Tree blocking stop sign",
@@ -45,7 +45,7 @@ const favors = [
     favorDate: "2022-03-12",
     authorId: "5",
     lat: 51.621,
-    lng: -0.095
+    lng: -0.095,
   },
   {
     title: "Need to borrow a toolset",
@@ -57,7 +57,7 @@ const favors = [
     favorDate: "2022-03-16",
     authorId: "4",
     lat: 51.618,
-    lng: -0.092
+    lng: -0.092,
   },
   {
     title: "Help changing a tail light",
@@ -68,7 +68,7 @@ const favors = [
     favorDate: "2022-03-05",
     authorId: "2",
     lat: 51.615,
-    lng: -0.11
+    lng: -0.11,
   },
   {
     title: "Moving trailer in driveway",
@@ -80,7 +80,7 @@ const favors = [
     favorDate: "2022-03-06",
     authorId: "6",
     lat: 51.611,
-    lng: -0.09
+    lng: -0.09,
   },
   {
     title: "Basketball hoop",
@@ -92,7 +92,7 @@ const favors = [
     favorDate: "2022-03-09",
     authorId: "7",
     lat: 51.615,
-    lng: -0.12
+    lng: -0.12,
   },
   {
     title: "Porch light bulb blown",
@@ -104,7 +104,7 @@ const favors = [
     favorDate: "2022-03-09",
     authorId: "8",
     lat: 51.613,
-    lng: -0.099
+    lng: -0.099,
   },
   {
     title: "Broken fence",
@@ -116,7 +116,7 @@ const favors = [
     favorDate: "2022-03-08",
     authorId: "7",
     lat: 51.601,
-    lng: -0.112
+    lng: -0.112,
   },
 ];
 
@@ -130,6 +130,24 @@ const bids = [
   {
     description: "I may be able to help, but not until tomorrow",
     volunteerId: 1,
+    status: "PENDING",
+    favorId: 2,
+  },
+  {
+    description: "I want to help!",
+    volunteerId: 3,
+    status: "PENDING",
+    favorId: 2,
+  },
+  {
+    description: "If you can't find anyone else, call me",
+    volunteerId: 4,
+    status: "PENDING",
+    favorId: 2,
+  },
+  {
+    description: "I'm free all weekend",
+    volunteerId: 5,
     status: "PENDING",
     favorId: 2,
   },
