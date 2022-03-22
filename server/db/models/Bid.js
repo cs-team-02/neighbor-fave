@@ -17,8 +17,8 @@ const Bid = db.define('bid', {
     },
   },
   status: {
-    type: Sequelize.STRING,
-    defaultValue: false,
+    type: Sequelize.ENUM("PENDING","ACCEPTED","REJECTED"),
+    defaultValue: "PENDING",
   },
 });
 
