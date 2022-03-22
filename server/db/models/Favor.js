@@ -21,12 +21,18 @@ const Favor = db.define("favor", {
     allowNull: false,
   },
   status: {
-    type: Sequelize.BOOLEAN,
-    defaultValue: false,
+    type: Sequelize.ENUM("OPEN","ASSIGNED","CLOSED"),
+    defaultValue: "OPEN",
   },
   favorDate: {
     type: Sequelize.DATEONLY,
   },
+  lat: {
+    type: Sequelize.FLOAT
+  },
+  lng: {
+    type: Sequelize.FLOAT
+  }
 });
 
 module.exports = Favor;
