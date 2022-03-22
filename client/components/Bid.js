@@ -1,27 +1,26 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { acceptBid } from "../store/favors";
+import { fetchSingleFavor } from "../store/SingleFavor";
 // import css from "./Bidstyle.css";
 
 const Bid = (props) => {
   const { bid } = props;
+  const dispatch = useDispatch();
 
-  // method to change bid to accepted
-  // THUNK to make that change to that bid in the DB and update redux store
-  // PUT /bids/:bidId {status: 'ACCEPTED'}
+  const handleAcceptBid = async () => {
+    await dispatch(acceptBid(bid.id, bid.favorId));
+    await dispatch(fetchSingleFavor(bid.favorId));
+  };
+
   return (
     <div class="bid-container">
-      {console.log("bid object:", bid)}
       <span id="bidder-name">from {bid.user.name}:</span>
       <div>{bid.description}</div>
 
       <div>
         <span id="bid-status">{bid.status}</span>
-        <button
-          onClick={() =>
-            console.log(`accepted offer from user # ${bid.volunteerId}`)
-          }
-        >
-          Accept offer
-        </button>
+        <button onClick={handleAcceptBid}>Accept offer</button>
         <br />
       </div>
       <br />
