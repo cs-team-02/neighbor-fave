@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import CreateBid from './CreateBid.js';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchSingleFavor } from '../store/SingleFavor.js';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import CreateBid from "./CreateBid.js";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchSingleFavor } from "../store/SingleFavor.js";
 
 // const dummyFavor = {
 //   id: 1,
@@ -39,9 +39,9 @@ const SingleFavor = (props) => {
   const dispatch = useDispatch();
   const CurrentUser = useSelector((state) => state.auth);
 
-  const [status, setStatus] = useState('');
+  // const [status, setStatus] = useState("");
   const [bidState, setBidState] = useState(false);
-  const [authorOrVolunteer, setAuthorOrVolunteer] = useState('volunteer');
+  // const [authorOrVolunteer, setAuthorOrVolunteer] = useState("volunteer");
 
   const favor =
     useSelector((state) => {
@@ -59,38 +59,45 @@ const SingleFavor = (props) => {
       <h1>Favor: {favor.title}</h1>
       <br />
       <br />
-      <button
+      {/* <button
         onClick={() => {
           setAuthorOrVolunteer(
-            authorOrVolunteer === 'volunteer' ? 'author' : 'volunteer'
+            authorOrVolunteer === "volunteer" ? "author" : "volunteer"
           );
         }}
       >
         Toggle Author/Volunteer View
-      </button>
-      <span> Status: {String(favor.status)} </span>
-      {authorOrVolunteer === 'author' ? (
+      </button> */}
+      <span> Status: {favor.status === true ? "Open" : "Closed"} </span>
+      {CurrentUser.id === favor.authorId ? (
         <button
           onClick={() => {
-            if (status === 'Open') {
-              console.log('status is open');
-              setStatus('Closed');
+            if (favor.status === false) {
+              // setStatus(true);
+              // ADD CODE (thunk) HERE TO CHANGE FAVOR STATUS TO TRUE ('Reopen the ticket')
             } else {
-              console.log('status is closed');
-              setStatus('Open');
+              // setStatus(false);
+              // ADD CODE (thunk) HERE TO CHANGE FAVOR STATUS TO FALSE ('Reopen the ticket')
             }
           }}
         >
-          {' '}
-          {status === 'Open' ? 'Resolve' : 'Reopen'}{' '}
+          {" "}
+          {favor.status === true ? "Resolve" : "Reopen"}
         </button>
       ) : (
         <div></div>
       )}
       <h3>Description: {favor.description}</h3>
-      <h2>Author: {favor.authorId}</h2>
-      {/* <h2>{favor.bids.length} Pending bids</h2> */}
-      {authorOrVolunteer === 'author' ? (
+      <h2>Author: {favor.user ? favor.user.name : "Loading"}</h2>
+      <h2>Pending bids: {favor.bids ? favor.bids.length : "Loading"} </h2>
+      {/* authorOrVolunteer === 'author'  */}
+      {/* {console.log(
+        "current user id is",
+        CurrentUser.id,
+        "author id is",
+        favor.authorId
+      )} */}
+      {CurrentUser.id === favor.authorId ? (
         favor.bids.map((bid) => {
           return (
             <div key={bid.id}>
@@ -100,7 +107,7 @@ const SingleFavor = (props) => {
                 }
               >
                 Accept offer
-              </button>{' '}
+              </button>{" "}
               from User #{bid.volunteerId}:
               <div>
                 <br />
@@ -131,7 +138,7 @@ const SingleFavor = (props) => {
         </div>
       )}
       <br />
-      <Link to="/mapView">
+      <Link to="/favors">
         <button>Back to map view</button>
       </Link>
     </div>

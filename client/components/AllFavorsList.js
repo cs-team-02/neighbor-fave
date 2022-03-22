@@ -1,7 +1,8 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { fetchFavors } from '../store/favors';
-import Map from './Map';
+import React from "react";
+import { connect } from "react-redux";
+import { fetchFavors } from "../store/favors";
+import Map from "./Map";
+import { Link } from "react-router-dom";
 
 export class AllFavorsList extends React.Component {
   constructor(props) {
@@ -21,18 +22,20 @@ export class AllFavorsList extends React.Component {
     } else {
       return (
         <div>
-          <Map />
+          <Map favors={this.props.favors} />
           {favorsArr.map((favor) => (
-            <div>
-              <hr />
-              <div>Favor needed: {favor.favorDate}</div>
-              <div>
-                <b>{favor.title}</b>
+            <div key={favor.id}>
+                <Link to={`/favors/${favor.id}`}>
+                  <hr />
+                  <div>Favor needed: {favor.favorDate}</div>
+                  <div>
+                    <b>{favor.title}</b>
+                  </div>
+                  <div>{favor.description}</div>
+                  <div>Address: {favor.user.address}</div>
+                  <div>Volunteers: {favor.user.bids.length}</div>
+                </Link>
               </div>
-              <div>{favor.description}</div>
-              <div>Address: {favor.user.address}</div>
-              <div>Volunteers: {favor.user.bids.length}</div>
-            </div>
           ))}
         </div>
       );
