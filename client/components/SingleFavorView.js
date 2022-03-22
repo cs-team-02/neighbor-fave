@@ -33,16 +33,12 @@ const SingleFavor = (props) => {
   // will use this id (from URL param, from route rendering the component)
   // to fetch this favor from the database and put it on app state as
   // THE singleFavor.
-
   // then we can use the singleFavor on state to populate this view
-  // with all details of the favor (name, description, status, author, pending bids)
-  // const id = this.props.match.params.id;
   const dispatch = useDispatch();
   const CurrentUser = useSelector((state) => state.auth);
 
   // const [status, setStatus] = useState("");
   const [bidState, setBidState] = useState(false);
-  // const [authorOrVolunteer, setAuthorOrVolunteer] = useState("volunteer");
 
   const favor =
     useSelector((state) => {
@@ -50,7 +46,6 @@ const SingleFavor = (props) => {
       return state.favor;
     }) || [];
 
-  // console.log(favor);
   useEffect(() => {
     dispatch(fetchSingleFavor(props.match.params.id));
   }, []);
@@ -60,30 +55,18 @@ const SingleFavor = (props) => {
       <h1>Favor: {favor.title}</h1>
       <br />
       <br />
-      {/* <button
-        onClick={() => {
-          setAuthorOrVolunteer(
-            authorOrVolunteer === "volunteer" ? "author" : "volunteer"
-          );
-        }}
-      >
-        Toggle Author/Volunteer View
-      </button> */}
-      <span> Status: {favor.status === true ? "Open" : "Closed"} </span>
+      <span> Status: {favor.status === "OPEN" ? "Open" : "Closed"} </span>
       {CurrentUser.id === favor.authorId ? (
         <button
           onClick={() => {
-            if (favor.status === false) {
-              // setStatus(true);
-              // ADD CODE (thunk) HERE TO CHANGE FAVOR STATUS TO TRUE ('Reopen the ticket')
+            if (favor.status === "CLOSED") {
+              // ADD CODE (thunk) HERE TO CHANGE FAVOR STATUS TO "OPEN" ('Reopen the ticket')
             } else {
-              // setStatus(false);
-              // ADD CODE (thunk) HERE TO CHANGE FAVOR STATUS TO FALSE ('Reopen the ticket')
+              // ADD CODE (thunk) HERE TO CHANGE FAVOR STATUS TO "CLOSED" ('Reopen the ticket')
             }
           }}
         >
-          {" "}
-          {favor.status === true ? "Resolve" : "Reopen"}
+          {favor.status === "OPEN" ? "Resolve" : "Reopen"}
         </button>
       ) : (
         <div></div>
@@ -91,13 +74,7 @@ const SingleFavor = (props) => {
       <h3>Description: {favor.description}</h3>
       <h2>Author: {favor.user ? favor.user.name : "Loading"}</h2>
       <h2>Pending bids: {favor.bids ? favor.bids.length : "Loading"} </h2>
-      {/* authorOrVolunteer === 'author'  */}
-      {/* {console.log(
-        "current user id is",
-        CurrentUser.id,
-        "author id is",
-        favor.authorId
-      )} */}
+
       {CurrentUser.id === favor.authorId ? (
         favor.bids.map((bid) => {
           return <Bid key={bid.id} bid={bid} />;
@@ -113,8 +90,6 @@ const SingleFavor = (props) => {
           </button>
           <br />
           <br />
-          {/* update the following condition to : bidState true AND logged in user is NOT the author
-        THEN display the CreateBid component (form) */}
           {bidState ? <CreateBid favor={favor} /> : <div></div>}
         </div>
       )}
