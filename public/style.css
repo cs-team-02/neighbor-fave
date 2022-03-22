@@ -24,3 +24,28 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+/* Bid styles */
+.bid-container {
+  border-style: solid;
+  width: vw;
+  margin: 20px;
+  padding: 10px;
+}
+
+.bid-container button,
+span,
+div,
+p,
+h1,
+h2 {
+  margin: 10px 10px 0px 10px;
+}
+
+#bid-status {
+  color: rgb(65, 65, 222);
+}
+
+#bidder-name {
+  font-weight: bold;
+}

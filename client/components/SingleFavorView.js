@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import CreateBid from "./CreateBid.js";
+import Bid from "./Bid.js";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchSingleFavor } from "../store/SingleFavor.js";
 
@@ -99,27 +100,7 @@ const SingleFavor = (props) => {
       )} */}
       {CurrentUser.id === favor.authorId ? (
         favor.bids.map((bid) => {
-          return (
-            <div key={bid.id}>
-              <button
-                onClick={() =>
-                  console.log(`accepted offer from user # ${bid.volunteerId}`)
-                }
-              >
-                Accept offer
-              </button>{" "}
-              from User #{bid.volunteerId}:
-              <div>
-                <br />
-                {bid.description}
-                <br />
-                {bid.status}
-                <br />
-                {favor.user.name}
-              </div>
-              <br />
-            </div>
-          );
+          return <Bid key={bid.id} bid={bid} />;
         })
       ) : (
         <div>
