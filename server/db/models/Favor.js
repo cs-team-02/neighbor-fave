@@ -27,6 +27,12 @@ const Favor = db.define("favor", {
   favorDate: {
     type: Sequelize.DATEONLY,
   },
+  lat: {
+    type: Sequelize.FLOAT
+  },
+  lng: {
+    type: Sequelize.FLOAT
+  }
 });
 
 module.exports = Favor;

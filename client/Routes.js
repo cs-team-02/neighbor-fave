@@ -31,7 +31,7 @@ class Routes extends Component {
             <Route exact path="/favors" component={AllFavorsList}></Route>
             <Route path="/favors/create" component={CreateFavor}></Route>
             <Route path="/favors/:id" component={SingleFavorView}></Route>
-            <Route path="/home" component={Home} />
+            <Route path="/home" component={AllFavorsList} />
             <Redirect to="/home" />
           </Switch>
         ) : (
