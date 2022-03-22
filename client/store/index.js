@@ -4,6 +4,7 @@ import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import auth from './auth';
 import favors from './favors';
+import singleFavorReducer from './SingleFavor';
 
 const reducer = combineReducers({
   auth,
