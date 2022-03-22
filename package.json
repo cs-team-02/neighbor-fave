@@ -6,9 +6,11 @@
   "scripts": {
     "build": "webpack",
     "build:dev": "npm run build -- --watch --mode=development",
+    "build:pwa": "npm run build -- --watch --mode=production",
     "seed": "node script/seed.js",
     "start": "node server",
     "start:dev": "npm run build:dev & npm run start-server",
+    "start:pwa": "npm run build:pwa & npm run start-server",
     "start:dev:logger": "LOGGING=true npm run start:dev",
     "start:dev:seed": "SEED=true npm run start:dev",
     "start-server": "JWT=shh nodemon server -e html,js,scss --ignore public --ignore client",
@@ -55,6 +57,7 @@
     "redux-thunk": "^2.3.0",
     "supertest": "^4.0.2",
     "webpack": "^5.15.0",
-    "webpack-cli": "^4.3.1"
+    "webpack-cli": "^4.3.1",
+    "workbox-webpack-plugin": "^6.5.1"
   }
 }
