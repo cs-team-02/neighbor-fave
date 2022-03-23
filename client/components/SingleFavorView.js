@@ -4,6 +4,7 @@ import CreateBid from "./CreateBid.js";
 import Bid from "./Bid.js";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchSingleFavor } from "../store/SingleFavor.js";
+import useAuth from "../utils/useAuthHook.js";
 
 // const dummyFavor = {
 //   id: 1,
@@ -35,14 +36,13 @@ const SingleFavor = (props) => {
   // THE singleFavor.
   // then we can use the singleFavor on state to populate this view
   const dispatch = useDispatch();
-  const CurrentUser = useSelector((state) => state.auth);
-
+  const CurrentUser = useAuth();
   // const [status, setStatus] = useState("");
   const [bidState, setBidState] = useState(false);
 
   const favor =
     useSelector((state) => {
-      console.log(state.favor.user);
+      // console.log(state.favor.user);
       return state.favor;
     }) || [];
 
