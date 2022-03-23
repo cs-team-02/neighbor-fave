@@ -1,42 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import { me } from '../store/auth';
+import { createProduct } from '../store/productsReducer';
+import useForm from './utils/useForm';
+import { useHistory } from 'react-router-dom';
 
-export class CreateFavor extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      title: '',
-      imageURL: '',
-      description: '',
-      status: true,
-      favorDate: '',
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
+function CreateFavor() {
+  const dispatch = useDispatch();
+  let history = useHistory();
+  const [values, handleChange] = useForm();
 
-  handleChange(event) {
-    event.preventDefault();
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-  }
+  const create = (e) => {
+    e.preventDefault();
+    console.log(values)
+    dispatch(createProduct(values));
+    history.push('/products');
+  };
 
-  async handleSubmit(event) {
-    event.preventDefault(event);
-    await axios.post('/api/favors/', { ...this.state });
-    this.setState({
-      title: '',
-      imageURL: '',
-      description: '',
-      status: true,
-      favorDate: '',
-    });
-    this.props.history.push(`/favors`);
-  }
-
-  render() {
     return (
       <div className='create-favor-form'>
         <div>
@@ -45,7 +27,7 @@ export class CreateFavor extends React.Component {
         <hr />
         <form
           id='create-favor-form'
-          onSubmit={(event) => this.handleSubmit(event)}
+          onSubmit={create}
         >
           <label htmlFor='price'>Price: </label>
           <input
@@ -71,6 +53,5 @@ export class CreateFavor extends React.Component {
       </div>
     );
   }
-}
 
-export default connect(null)(CreateFavor);
+export default CreateFavor;
