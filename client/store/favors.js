@@ -1,8 +1,8 @@
 import axios from "axios";
-import history from "../history";
 
 //ACTION TYPES
-const SET_FAVORS = "SET_FAVORS";
+const SET_FAVORS = 'SET_FAVORS';
+const CREATE_FAVOR = 'CREATE_FAVOR';
 const ACCEPTED_BID = "ACCEPTED_BID";
 
 //ACTION CREATORS
@@ -11,6 +11,10 @@ const setFavors = (favors) => ({
   favors,
 });
 
+const favorCreate = (favor) => ({ 
+   type: CREATE_FAVOR,
+    favor,
+  });
 const acceptedTheBid = (bid, favorId) => ({
   type: ACCEPTED_BID,
   bid,
@@ -27,6 +31,16 @@ export const fetchFavors = () => {
   };
 };
 
+export const createFavor = (favor) => {
+  return async (dispatch) => {
+    try {
+      const { data } = await axios.post('/api/favors', favor);
+      dispatch(favorCreate(data));
+    } catch (err) {
+      console.log(err);
+    }
+  }
+}
 // thunk to update bid status in DB from "PENDING" to "ACCEPTED"
 export const acceptBid = (bidId, favorId) => {
   return async (dispatch) => {
@@ -41,6 +55,8 @@ export default function favors(state = [], action) {
   switch (action.type) {
     case SET_FAVORS:
       return action.favors;
+    case CREATE_FAVOR:
+      return [...favors, action.favor];
     case ACCEPTED_BID: {
       let updatedFavorsArray = state.map((favor) => {
         if (favor.id === action.theFavorId) {

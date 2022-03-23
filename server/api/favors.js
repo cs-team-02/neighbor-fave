@@ -12,10 +12,9 @@ router.get("/", async (req, res, next) => {
       where: {
         status: "OPEN",
       },
-      include: {
+      include: [{
         model: User,
-        include: { model: Bid },
-      },
+      },{model: Bid}],
     });
     res.json(favors);
   } catch (err) {
@@ -49,7 +48,8 @@ router.get("/:favorId/bids/:bidId/comments");
 // POST /api/favors    --- add a favor
 router.post("/", async (req, res, next) => {
   try {
-    res.status(201).send(await Favor.create(req.body));
+    const favor = await Favor.create(req.body);
+    res.json(favor)
   } catch (error) {
     next(error);
   }
