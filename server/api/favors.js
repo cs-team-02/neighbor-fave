@@ -53,7 +53,8 @@ router.get('/:favorId/bids/:bidId/comments');
 // POST /api/favors    --- add a favor
 router.post('/', async (req, res, next) => {
   try {
-    res.status(201).send(await Favor.create(req.body));
+    const favor = await Favor.create(req.body);
+    res.json(favor);
   } catch (error) {
     next(error);
   }

@@ -18,7 +18,6 @@ const dummyData = [
   { id: 7, name: "someone ran over my mailbox", lat: 51.615, long: -0.11 },
 ];
 const Map = (props) => {
-  console.log(props.favors)
   return (
     // change it so the center is always the (logged in) user's address
     // (will need to convert their address to lat & longitude)
