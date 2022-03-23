@@ -5,6 +5,7 @@ import Bid from "./Bid.js";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchSingleFavor } from "../store/SingleFavor.js";
 import useAuth from "../utils/useAuthHook.js";
+import useFavor from "../utils/useFavorHook";
 
 // const dummyFavor = {
 //   id: 1,
@@ -40,11 +41,7 @@ const SingleFavor = (props) => {
   // const [status, setStatus] = useState("");
   const [bidState, setBidState] = useState(false);
 
-  const favor =
-    useSelector((state) => {
-      // console.log(state.favor.user);
-      return state.favor;
-    }) || [];
+  const favor = useFavor();
 
   useEffect(() => {
     dispatch(fetchSingleFavor(props.match.params.id));
