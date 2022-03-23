@@ -24,6 +24,15 @@ router.get("/:bidId/comments", async (req, res, next) => {
   res.send(bid);
 });
 
+router.post("/", async (req, res, next) => {
+  try {
+    const newBid = await Bid.create(req.body);
+    res.send(newBid);
+  } catch (error) {
+    console.log("error creating bid in the DB", error);
+  }
+});
+
 router.put("/:bidId", async (req, res, next) => {
   try {
     const bid = await Bid.findByPk(req.params.bidId);
