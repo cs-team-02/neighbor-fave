@@ -13,18 +13,6 @@ export default function AllUsersList() {
     dispatch(fetchUsers());
   }, []);
 
-  //   const renderFavorsTally = function (user) {
-  //     if (loggedInId === user.authorId) {
-  //       return (
-  //         <div className='orange-button'>
-  //           <b>Your ask: {favor.bids.length} Volunteers</b>
-  //         </div>
-  //       );
-  //     } else {
-  //       return <div>{favor.bids.length} Volunteers</div>;
-  //     }
-  //   };
-
   if (users === undefined) {
     return <h3>Loading users...</h3>;
   } else if (users === 0) {
@@ -36,10 +24,14 @@ export default function AllUsersList() {
           <div key={user.id}>
             <img src={user.ImageURL} />
             <div>
-              <Link to={`/favors/${user.id}`}>{user.name}</Link>
+              <Link>
+                <b>{user.name}</b>
+              </Link>
             </div>
             <div>{user.address}</div>
-            {/* <div>{renderButton(favor)}</div> */}
+            <div>
+              Asks: {user.favors.length} | Volunteering: {user.bids.length}
+            </div>
             <hr />
           </div>
         ))}

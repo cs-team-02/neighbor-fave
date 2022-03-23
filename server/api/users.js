@@ -29,6 +29,7 @@ router.get('/:userId', async (req, res, next) => {
   const user = await User.findByPk(req.params.userId, {
     include: [{ model: Favor }, { model: Bid }],
   });
+  res.send(user);
 
   // if eager loading can't include these models, then instead query DB for
   // all favors where authorId is this userId,

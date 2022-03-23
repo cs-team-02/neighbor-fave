@@ -18,7 +18,9 @@ export default function AllFavorsList() {
     if (loggedInId === favor.authorId) {
       return (
         <div className='orange-button'>
-          <b>Your ask: {favor.bids.length} Volunteers</b>
+          <Link to={`/favors/${favor.id}`}>
+            <b>Your ask: {favor.bids.length} Volunteers</b>
+          </Link>
         </div>
       );
     } else {
@@ -37,14 +39,12 @@ export default function AllFavorsList() {
         {favors.map((favor) => (
           <div key={favor.id}>
             <hr />
-            <div>Favor needed: {favor.favorDate}</div>
+            <div className='grey-box'>Favor needed: {favor.favorDate}</div>
             <div>
-              <Link to={`/favors/${favor.id}`}>
-                <b>{favor.title}</b>
-              </Link>
+              <b>{favor.title}</b>
             </div>
             <div>{favor.description}</div>
-            <div>Address: {favor.user.address}</div>
+            <div>Address: {favor.author.address}</div>
             <div>{renderButton(favor)}</div>
           </div>
         ))}
