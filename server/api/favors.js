@@ -10,12 +10,15 @@ router.get('/', async (req, res, next) => {
   try {
     const favors = await Favor.findAll({
       where: {
-        status: "OPEN",
+        status: 'OPEN',
       },
-      include: {
-        model: User,
-        include: { model: Bid },
-      },
+      include: [
+        {
+          model: User,
+          include: { model: Bid },
+        },
+        { model: Bid },
+      ],
     });
     res.json(favors);
   } catch (err) {

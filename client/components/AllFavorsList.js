@@ -1,64 +1,54 @@
-import React from "react";
-import { connect } from "react-redux";
-import { fetchFavors } from "../store/favors";
-import Map from "./Map";
-import { Link } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchFavors } from '../store/favorsReducer';
+import Map from './Map';
+import { Link } from 'react-router-dom';
 
-export class AllFavorsList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.renderFavorsList = this.renderFavorsList.bind(this);
-  }
-  componentDidMount() {
-    // console.log('THIS.STATE', this.state);
-    this.props.loadFavors();
-  }
+export default function AllFavorsList() {
+  const dispatch = useDispatch();
+  const favors = useSelector((state) => state.favors);
+  const loggedInId = useSelector((state) => state.auth.id);
+  const loggedIn = useSelector((state) => !!state.auth.id);
 
-  renderFavorsList(favorsArr) {
-    if (favorsArr === undefined) {
-      return <h3>Loading favors...</h3>;
-    } else if (favorsArr.length === 0) {
-      return <h3>Looks like noone needs a favor...</h3>;
-    } else {
+  useEffect(() => {
+    dispatch(fetchFavors());
+  }, []);
+
+  const renderButton = function (favor) {
+    if (loggedInId === favor.authorId) {
       return (
-        <div>
-          <Map favors={this.props.favors} />
-          {favorsArr.map((favor) => (
-            <div key={favor.id}>
-                <Link to={`/favors/${favor.id}`}>
-                  <hr />
-                  <div>Favor needed: {favor.favorDate}</div>
-                  <div>
-                    <b>{favor.title}</b>
-                  </div>
-                  <div>{favor.description}</div>
-                  <div>Address: {favor.user.address}</div>
-                  <div>Volunteers: {favor.user.bids.length}</div>
-                </Link>
-              </div>
-          ))}
+        <div className='orange-button'>
+          <b>Your ask: {favor.bids.length} Volunteers</b>
         </div>
       );
-
-      //end
+    } else {
+      return <div>{favor.bids.length} Volunteers</div>;
     }
-  }
+  };
 
-  render() {
-    return <div>{this.renderFavorsList(this.props.favors)}</div>;
+  if (favors === undefined) {
+    return <h3>Loading favors...</h3>;
+  } else if (favors === 0) {
+    return <h3>Looks like noone needs a favor...</h3>;
+  } else {
+    return (
+      <div>
+        <Map favors={favors} />
+        {favors.map((favor) => (
+          <div key={favor.id}>
+            <hr />
+            <div>Favor needed: {favor.favorDate}</div>
+            <div>
+              <Link to={`/favors/${favor.id}`}>
+                <b>{favor.title}</b>
+              </Link>
+            </div>
+            <div>{favor.description}</div>
+            <div>Address: {favor.user.address}</div>
+            <div>{renderButton(favor)}</div>
+          </div>
+        ))}
+      </div>
+    );
   }
 }
-
-const mapState = (state) => {
-  return {
-    favors: state.favors,
-  };
-};
-
-const mapDispatch = (dispatch) => {
-  return {
-    loadFavors: () => dispatch(fetchFavors()),
-  };
-};
-
-export default connect(mapState, mapDispatch)(AllFavorsList);
