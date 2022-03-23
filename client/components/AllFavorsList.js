@@ -32,8 +32,8 @@ export class AllFavorsList extends React.Component {
                     <b>{favor.title}</b>
                   </div>
                   <div>{favor.description}</div>
-                  <div>Address: {favor.user.address}</div>
-                  <div>Volunteers: {favor.user.bids.length}</div>
+                  {/* <div>Address: {favor.user.address}</div> */}
+                  {/* <div>Volunteers: {favor.user.bids ? favor.user.bids.length : 'loading'}</div> */}
                 </Link>
               </div>
           ))}

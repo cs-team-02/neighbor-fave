@@ -11,7 +11,7 @@ const setFavors = (favors) => ({
   favors,
 });
 
-const productCreate = (favor) => ({ 
+const favorCreate = (favor) => ({ 
    type: CREATE_FAVOR,
     favor,
   });

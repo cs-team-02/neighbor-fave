@@ -1,22 +1,21 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import axios from 'axios';
-import { useSelector, useDispatch } from 'react-redux';
-import { me } from '../store/auth';
-import { createProduct } from '../store/productsReducer';
+import { useDispatch } from 'react-redux';
+import { createFavor } from '../store/favors';
 import useForm from './utils/useForm';
+import useAuth from './utils/useAuthHook';
 import { useHistory } from 'react-router-dom';
 
 function CreateFavor() {
   const dispatch = useDispatch();
   let history = useHistory();
   const [values, handleChange] = useForm();
+  const currentUser = useAuth();
 
   const create = (e) => {
     e.preventDefault();
     console.log(values)
-    dispatch(createProduct(values));
-    history.push('/products');
+    dispatch(createFavor({...values,authorId: currentUser.id}));
+    history.push('/favors');
   };
 
     return (
@@ -29,23 +28,51 @@ function CreateFavor() {
           id='create-favor-form'
           onSubmit={create}
         >
-          <label htmlFor='price'>Price: </label>
+          <label htmlFor='title'>Title: </label>
           <input
             type='text'
-            name='price'
-            onChange={(event) => this.handleChange(event)}
-            value={this.state.price}
+            name='title'
+            onChange={handleChange}
+            value={values.title || ''}
           />
-
+          <label htmlFor='imageURL'>Image: </label>
+          <input
+            type='text'
+            name='imageURL'
+            onChange={handleChange}
+            value={values.imageURL || ''}
+          />
+          <label htmlFor='description'>Description: </label>
+          <input
+            type='text'
+            name='description'
+            onChange={handleChange}
+            value={values.description || ''}
+          />
           <label htmlFor='favorDate'>Date: </label>
           <input
             type='date'
             name='favorDate'
-            value={this.state.favorDate}
-            onChange={(event) => this.handleChange(event)}
+            onChange={handleChange}
+            value={values.favorDate || ''}
           />
+          <label htmlFor='lat'>Lat: </label>
+          <input
+            type='text'
+            name='lat'
+            onChange={handleChange}
+            value={values.lat || ''}
+          />
+          <label htmlFor='lng'>Lng: </label>
+          <input
+            type='text'
+            name='lng'
+            onChange={handleChange}
+            value={values.lng || ''}
+          />
+          <br />
           <div>
-            <button type='submit' className='submit-btn'>
+            <button className='submit-btn'>
               Ask a Favor
             </button>
           </div>

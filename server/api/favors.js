@@ -12,10 +12,9 @@ router.get("/", async (req, res, next) => {
       where: {
         status: "OPEN",
       },
-      include: {
+      include: [{
         model: User,
-        include: { model: Bid },
-      },
+      },{model: Bid}],
     });
     res.json(favors);
   } catch (err) {

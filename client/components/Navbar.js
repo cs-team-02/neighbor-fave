@@ -2,15 +2,20 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../store";
+import useAuth from './utils/useAuthHook';
 
-const Navbar = ({ handleClick, isLoggedIn }) => (
+const Navbar = ({ handleClick, isLoggedIn }) => {
+  const currentUser = useAuth();
+   return (
   <div>
     <h1>NeighborFave</h1>
     <nav>
       {isLoggedIn ? (
         <div>
           {/* The navbar will show these links after you log in */}
+          <h2>Hello, {currentUser.name}</h2>
           <Link to="/home">Home</Link>
+          <Link to="/favors/create">Ask</Link>
           <a href="#" onClick={handleClick}>
             Logout
           </a>
@@ -26,6 +31,7 @@ const Navbar = ({ handleClick, isLoggedIn }) => (
     <hr />
   </div>
 );
+};
 
 /**
  * CONTAINER
