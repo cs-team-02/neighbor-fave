@@ -8,6 +8,10 @@ body {
 }
 
 a {
+  color: black;
+}
+
+a:hover {
   text-decoration: none;
 }
 
@@ -31,6 +35,12 @@ form div {
   width: vw;
   margin: 20px;
   padding: 10px;
+}
+.orange-button {
+  background-color: orange;
+}
+.grey-box {
+  background-color: rgb(224, 224, 224);
 }
 
 .bid-container button,

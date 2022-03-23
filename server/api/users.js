@@ -1,17 +1,22 @@
-const router = require("express").Router();
+const router = require('express').Router();
 const {
-  models: { User },
-} = require("../db");
+  models: { Favor, User, Bid, Comment },
+} = require('../db');
 module.exports = router;
 
 // GET /api/users
-router.get("/", async (req, res, next) => {
+router.get('/', async (req, res, next) => {
   try {
     const users = await User.findAll({
       // explicitly select only the id and username fields - even though
       // users' passwords are encrypted, it won't help if we just
       // send everything to anyone who asks!
-      attributes: ["id", "username"],
+      attributes: ['id', 'username', 'name', 'ImageURL', 'address'],
+      include: [
+        { model: Favor },
+        //Need to include both PENDING and ACCEPED statuses here:
+        { model: Bid },
+      ],
     });
     res.json(users);
   } catch (err) {
@@ -20,10 +25,11 @@ router.get("/", async (req, res, next) => {
 });
 
 // GET /api/users/:userId    --- get one user, and attach their favors and bids
-router.get("/:userId", async (req, res, next) => {
+router.get('/:userId', async (req, res, next) => {
   const user = await User.findByPk(req.params.userId, {
     include: [{ model: Favor }, { model: Bid }],
   });
+  res.send(user);
 
   // if eager loading can't include these models, then instead query DB for
   // all favors where authorId is this userId,

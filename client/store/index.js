@@ -5,11 +5,15 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import auth from "./auth";
 import favors from "./favors";
 import singleFavorReducer from "./SingleFavor";
+import users from "./usersReducer";
+import singleUserReducer from "./singleUserReducer";
 
 const reducer = combineReducers({
   auth,
   favors,
   favor: singleFavorReducer,
+  users,
+  user: singleUserReducer,
 });
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }))

@@ -1,9 +1,9 @@
-import axios from "axios";
+import axios from 'axios';
 
 //ACTION TYPES
 const SET_FAVORS = 'SET_FAVORS';
 const CREATE_FAVOR = 'CREATE_FAVOR';
-const ACCEPTED_BID = "ACCEPTED_BID";
+const ACCEPTED_BID = 'ACCEPTED_BID';
 
 //ACTION CREATORS
 const setFavors = (favors) => ({
@@ -11,10 +11,10 @@ const setFavors = (favors) => ({
   favors,
 });
 
-const favorCreate = (favor) => ({ 
-   type: CREATE_FAVOR,
-    favor,
-  });
+const favorCreate = (favor) => ({
+  type: CREATE_FAVOR,
+  favor,
+});
 const acceptedTheBid = (bid, favorId) => ({
   type: ACCEPTED_BID,
   bid,
@@ -25,7 +25,7 @@ const acceptedTheBid = (bid, favorId) => ({
 
 export const fetchFavors = () => {
   return async (dispatch) => {
-    const { data } = await axios.get("/api/favors");
+    const { data } = await axios.get('/api/favors');
     // console.log('DATA IN THUNK', data);
     dispatch(setFavors(data));
   };
@@ -39,13 +39,13 @@ export const createFavor = (favor) => {
     } catch (err) {
       console.log(err);
     }
-  }
-}
+  };
+};
 // thunk to update bid status in DB from "PENDING" to "ACCEPTED"
 export const acceptBid = (bidId, favorId) => {
   return async (dispatch) => {
     const { data } = await axios.put(`/api/bids/${bidId}`, {
-      status: "ACCEPTED",
+      status: 'ACCEPTED',
     });
     dispatch(acceptedTheBid(data, favorId));
   };

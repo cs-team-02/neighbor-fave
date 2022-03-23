@@ -12,9 +12,14 @@ router.get("/", async (req, res, next) => {
       where: {
         status: "OPEN",
       },
-      include: [{
-        model: User,
-      },{model: Bid}],
+      include: [
+        {
+          model: User,
+          as: "author",
+          include: { model: Bid },
+        },
+        { model: Bid },
+      ],
     });
     res.json(favors);
   } catch (err) {
@@ -27,8 +32,11 @@ router.get("/:favorId", async (req, res, next) => {
   try {
     const favor = await Favor.findByPk(req.params.favorId, {
       include: [
-        { model: User },
-        { model: Bid, include: [{ model: Comment }, { model: User }] },
+        { model: User, as: "author" },
+        {
+          model: Bid,
+          include: [{ model: Comment }, { model: User, as: "volunteer" }],
+        },
       ],
     });
     res.send(favor);
@@ -49,7 +57,7 @@ router.get("/:favorId/bids/:bidId/comments");
 router.post("/", async (req, res, next) => {
   try {
     const favor = await Favor.create(req.body);
-    res.json(favor)
+    res.json(favor);
   } catch (error) {
     next(error);
   }
