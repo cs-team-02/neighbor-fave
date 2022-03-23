@@ -15,7 +15,7 @@ const SingleFavor = (props) => {
   // then we can use the singleFavor on state to populate this view
   const dispatch = useDispatch();
   const CurrentUser = useAuth();
-  // const [status, setStatus] = useState("");
+
   const [bidState, setBidState] = useState(false);
 
   const favor = useFavor();
@@ -26,11 +26,9 @@ const SingleFavor = (props) => {
 
   const toggleFavorResolved = async () => {
     if (favor.status === "CLOSED") {
-      // ADD CODE (thunk) HERE TO CHANGE FAVOR STATUS TO "OPEN" ('Reopen the ticket')
       await dispatch(updateFavor(favor.id, { status: "OPEN" }));
       await dispatch(fetchSingleFavor(props.match.params.id));
     } else {
-      // ADD CODE (thunk) HERE TO CHANGE FAVOR STATUS TO "CLOSED" ('Reopen the ticket')
       await dispatch(updateFavor(favor.id, { status: "CLOSED" }));
       await dispatch(fetchSingleFavor(props.match.params.id));
     }

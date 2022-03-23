@@ -5,7 +5,7 @@ const {
 module.exports = router;
 
 // GET /api/favors
-//  get all favors
+
 router.get("/", async (req, res, next) => {
   try {
     const favors = await Favor.findAll({
@@ -37,9 +37,6 @@ router.get("/:favorId", async (req, res, next) => {
     console.log(error);
   }
 });
-// OR, if not all of these nested "includes" work, then:
-// get one favor, eager load its author.
-// And query DB for all bids with this favorId and attach the array to this favor as "bids" property
 
 // GET /api/favors/:favorId/bids    --- get all the bids for a favor
 router.get("/:favorId/bids");
