@@ -23,3 +23,13 @@ router.get("/:bidId/comments", async (req, res, next) => {
   bid.comments = comments;
   res.send(bid);
 });
+
+router.put("/:bidId", async (req, res, next) => {
+  try {
+    const bid = await Bid.findByPk(req.params.bidId);
+    const updatedBid = await bid.update(req.body);
+    res.send(updatedBid);
+  } catch (error) {
+    console.log("error updating bid in DB", error);
+  }
+});
