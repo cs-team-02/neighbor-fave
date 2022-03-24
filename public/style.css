@@ -30,15 +30,15 @@ form div {
 }
 
 .li-picture-div {
-  border-width: 1px;
-  border-style: dotted;
+  /* border-width: 1px;
+  border-style: dotted; */
   width: 75px;
 }
 
-.li-info-div {
+/* .li-info-div {
   border-width: 1px;
   border-style: dotted;
-}
+} */
 
 .li-img {
   max-width: 100%;
