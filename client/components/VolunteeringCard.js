@@ -13,11 +13,11 @@ export default function VolunteeringCard(props) {
       <div className='grey-box'>Favor needed: {favor.favorDate}</div>
       <div>
         <Link to={`/favors/${favor.id}`}>
-          <b>{favor.title}</b>
+          <b>MAKE ANOTHER CHANGE{favor.title}</b>
         </Link>
       </div>
       <div>{favor.description}</div>
-      <div>{favor.bids.length} Volunteers</div>
+      {/* <div>{favor.bids.length} Volunteers</div> */}
     </div>
   );
 }
