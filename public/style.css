@@ -98,3 +98,6 @@ h2 {
 #bidder-name {
   font-weight: bold;
 }
+.map {
+  display: flex;
+}

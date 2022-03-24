@@ -21,7 +21,7 @@ const Map = (props) => {
   return (
     // change it so the center is always the (logged in) user's address
     // (will need to convert their address to lat & longitude)
-    <div>
+    <div className="map">
       <MapContainer center={userLocation} zoom={13}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
