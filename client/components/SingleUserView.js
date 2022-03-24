@@ -3,18 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchSingleUser } from '../store/singleUserReducer';
 import { fetchFavors } from '../store/favors';
 import { Link } from 'react-router-dom';
-import VolunteeringCard from './VolunteeringCard';
+import VolunteeringFavorCard from './VolunteeringCard';
 
 export default function SingleUserView(props) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
-  const favors = useSelector((state) => state.favors);
   const loggedInId = useSelector((state) => state.auth.id);
   const loggedIn = useSelector((state) => !!state.auth.id);
 
   useEffect(() => {
     dispatch(fetchSingleUser(props.match.params.id));
-    dispatch(fetchFavors());
   }, []);
 
   const favorsTally = function () {
@@ -33,21 +31,6 @@ export default function SingleUserView(props) {
     }
   };
 
-  const volunteeringCard = function () {
-    if (user.favors === undefined || user.favors === []) {
-      return 0;
-    } else {
-      return (
-        <div>
-          {user.favors.map((favor) => (
-            <VolunteeringCard favor={favor} />
-          ))}
-        </div>
-      );
-    }
-  };
-  // const voluneeringCard = function () {};
-
   if (user === undefined) {
     return <h3>Loading user...</h3>;
   } else {
@@ -64,18 +47,33 @@ export default function SingleUserView(props) {
         <div>
           <div>
             <div>
-              <b>{user.name}'s Favor Asks:</b>
+              <b>
+                {user.name}'s Favor Asks: <b>{favorsTally()}</b>
+              </b>
             </div>
             <hr />
-            <div>Active: {favorsTally()}</div>
+            {/* <div>Active: {favorsTally()}</div> */}
+            <div>
+              {user.favors &&
+                user.favors.map((favor) => (
+                  <VolunteeringFavorCard favor={favor} user={user} />
+                ))}
+            </div>
           </div>
           <div>
             <div>
-              <b>{user.name}'s Volunteering:</b>
+              <b>
+                {user.name}'s Volunteering: <b>{bidsTally()}</b>
+              </b>
             </div>
             <hr />
-            <div>Active: {bidsTally()}</div>
-            <div>{volunteeringCard()}</div>
+            {/* <div>Active: {bidsTally()}</div> */}
+            <div>
+              {user.bids &&
+                user.bids.map((bid) => (
+                  <VolunteeringFavorCard favor={bid.favor} user={user} />
+                ))}
+            </div>
           </div>
         </div>
       </div>

@@ -3,85 +3,97 @@ const users = [
     name: 'Tedi',
     username: 'tedi',
     password: '123',
-    imageUrl: '',
+    ImageURL:
+      'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
     address: '134 Maple Ave, Milwaukee, WI',
   },
   {
     name: 'Kwame',
     username: 'kwame',
     password: '123',
-    imageUrl: '',
+    ImageURL:
+      'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
     address: '145 W Walnut St, Milwaukee, WI',
   },
   {
     name: 'Sulaiman',
     username: 'sulaiman',
     password: '123',
-    imageUrl: '',
+    ImageURL:
+      'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
     address: '123 Walnut St, Milwaukee, WI',
   },
   {
     name: 'Konstantin',
     username: 'konstantin',
     password: '123',
-    imageUrl: '',
+    ImageURL:
+      'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
     address: '156 Ash St, Milwaukee, WI',
   },
   {
     name: 'Bob',
     username: 'bobsyourneighbor',
     password: 'bobrocks',
-    imageUrl: '',
-    address: '',
+    ImageURL:
+      'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
+    address: '111 Tree St, Milwaukee, WI',
   },
   {
     name: 'Susan',
     username: 'soccermom34',
     password: 'go0o0o0al',
-    imageUrl: '',
-    address: '',
+    ImageURL:
+      'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
+    address: '111 Tree St, Milwaukee, WI',
   },
   {
     name: 'Peter',
     username: 'musicianpete',
     password: 'beethoven13th',
-    imageUrl: '',
-    address: '',
+    ImageURL:
+      'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
+    address: '111 Tree St, Milwaukee, WI',
   },
   {
     name: 'Cheryl',
     username: 'momof3',
     password: 'password',
-    imageUrl: '',
-    address: '',
+    ImageURL:
+      'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
+    address: '111 Tree St, Milwaukee, WI',
   },
   {
     name: 'Tim',
     username: 'itstim',
     password: 'fisher45',
-    imageUrl: '',
-    address: '',
+    ImageURL:
+      'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
+    address: '111 Tree St, Milwaukee, WI',
   },
   {
     name: 'Sean',
     username: 'purepositivity',
     password: 'whiskeyincoffee',
-    imageUrl: '',
-    address: '',
+    ImageURL:
+      'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
+    address: '111 Tree St, Milwaukee, WI',
   },
   {
     name: 'Jibron',
     username: 'oshawattenthusiast',
     password: 'saurottsucks',
-    imageUrl: '',
-    address: '',
+    ImageURL:
+      'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
+    address: '111 Tree St, Milwaukee, WI',
   },
   {
     name: 'Bart',
     username: 'bartbot',
     password: '1011011',
-    imageUrl: '',
-    address: '',
+    ImageURL:
+      'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
+    address: '111 Tree St, Milwaukee, WI',
   },
 ];
 module.exports = users;
