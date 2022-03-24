@@ -12,11 +12,7 @@ router.get('/', async (req, res, next) => {
       // users' passwords are encrypted, it won't help if we just
       // send everything to anyone who asks!
       attributes: ['id', 'username', 'name', 'ImageURL', 'address'],
-      include: [
-        { model: Favor },
-        //Need to include both PENDING and ACCEPED statuses here:
-        { model: Bid },
-      ],
+      include: [{ model: Favor }, { model: Bid }],
     });
     res.json(users);
   } catch (err) {

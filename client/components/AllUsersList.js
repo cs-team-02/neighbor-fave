@@ -24,7 +24,7 @@ export default function AllUsersList() {
           <div key={user.id}>
             <img src={user.ImageURL} />
             <div>
-              <Link>
+              <Link to={`/users/${user.id}`}>
                 <b>{user.name}</b>
               </Link>
             </div>
