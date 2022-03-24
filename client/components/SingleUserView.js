@@ -1,16 +1,20 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchSingleUser } from '../store/singleUserReducer';
+import { fetchFavors } from '../store/favors';
 import { Link } from 'react-router-dom';
+import VolunteeringCard from './VolunteeringCard';
 
 export default function SingleUserView(props) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
+  const favors = useSelector((state) => state.favors);
   const loggedInId = useSelector((state) => state.auth.id);
   const loggedIn = useSelector((state) => !!state.auth.id);
 
   useEffect(() => {
     dispatch(fetchSingleUser(props.match.params.id));
+    dispatch(fetchFavors());
   }, []);
 
   const favorsTally = function () {
@@ -28,6 +32,21 @@ export default function SingleUserView(props) {
       return user.bids.length;
     }
   };
+
+  const volunteeringCard = function () {
+    if (user.favors === undefined || user.favors === []) {
+      return 0;
+    } else {
+      return (
+        <div>
+          {user.favors.map((favor) => (
+            <VolunteeringCard favor={favor} />
+          ))}
+        </div>
+      );
+    }
+  };
+  // const voluneeringCard = function () {};
 
   if (user === undefined) {
     return <h3>Loading user...</h3>;
@@ -56,6 +75,7 @@ export default function SingleUserView(props) {
             </div>
             <hr />
             <div>Active: {bidsTally()}</div>
+            <div>{volunteeringCard()}</div>
           </div>
         </div>
       </div>

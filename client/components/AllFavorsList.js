@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchFavors } from "../store/favors";
-import Map from "./Map";
-import { Link } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchFavors } from '../store/favors';
+import Map from './Map';
+import { Link } from 'react-router-dom';
 
 export default function AllFavorsList() {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ export default function AllFavorsList() {
   const renderButton = function (favor) {
     if (loggedInId === favor.authorId) {
       return (
-        <div className="orange-button">
+        <div className='orange-button'>
           <Link to={`/favors/${favor.id}`}>
             <b>Your ask: {favor.bids.length} Volunteers</b>
           </Link>
@@ -39,9 +39,11 @@ export default function AllFavorsList() {
         {favors.map((favor) => (
           <div key={favor.id}>
             <hr />
-            <div className="grey-box">Favor needed: {favor.favorDate}</div>
+            <div className='grey-box'>Favor needed: {favor.favorDate}</div>
             <div>
-              <b>{favor.title}</b>
+              <Link to={`/favors/${favor.id}`}>
+                <b>{favor.title}</b>
+              </Link>
             </div>
             <div>{favor.description}</div>
             <div>Address: {favor.author.address}</div>
