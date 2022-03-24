@@ -21,17 +21,27 @@ export default function AllUsersList() {
     return (
       <div>
         {users.map((user) => (
-          <div key={user.id}>
-            <img src={user.ImageURL} />
-            <div>
-              <Link to={`/users/${user.id}`}>
-                <b>{user.name}</b>
-              </Link>
+          <div>
+            <div className='li-div'>
+              <div className='li-picture-div'>
+                <img className='li-img' src={user.ImageURL} />
+              </div>
+              <div className='li-info-div'>
+                <div>
+                  <div>
+                    <Link to={`/users/${user.id}`}>
+                      <b>{user.name}</b>
+                    </Link>
+                  </div>
+                  <div>{user.address}</div>
+                  <div>
+                    Asks: {user.favors.length} | Volunteering:{' '}
+                    {user.bids.length}
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>{user.address}</div>
-            <div>
-              Asks: {user.favors.length} | Volunteering: {user.bids.length}
-            </div>
+
             <hr />
           </div>
         ))}

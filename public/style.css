@@ -29,18 +29,57 @@ form div {
   display: inline-block;
 }
 
+.li-picture-div {
+  /* border-width: 1px;
+  border-style: dotted; */
+  width: 75px;
+}
+
+/* .li-info-div {
+  border-width: 1px;
+  border-style: dotted;
+} */
+
+.li-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.li-div {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+}
+
+.grey-text {
+  color: grey;
+}
+.center-text-div {
+  text-align: center;
+  padding: 2px;
+}
+
+.card-div {
+  background-color: rgb(226, 226, 226);
+  padding: 5px;
+}
+.orange-button {
+  background-color: orange;
+  text-align: center;
+  padding: 2px;
+  margin: auto;
+  width: 50%;
+}
+.grey-box {
+  background-color: rgb(224, 224, 224);
+}
+
 /* Bid styles */
 .bid-container {
   border-style: solid;
   width: vw;
   margin: 20px;
   padding: 10px;
-}
-.orange-button {
-  background-color: orange;
-}
-.grey-box {
-  background-color: rgb(224, 224, 224);
 }
 
 .bid-container button,

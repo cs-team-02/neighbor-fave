@@ -23,7 +23,16 @@ router.get('/', async (req, res, next) => {
 // GET /api/users/:userId    --- get one user, and attach their favors and bids
 router.get('/:userId', async (req, res, next) => {
   const user = await User.findByPk(req.params.userId, {
-    include: [{ model: Favor }, { model: Bid }],
+    include: [
+      { model: Favor, include: { model: Bid } },
+      {
+        model: Bid,
+        include: {
+          model: Favor,
+          include: [{ model: Bid }, { model: User, as: 'author' }],
+        },
+      },
+    ],
   });
   res.send(user);
 
