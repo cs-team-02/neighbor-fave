@@ -15,7 +15,7 @@ const Bid = (props) => {
 
   return (
     <div className="bid-container">
-      <span id="bidder-name">from {bid.user.name}:</span>
+      <span id="bidder-name">from {bid.volunteer.name}:</span>
       <div>{bid.description}</div>
 
       <div>

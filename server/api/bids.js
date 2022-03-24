@@ -17,13 +17,29 @@ router.get("/", async (req, res, next) => {
 router.get("/:bidId/comments", async (req, res, next) => {
   const bid = await Bid.findByPk(req.params.bidId);
 
-  const comments = await Comment.findAll({
-    where: { bid_id: req.params.bidId },
-  });
-  bid.comments = comments;
-  res.send(bid);
+  // if using this route, eager load volunteer of the bid
+  // (User as 'volunteer)
+  // and the comments of that bid
+
+  // not this:
+  // const comments = await Comment.findAll({
+  //   where: { bidId: req.params.bidId },
+  // });
+  // bid.comments = comments;
+  // res.send(bid);
 });
 
+// POST /api/bids  --- creates a bid
+router.post("/", async (req, res, next) => {
+  try {
+    const newBid = await Bid.create(req.body);
+    res.send(newBid);
+  } catch (error) {
+    console.log("error creating bid in the DB", error);
+  }
+});
+
+// PUT /api/bids/:bidId  --- updates a bid
 router.put("/:bidId", async (req, res, next) => {
   try {
     const bid = await Bid.findByPk(req.params.bidId);

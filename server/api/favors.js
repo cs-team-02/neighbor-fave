@@ -64,7 +64,16 @@ router.post("/", async (req, res, next) => {
 });
 
 // PUT /api/favors/:favorId    --- edit a favor
-router.put("/:favorId");
+router.put("/:favorId", async (req, res, next) => {
+  try {
+    const favor = await Favor.findByPk(req.params.favorId);
+    const updatedFavor = await favor.update(req.body);
+    res.send(updatedFavor);
+    // const favor = await Favor.update({where: {id: req.params.favorId}}, req.body)
+  } catch (error) {
+    console.log("error updating favor in the DB", error);
+  }
+});
 
 // DELETE /api/favors/:favorId    --- delete a favor
 router.delete("/:favorId");
