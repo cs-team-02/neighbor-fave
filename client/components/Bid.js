@@ -12,8 +12,9 @@ const Bid = (props) => {
   const dispatch = useDispatch();
   const [showChat, setShowChat] = useState(false);
   const CurrentUser = useAuth();
-  const canViewChat =
-    CurrentUser.id === bid.volunteer.id || CurrentUser.id === favor.author.id;
+  const isAuthor = CurrentUser.id === favor.author.id;
+  const isVolunteer = CurrentUser.id === bid.volunteer.id;
+  const canViewChat = isAuthor || isVolunteer;
 
   // CurrentUser.id === bid.volunteer.id || favor.author.id
   // CurrentUser === bid.volunteer || favor.author
@@ -38,13 +39,15 @@ const Bid = (props) => {
       <div>
         <span id="bid-status">{bid.status}</span>
         <br></br>
-        <button onClick={handleAcceptBid}>Accept offer</button>
+        {isAuthor ? (
+          <button onClick={handleAcceptBid}>Accept offer</button>
+        ) : null}
         <br />
       </div>
       {canViewChat ? (
         <div id="chat-div">
           <button onClick={toggleShowChat}>
-            {!showChat ? `Show Chat ` : "Hide Chat"}
+            {!showChat ? `Show Chat` : "Hide Chat"}
           </button>
           {showChat ? (
             <div id="chat-box">
