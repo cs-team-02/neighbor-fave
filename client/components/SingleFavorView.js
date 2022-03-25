@@ -39,7 +39,7 @@ const SingleFavor = (props) => {
       <h1> {favor.title}</h1>
       <br />
       <span> Status: {favor.status === "OPEN" ? "Open" : "Closed"} </span>
-      {useAuth().id === favor.authorId ? (
+      {CurrentUser.id === favor.authorId ? (
         <button onClick={toggleFavorResolved}>
           {favor.status === "OPEN" ? "Resolve" : "Reopen"}
         </button>
@@ -55,12 +55,21 @@ const SingleFavor = (props) => {
           : "Loading"}
       </h2>
 
-      {useAuth().id === favor.authorId ? (
+      {CurrentUser.id === favor.authorId ? (
         favor.bids.map((bid) => {
-          return <Bid key={bid.id} bid={bid} />;
+          return <Bid key={bid.id} bid={bid} favor={favor} />;
         })
       ) : (
         <div>
+          {favor.bids ? (
+            favor.bids
+              .filter((bid) => bid.volunteer.id === CurrentUser.id)
+              .map((bid) => {
+                return <Bid key={bid.id} bid={bid} favor={favor} />;
+              })
+          ) : (
+            <div></div>
+          )}
           <button
             onClick={() => {
               setBidState(true);
