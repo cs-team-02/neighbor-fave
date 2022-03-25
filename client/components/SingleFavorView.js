@@ -1,26 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import CreateBid from "./CreateBid.js";
-import Bid from "./Bid.js";
 import BidsList from "./BidsList.js";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetchSingleFavor } from "../store/SingleFavor.js";
-import { updateFavor, updateBid } from "../store/favors";
 import useAuth from "./utils/useAuthHook.js";
 import useFavor from "./utils/useFavorHook";
-// experimenting with toggle function in its own module:
 import { toggleFavorResolved } from "./utils/toggleFavorStatus";
 
 const SingleFavor = (props) => {
-  // will use this id (from URL param, from route rendering the component)
-  // to fetch this favor from the database and put it on app state as
-  // THE singleFavor.
-  // then we can use the singleFavor on state to populate this view
   const dispatch = useDispatch();
-  const CurrentUser = useAuth();
-
   const [bidState, setBidState] = useState(false);
-
+  const CurrentUser = useAuth();
   const favor = useFavor();
 
   useEffect(() => {
