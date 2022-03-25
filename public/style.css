@@ -95,8 +95,10 @@ form div {
 }
 
 .thumb-img {
-  max-width: 10%;
+  max-width: fit-content;
+  min-width: fit-content;
   max-height: 60px;
+  min-height: 50px;
   height: auto;
 }
 

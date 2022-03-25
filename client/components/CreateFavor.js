@@ -1,37 +1,37 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createFavor } from '../store/favors';
 import useForm from './utils/useForm';
 import useAuth from './utils/useAuthHook';
 import { useHistory } from 'react-router-dom';
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
-import { useMap } from 'react-leaflet';
-const SearchField = () => {
+import { OpenStreetMapProvider } from 'leaflet-geosearch';
+
+ function searchField() {
+  const timeout = useRef();
+  const [input, setInput] = useState('');
+  const [results, setResults] = useState([]);
   const provider = new OpenStreetMapProvider();
 
-  // @ts-ignore
-  const searchControl = new GeoSearchControl({
-    provider: provider,
-    //style: 'bar',
-    searchLabel: 'Enter address',
-  });
+  const handleAddress = e =>{
+    setInput(e.target.value);
 
-  const map = useMap();
-  useEffect(() => {
-    map.addControl(searchControl);
-    return () => map.removeControl(searchControl);
-  }, []);
+    if(timeout.current){
+      clearTimeout(timeout.current);
+    }
 
-  return null;
-};
-// import { nodeGeocoder } from 'node-geocoder';
-
+    timeout.current = setTimeout(async() => {
+      const results = await provider.search({query: e.target.value});
+      setResults(results);
+    }, 500);
+  }
+}
 function CreateFavor() {
   const dispatch = useDispatch();
   let history = useHistory();
   const [values, handleChange] = useForm();
   const currentUser = useAuth();
+  
+//const results = await provider.search({ query: input.value });
 
   const create = (e) => {
     e.preventDefault();
@@ -54,21 +54,6 @@ function CreateFavor() {
   // });
     return (
       <div className='create-favor-form'>
-            <div className='createFavorMap'>
-      <MapContainer center={userLocation} zoom={13}>
-        <SearchField />
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        {/* <Marker position={[51.505, -0.09]}>
-          <Popup>
-            my Favor please <br /> anyone have a shovel?
-          </Popup>
-        </Marker> */}
-      </MapContainer>
-      {/* <ListView /> */}
-    </div>
         <div>
           <h3>Ask: </h3>
         </div>
@@ -126,6 +111,14 @@ function CreateFavor() {
             </button>
           </div>
         </form>
+        <div>
+          <label htmlFor='address'>Address: </label>
+          <input
+            type='text'
+            name='address'
+            onChange={(e) =>handleAddress(e)} value={input}
+          />
+        </div>
       </div>
     );
   }
