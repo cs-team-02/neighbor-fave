@@ -4,6 +4,7 @@ import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
 import { me } from './store';
+import ChatForm from './Chat/ChatForm';
 // created a single favor view:
 import SingleFavorView from './components/SingleFavorView';
 import Map from './components/Map';
@@ -24,25 +25,26 @@ class Routes extends Component {
     const { isLoggedIn } = this.props;
 
     return (
-      <div className='no-div-margin'>
+      <div className="no-div-margin">
         {isLoggedIn ? (
           <Switch>
             {/* create a component for Single Favor View
             and Link to each single favor in every marker's popup */}
-            <Route path='/mapView' component={Map}></Route>
-            <Route exact path='/favors' component={AllFavorsList}></Route>
-            <Route exact path='/users' component={AllUsersList}></Route>
-            <Route path='/users/:id' component={SingleUserView}></Route>
-            <Route path='/favors/create' component={CreateFavor}></Route>
-            <Route path='/favors/:id' component={SingleFavorView}></Route>
-            <Route path='/home' component={AllFavorsList} />
-            <Redirect to='/home' />
+            <Route path="/mapView" component={Map}></Route>
+            <Route exact path="/favors" component={AllFavorsList}></Route>
+            <Route exact path="/users" component={AllUsersList}></Route>
+            <Route path="/users/:id" component={SingleUserView}></Route>
+            <Route path="/favors/create" component={CreateFavor}></Route>
+            <Route path="/favors/:id" component={SingleFavorView}></Route>
+            <Route path="/ChatForm" component={ChatForm}></Route>
+            <Route path="/home" component={AllFavorsList} />
+            <Redirect to="/home" />
           </Switch>
         ) : (
           <Switch>
-            <Route path='/' exact component={Login} />
-            <Route path='/login' component={Login} />
-            <Route path='/signup' component={Signup} />
+            <Route path="/" exact component={Login} />
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={Signup} />
           </Switch>
         )}
       </div>
