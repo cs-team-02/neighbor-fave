@@ -37,12 +37,14 @@ export default function SingleUserView(props) {
     return (
       <div>
         <div className='user-info-card'>
-          <img src={user.ImageUrl} />
-          <div>
+          <div className='center-text-div'>
+            <img className='profile-img' src={user.ImageURL} />
+          </div>
+          <div className='center-text-div'>
             <b>{user.name}</b>
           </div>
-          <div>{user.address}</div>
-          <hr />
+          <div className='center-text-div'>{user.address}</div>
+          <div className='spacer-div' />
         </div>
         <div>
           <div>
