@@ -16,9 +16,6 @@ const Bid = (props) => {
   const isVolunteer = CurrentUser.id === bid.volunteer.id;
   const canViewChat = isAuthor || isVolunteer;
 
-  // CurrentUser.id === bid.volunteer.id || favor.author.id
-  // CurrentUser === bid.volunteer || favor.author
-
   const handleAcceptBid = async () => {
     await dispatch(acceptBid(bid.id, bid.favorId));
     await dispatch(fetchSingleFavor(bid.favorId));
