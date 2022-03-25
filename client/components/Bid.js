@@ -19,7 +19,11 @@ const Bid = (props) => {
   const handleAcceptBid = async () => {
     // await dispatch(acceptBid(bid.id, bid.favorId));
     // INSTEAD
-    await dispatch(updateBid(bid, { status: "ACCEPTED" }));
+    if (bid.status === "PENDING") {
+      await dispatch(updateBid(bid, { status: "ACCEPTED" }));
+    } else if (bid.status === "ACCEPTED") {
+      await dispatch(updateBid(bid, { status: "PENDING" }));
+    }
     await dispatch(fetchSingleFavor(bid.favorId));
   };
 
