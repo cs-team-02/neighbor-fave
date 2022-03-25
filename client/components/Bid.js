@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { acceptBid, updateBid } from "../store/favors";
+import { updateBid } from "../store/favors";
 import { fetchSingleFavor } from "../store/SingleFavor";
 import { Link } from "react-router-dom";
 import useAuth from "./utils/useAuthHook";
