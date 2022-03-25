@@ -6,6 +6,13 @@
 body {
   font-family: sans-serif;
 }
+hr {
+  border-top: 2px solid rgb(92, 92, 92);
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 2px;
+}
 
 a {
   color: black;
@@ -28,6 +35,37 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+#top-spacer-div {
+  height: 50px;
+}
+
+#bottom-spacer-div {
+  height: 200px;
+}
+
+.no-margin-div {
+  margin: 0;
+  padding: 0;
+}
+
+.menu-bar {
+  background-color: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar-bottom {
+  background-color: rgb(255, 210, 32);
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.205);
+}
 
 .li-picture-div {
   /* border-width: 1px;
@@ -40,8 +78,19 @@ form div {
   border-style: dotted;
 } */
 
+.profile-img {
+  max-width: 40%;
+  height: auto;
+  align-content: center;
+}
+
 .li-img {
   max-width: 100%;
+  height: auto;
+}
+
+.thumb-img {
+  max-width: 10%;
   height: auto;
 }
 
@@ -56,7 +105,17 @@ form div {
 }
 .center-text-div {
   text-align: center;
-  padding: 2px;
+  /* padding: 2px; */
+}
+
+#top-menu-div {
+  display: flex;
+  align-items: center;
+  z-index: 3;
+}
+
+.spacer-div {
+  height: 7px;
 }
 
 .card-div {
@@ -64,7 +123,7 @@ form div {
   padding: 5px;
 }
 .orange-button {
-  background-color: orange;
+  background-color: rgb(255, 210, 32);
   text-align: center;
   padding: 2px;
   margin: auto;
@@ -100,4 +159,6 @@ h2 {
 }
 .map {
   display: flex;
+  width: 100%;
+  z-index: 1;
 }

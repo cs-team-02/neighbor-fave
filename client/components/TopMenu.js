@@ -4,25 +4,26 @@ import { Link } from 'react-router-dom';
 import { logout } from '../store';
 import useAuth from './utils/useAuthHook';
 
-const Navbar = ({ handleClick, isLoggedIn }) => {
+const TopMenu = ({ handleClick, isLoggedIn }) => {
   const currentUser = useAuth();
   return (
-    <div className='navbar-bottom'>
+    <div className='menu-bar'>
       <nav>
         {isLoggedIn ? (
-          <div className='center-text-div'>
+          <div id='top-menu-div'>
             {/* The navbar will show these links after you log in */}
-            {/* <div className='center-text-div'>
-              <h5>Hello, {currentUser.name}</h5>
-            </div> */}
-            <Link to='/home'>Home</Link>
-            <Link to='/favors/create'>Ask</Link>
-            <Link to='/users'>Users</Link>
+
+            <img className='thumb-img' src={currentUser.ImageURL} />
+            <b>{currentUser.name}</b>
+            <a href='#' onClick={handleClick}>
+              Logout
+            </a>
           </div>
         ) : (
-          <div className='center-text-div'>
+          <div className='right-text-div'>
             {/* The navbar will show these links before you log in */}
-            <h3>NeighborFave</h3>
+            <Link to='/login'>Login</Link>
+            <Link to='/signup'>Sign Up</Link>
           </div>
         )}
       </nav>
@@ -47,4 +48,4 @@ const mapDispatch = (dispatch) => {
   };
 };
 
-export default connect(mapState, mapDispatch)(Navbar);
+export default connect(mapState, mapDispatch)(TopMenu);
