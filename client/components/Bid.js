@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { acceptBid } from "../store/favors";
+import { updateBid } from "../store/favors";
 import { fetchSingleFavor } from "../store/SingleFavor";
 import { Link } from "react-router-dom";
 import useAuth from "./utils/useAuthHook";
@@ -17,7 +17,13 @@ const Bid = (props) => {
   const canViewChat = isAuthor || isVolunteer;
 
   const handleAcceptBid = async () => {
-    await dispatch(acceptBid(bid.id, bid.favorId));
+    // await dispatch(acceptBid(bid.id, bid.favorId));
+    // INSTEAD
+    if (bid.status === "PENDING") {
+      await dispatch(updateBid(bid, { status: "ACCEPTED" }));
+    } else if (bid.status === "ACCEPTED") {
+      await dispatch(updateBid(bid, { status: "PENDING" }));
+    }
     await dispatch(fetchSingleFavor(bid.favorId));
   };
 

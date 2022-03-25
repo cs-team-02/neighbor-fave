@@ -1,38 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import CreateBid from "./CreateBid.js";
-import Bid from "./Bid.js";
-import { useSelector, useDispatch } from "react-redux";
+import BidsList from "./BidsList.js";
+import { useDispatch } from "react-redux";
 import { fetchSingleFavor } from "../store/SingleFavor.js";
-import { updateFavor } from "../store/favors";
 import useAuth from "./utils/useAuthHook.js";
 import useFavor from "./utils/useFavorHook";
+import { toggleFavorResolved } from "./utils/toggleFavorStatus";
 
 const SingleFavor = (props) => {
-  // will use this id (from URL param, from route rendering the component)
-  // to fetch this favor from the database and put it on app state as
-  // THE singleFavor.
-  // then we can use the singleFavor on state to populate this view
   const dispatch = useDispatch();
-  const CurrentUser = useAuth();
-
   const [bidState, setBidState] = useState(false);
-
+  const CurrentUser = useAuth();
   const favor = useFavor();
 
   useEffect(() => {
     dispatch(fetchSingleFavor(props.match.params.id));
   }, []);
-
-  const toggleFavorResolved = async () => {
-    if (favor.status === "CLOSED") {
-      await dispatch(updateFavor(favor.id, { status: "OPEN" }));
-      await dispatch(fetchSingleFavor(props.match.params.id));
-    } else {
-      await dispatch(updateFavor(favor.id, { status: "CLOSED" }));
-      await dispatch(fetchSingleFavor(props.match.params.id));
-    }
-  };
 
   return (
     <div>
@@ -40,7 +23,7 @@ const SingleFavor = (props) => {
       <br />
       <span> Status: {favor.status === "OPEN" ? "Open" : "Closed"} </span>
       {CurrentUser.id === favor.authorId ? (
-        <button onClick={toggleFavorResolved}>
+        <button onClick={() => toggleFavorResolved(dispatch, favor)}>
           {favor.status === "OPEN" ? "Resolve" : "Reopen"}
         </button>
       ) : (
@@ -54,34 +37,13 @@ const SingleFavor = (props) => {
             ` Pending bid${favor.bids.length > 1 ? "s" : ""}`
           : "Loading"}
       </h2>
+      <BidsList
+        CurrentUser={CurrentUser}
+        favor={favor}
+        bidState={bidState}
+        setBidState={setBidState}
+      />
 
-      {CurrentUser.id === favor.authorId ? (
-        favor.bids.map((bid) => {
-          return <Bid key={bid.id} bid={bid} favor={favor} />;
-        })
-      ) : (
-        <div>
-          {favor.bids ? (
-            favor.bids
-              .filter((bid) => bid.volunteer.id === CurrentUser.id)
-              .map((bid) => {
-                return <Bid key={bid.id} bid={bid} favor={favor} />;
-              })
-          ) : (
-            <div></div>
-          )}
-          <button
-            onClick={() => {
-              setBidState(true);
-            }}
-          >
-            Offer help : {favor.title}
-          </button>
-          <br />
-          <br />
-          {bidState ? <CreateBid favor={favor} /> : <div></div>}
-        </div>
-      )}
       <br />
       <Link to="/favors">
         <button>Back to map view</button>
