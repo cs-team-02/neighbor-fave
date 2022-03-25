@@ -82,6 +82,12 @@ form div {
   padding: 10px;
 }
 
+#chat-box {
+  background-color: aqua;
+  width: 70%;
+  height: 100px;
+  border-style: solid;
+}
 .bid-container button,
 span,
 div,
