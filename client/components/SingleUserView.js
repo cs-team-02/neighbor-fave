@@ -13,7 +13,7 @@ export default function SingleUserView(props) {
 
   useEffect(() => {
     dispatch(fetchSingleUser(props.match.params.id));
-  }, []);
+  }, [props.match.params.id]);
 
   const favorsTally = function () {
     if (user.favors === undefined) {

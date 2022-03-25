@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { acceptBid } from "../store/favors";
 import { fetchSingleFavor } from "../store/SingleFavor";
+import { Link } from "react-router-dom";
 // import css from "./Bidstyle.css";
 
 const Bid = (props) => {
@@ -15,7 +16,12 @@ const Bid = (props) => {
 
   return (
     <div className="bid-container">
-      <span id="bidder-name">from {bid.volunteer.name}:</span>
+        <span id="bidder-name">from 
+          <Link to={`/users/${bid.volunteer.id}`}>
+            {bid.volunteer.name}
+          </Link>
+          :
+        </span>
       <div>{bid.description}</div>
 
       <div>
