@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { acceptBid } from "../store/favors";
-import { fetchSingleFavor } from "../store/SingleFavor";
-import { Link } from "react-router-dom";
-import useAuth from "./utils/useAuthHook";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { acceptBid } from '../store/favors';
+import { fetchSingleFavor } from '../store/SingleFavor';
+import { Link } from 'react-router-dom';
+import useAuth from './utils/useAuthHook';
 // import css from "./Bidstyle.css";
 
 const Bid = (props) => {
@@ -44,9 +44,13 @@ const Bid = (props) => {
       {canViewChat ? (
         <div id="chat-div">
           <button onClick={toggleShowChat}>
-            {!showChat ? `Show Chat` : "Hide Chat"}
+            {!showChat ? `Show Chat` : 'Hide Chat'}
           </button>
-          {showChat ? <div id="chat-box">Chat box here:</div> : <div></div>}
+          {showChat ? (
+            <div id="chat-box"> your roomId is: {bid.id}</div>
+          ) : (
+            <div></div>
+          )}
         </div>
       ) : (
         <div>Not your chat</div>
