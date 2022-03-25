@@ -1,6 +1,7 @@
 .leaflet-container {
   width: 100vw;
   height: 50vh;
+  z-index: 1;
 }
 
 body {
@@ -49,11 +50,12 @@ form div {
 }
 
 .menu-bar {
-  background-color: none;
   overflow: hidden;
-  position: fixed;
+  position:fixed;
   top: 0;
+  background-color: rgb(255, 210, 32);
   width: 100%;
+  z-index: 2;
 }
 
 .navbar-bottom {
@@ -105,13 +107,18 @@ form div {
 }
 .center-text-div {
   text-align: center;
+  margin-top: 5px;
   /* padding: 2px; */
 }
 
 #top-menu-div {
   display: flex;
   align-items: center;
-  z-index: 3;
+  z-index: 100;
+  width: 100%;
+  position: relative;
+  padding: 10px;
+  background-color: rgb(255, 210, 32);
 }
 
 .spacer-div {
@@ -166,5 +173,5 @@ h2 {
 .map {
   display: flex;
   width: 100%;
-  z-index: 1;
+  margin-top:90px;
 }
