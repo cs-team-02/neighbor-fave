@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import CreateBid from "./CreateBid.js";
 import Bid from "./Bid.js";
+import BidsList from "./BidsList.js";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchSingleFavor } from "../store/SingleFavor.js";
 import { updateFavor, updateBid } from "../store/favors";
@@ -46,34 +47,13 @@ const SingleFavor = (props) => {
             ` Pending bid${favor.bids.length > 1 ? "s" : ""}`
           : "Loading"}
       </h2>
+      <BidsList
+        CurrentUser={CurrentUser}
+        favor={favor}
+        bidState={bidState}
+        setBidState={setBidState}
+      />
 
-      {CurrentUser.id === favor.authorId ? (
-        favor.bids.map((bid) => {
-          return <Bid key={bid.id} bid={bid} favor={favor} />;
-        })
-      ) : (
-        <div>
-          {favor.bids ? (
-            favor.bids
-              .filter((bid) => bid.volunteer.id === CurrentUser.id)
-              .map((bid) => {
-                return <Bid key={bid.id} bid={bid} favor={favor} />;
-              })
-          ) : (
-            <div></div>
-          )}
-          <button
-            onClick={() => {
-              setBidState(true);
-            }}
-          >
-            Offer help : {favor.title}
-          </button>
-          <br />
-          <br />
-          {bidState ? <CreateBid favor={favor} /> : <div></div>}
-        </div>
-      )}
       <br />
       <Link to="/favors">
         <button>Back to map view</button>
