@@ -29,6 +29,9 @@ const SingleFavor = (props) => {
       await dispatch(updateFavor(favor.id, { status: "OPEN" }));
       await dispatch(fetchSingleFavor(props.match.params.id));
     } else {
+      // set the bid(s) with "ACCEPTED" status to status "FULFILLED"
+      // and set all of the bids with "PENDING" status to "REJECTED"
+
       await dispatch(updateFavor(favor.id, { status: "CLOSED" }));
       await dispatch(fetchSingleFavor(props.match.params.id));
     }
