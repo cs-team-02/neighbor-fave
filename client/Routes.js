@@ -11,6 +11,7 @@ import AllFavorsList from './components/AllFavorsList';
 import AllUsersList from './components/AllUsersList';
 import CreateFavor from './components/CreateFavor';
 import SingleUserView from './components/SingleUserView';
+import searchField from './components/geo';
 
 /**
  * COMPONENT
@@ -36,6 +37,7 @@ class Routes extends Component {
             <Route path='/favors/create' component={CreateFavor}></Route>
             <Route path='/favors/:id' component={SingleFavorView}></Route>
             <Route path='/home' component={AllFavorsList} />
+            <Route path='/geo' component={searchField} />
             <Redirect to='/home' />
           </Switch>
         ) : (

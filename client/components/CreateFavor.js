@@ -6,7 +6,12 @@ import useAuth from './utils/useAuthHook';
 import { useHistory } from 'react-router-dom';
 import { OpenStreetMapProvider } from 'leaflet-geosearch';
 
- function searchField() {
+
+function CreateFavor() {
+  const dispatch = useDispatch();
+  let history = useHistory();
+  const [values, handleChange] = useForm();
+  const currentUser = useAuth();
   const timeout = useRef();
   const [input, setInput] = useState('');
   const [results, setResults] = useState([]);
@@ -20,16 +25,10 @@ import { OpenStreetMapProvider } from 'leaflet-geosearch';
     }
 
     timeout.current = setTimeout(async() => {
-      const results = await provider.search({query: e.target.value});
-      setResults(results);
+      const result = await provider.search({query: e.target.value});
+      setResults(result);
     }, 500);
   }
-}
-function CreateFavor() {
-  const dispatch = useDispatch();
-  let history = useHistory();
-  const [values, handleChange] = useForm();
-  const currentUser = useAuth();
   
 //const results = await provider.search({ query: input.value });
 
@@ -116,7 +115,7 @@ function CreateFavor() {
           <input
             type='text'
             name='address'
-            onChange={(e) =>handleAddress(e)} value={input}
+            onChange={handleAddress} value={input}
           />
         </div>
       </div>
