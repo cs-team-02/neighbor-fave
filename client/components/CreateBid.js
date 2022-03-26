@@ -6,7 +6,7 @@ import { fetchSingleFavor } from "../store/SingleFavor";
 // NOW ADD THE REQUIRED ADDITIONS/FIXES TO favors reducer and bids route
 // to accommodate this { createBid } import ^^
 const CreateBid = (props) => {
-  const { favor } = props;
+  const { favor, setBidState } = props;
   const dispatch = useDispatch();
   const currentUser = useAuth();
 
@@ -24,6 +24,7 @@ const CreateBid = (props) => {
     await dispatch(fetchSingleFavor(favor.id));
 
     setMessage("");
+    setBidState(false);
   };
 
   return (

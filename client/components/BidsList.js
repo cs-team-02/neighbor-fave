@@ -4,7 +4,7 @@ import CreateBid from "./CreateBid";
 
 const BidsList = (props) => {
   const { CurrentUser, favor, bidState, setBidState } = props;
-
+  console.log(CurrentUser);
   return (
     <div>
       {CurrentUser.id === favor.authorId ? (
@@ -22,15 +22,32 @@ const BidsList = (props) => {
           ) : (
             <div></div>
           )}
-          <button
-            onClick={() => {
-              setBidState(true);
-            }}
-          >
-            Offer help : {favor.title}
-          </button>
+          {/* only render this button if user has not bidded on THIS favor already */}
+          {CurrentUser.bids ? (
+            <div>
+              {" "}
+              {CurrentUser.bids.some((bid) => bid.favorId === favor.id) ? (
+                <div>you've already bidded on this favor</div>
+              ) : (
+                <button
+                  onClick={() => {
+                    setBidState(true);
+                  }}
+                >
+                  Offer help : {favor.title}
+                </button>
+              )}
+            </div>
+          ) : (
+            <p>Loading</p>
+          )}
+
           <br />
-          {bidState ? <CreateBid favor={favor} /> : <div></div>}
+          {bidState ? (
+            <CreateBid favor={favor} setBidState={setBidState} />
+          ) : (
+            <div></div>
+          )}
         </div>
       )}
     </div>
