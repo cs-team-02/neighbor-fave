@@ -32,20 +32,16 @@ const Bid = (props) => {
   };
 
   return (
-    <div className="bid-container">
+    <div className="single-bid-container">
       <span id="bidder-name">
-        from
-        <Link to={`/users/${bid.volunteer.id}`}>{bid.volunteer.name}</Link>:
+        <Link to={`/users/${bid.volunteer.id}`}> {bid.volunteer.name}</Link>:
       </span>
-      <div>{bid.description}</div>
-
+      <p>{bid.description}</p>
       <div>
-        <span id="bid-status">{bid.status}</span>
-        <br></br>
         {isAuthor ? (
           <button onClick={handleAcceptBid}>Accept offer</button>
         ) : null}
-        <br />
+        <span id="bid-status">{bid.status}</span>
       </div>
       {canViewChat ? (
         <div id="chat-div">
@@ -57,8 +53,6 @@ const Bid = (props) => {
       ) : (
         <div>Not your chat</div>
       )}
-
-      <br />
     </div>
   );
 };

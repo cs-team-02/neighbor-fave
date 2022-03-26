@@ -18,10 +18,16 @@ const SingleFavor = (props) => {
   }, []);
 
   return (
-    <div>
-      <h1> {favor.title}</h1>
+    <div id="single-favor-container">
+      <h1>
+        {" "}
+        {favor.title}{" "}
+        <span id="favor-status">
+          ({favor.status === "OPEN" ? "Open" : "Closed"})
+        </span>
+      </h1>
       <br />
-      <span> Status: {favor.status === "OPEN" ? "Open" : "Closed"} </span>
+
       {CurrentUser.id === favor.authorId ? (
         <button onClick={() => toggleFavorResolved(dispatch, favor)}>
           {favor.status === "OPEN" ? "Resolve" : "Reopen"}
@@ -29,20 +35,26 @@ const SingleFavor = (props) => {
       ) : (
         <div></div>
       )}
-      <h3>Description: {favor.description}</h3>
-      <h2>Author: {favor.author ? favor.author.name : "Loading"}</h2>
-      <h2>
-        {favor.bids
-          ? favor.bids.length +
-            ` Pending bid${favor.bids.length > 1 ? "s" : ""}`
-          : "Loading"}
-      </h2>
-      <BidsList
-        CurrentUser={CurrentUser}
-        favor={favor}
-        bidState={bidState}
-        setBidState={setBidState}
-      />
+
+      <span id="favor-author">
+        {favor.author ? favor.author.name : "Loading"}:
+      </span>
+
+      <span id="favor-description"> "{favor.description}"</span>
+      <div id="all-bids-container">
+        <h2 id="favors-pending-bids">
+          {favor.bids
+            ? favor.bids.length +
+              ` Pending bid${favor.bids.length > 1 ? "s" : ""}`
+            : "Loading"}
+        </h2>
+        <BidsList
+          CurrentUser={CurrentUser}
+          favor={favor}
+          bidState={bidState}
+          setBidState={setBidState}
+        />
+      </div>
 
       <br />
       <Link to="/favors">

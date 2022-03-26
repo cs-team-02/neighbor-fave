@@ -51,7 +51,7 @@ form div {
 
 .menu-bar {
   overflow: hidden;
-  position:fixed;
+  position: fixed;
   top: 0;
   background-color: rgb(255, 210, 32);
   width: 100%;
@@ -140,12 +140,44 @@ form div {
   background-color: rgb(224, 224, 224);
 }
 
+/* Single Favor Styles */
+
+#single-favor-container {
+  font-family: sans-serif;
+  margin: 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#single-favor-container > * {
+  /* padding: 7px; */
+  font-size: large;
+}
+
+#favor-status {
+  font-size: x-large;
+}
+
 /* Bid styles */
-.bid-container {
+.single-bid-container {
   border-style: solid;
   width: vw;
-  margin: 20px;
+  background-color: whitesmoke;
+  margin: 10px;
+
   padding: 10px;
+}
+
+.single-bid-container * {
+  padding: 6px;
+  font-size: large;
+}
+
+#all-bids-container {
+  background-color: rgb(226, 226, 226);
+
+  padding: 30px;
 }
 
 #chat-box {
@@ -154,16 +186,8 @@ form div {
   height: 100px;
   border-style: solid;
 }
-.bid-container button,
-span,
-div,
-p,
-h1,
-h2 {
-  margin: 10px 10px 0px 10px;
-}
-
 #bid-status {
+  font-size: x-large;
   color: rgb(65, 65, 222);
 }
 
@@ -173,5 +197,5 @@ h2 {
 .map {
   display: flex;
   width: 100%;
-  margin-top:90px;
+  margin-top: 90px;
 }

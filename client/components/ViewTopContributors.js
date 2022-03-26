@@ -10,7 +10,6 @@ const TopContributors = () => {
     (user) => user.bids.filter((bid) => bid.status === "PENDING").length > 1
   );
 
-  // const usersFiltered = allUsers.filter((user) => user.bids.length > 0);
   useEffect(() => {
     dispatch(fetchUsers());
     dispatch(fetchFavors());
@@ -18,8 +17,6 @@ const TopContributors = () => {
   }, []);
 
   return (
-    // MAP OVER usersFiltered array
-
     <div>
       <br></br>
       <br></br>
