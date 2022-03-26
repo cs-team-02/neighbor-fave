@@ -11,6 +11,7 @@ import AllFavorsList from './components/AllFavorsList';
 import AllUsersList from './components/AllUsersList';
 import CreateFavor from './components/CreateFavor';
 import SingleUserView from './components/SingleUserView';
+import UserProfile from './components/UserProfile';
 
 /**
  * COMPONENT
@@ -32,6 +33,7 @@ class Routes extends Component {
             <Route path='/mapView' component={Map}></Route>
             <Route exact path='/favors' component={AllFavorsList}></Route>
             <Route exact path='/users' component={AllUsersList}></Route>
+            <Route path='/profile' component={UserProfile}></Route>
             <Route path='/users/:id' component={SingleUserView}></Route>
             <Route path='/favors/create' component={CreateFavor}></Route>
             <Route path='/favors/:id' component={SingleFavorView}></Route>

@@ -1,4 +1,4 @@
-//This component renders favor for which neighbor volunteered
+//This component renders neighbor's Favor Ask
 
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -6,8 +6,14 @@ import favors, { fetchFavors } from '../store/favors';
 import Map from './Map';
 import { Link } from 'react-router-dom';
 
-export default function VolunteeringCard(props) {
+export default function MyFavorAskCard(props) {
   const favor = props.favor;
+  const loggedInId = props.loggedInId;
+
+  //   const renderVolunteerButton = function () {
+  //     if (favor.authorId === loggedInId) {
+  //     }
+  //   };
 
   const renderVolunteersNumber = function () {
     if (favor.bids.length === 1) {
@@ -18,19 +24,15 @@ export default function VolunteeringCard(props) {
   };
 
   return (
-    <div className='volunteer-card-div' key={favor.id}>
-      <div>
-        <Link to={`/users/${favor.authorId}`}>
-          <b>{favor.author.name}</b>
-        </Link>
-      </div>
+    <div className='ask-card-div' key={favor.id}>
+      <div className='grey-text'>Favor needed: {favor.favorDate}</div>
       <div>
         <Link to={`/favors/${favor.id}`}>
           <b>{favor.title}</b>
         </Link>
       </div>
       <div>{favor.description}</div>
-      {/* <div className='center-text-div'>{renderVolunteersNumber()}</div> */}
+      <div className='center-text-div'>{renderVolunteersNumber()}</div>
     </div>
   );
 }

@@ -8,7 +8,7 @@ body {
   font-family: sans-serif;
 }
 hr {
-  border-top: 2px solid rgb(92, 92, 92);
+  border-top: 2px solid rgb(204, 204, 204);
   border-bottom: none;
   border-left: none;
   border-right: none;
@@ -37,7 +37,7 @@ form div {
   display: inline-block;
 }
 #top-spacer-div {
-  height: 50px;
+  height: 70px;
 }
 
 #bottom-spacer-div {
@@ -51,7 +51,7 @@ form div {
 
 .menu-bar {
   overflow: hidden;
-  position:fixed;
+  position: fixed;
   top: 0;
   background-color: rgb(255, 210, 32);
   width: 100%;
@@ -81,18 +81,24 @@ form div {
 } */
 
 .profile-img {
-  max-width: 40%;
+  /* clip-path: circle(20px at center); */
+  clip-path: circle(50px at center);
+  width: 100px;
+  /* max-width: 10%; */
   height: auto;
   align-content: center;
 }
 
 .li-img {
-  max-width: 100%;
+  clip-path: circle(40px at center);
+  width: 80px;
+  /* max-width: 100%; */
   height: auto;
 }
 
 .thumb-img {
-  max-width: 10%;
+  clip-path: circle(20px at center);
+  max-width: 40px;
   height: auto;
 }
 
@@ -124,20 +130,44 @@ form div {
 .spacer-div {
   height: 7px;
 }
+.small-spacer-div {
+  height: 1px;
+}
 
-.card-div {
+.ask-card-div {
   background-color: rgb(226, 226, 226);
   padding: 5px;
+  padding-bottom: 15px;
+  border-radius: 7px;
+  border: 2px solid rgb(255, 210, 32);
 }
+
+.volunteer-card-div {
+  background-color: rgb(226, 226, 226);
+  padding: 5px;
+  padding-bottom: 15px;
+  border-radius: 7px;
+}
+
+.bid-card-div {
+  background-color: rgba(255, 210, 32, 0.349);
+  padding: 10px;
+  border-radius: 7px;
+  /* border: 2px solid rgb(255, 210, 32); */
+  font-style: italic;
+}
+
 .orange-button {
   background-color: rgb(255, 210, 32);
   text-align: center;
   padding: 2px;
   margin: auto;
   width: 50%;
+  border-radius: 4px;
 }
 .grey-box {
   background-color: rgb(224, 224, 224);
+  text-align: center;
 }
 
 /* Bid styles */
@@ -173,5 +203,5 @@ h2 {
 .map {
   display: flex;
   width: 100%;
-  margin-top:90px;
+  margin-top: 90px;
 }

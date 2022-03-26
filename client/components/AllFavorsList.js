@@ -46,7 +46,7 @@ export default function AllFavorsList() {
               </Link>
             </div>
             <div>{favor.description}</div>
-            <div>Address: {favor.author.address}</div>
+            <div>{favor.author.address}</div>
             <div>{renderButton(favor)}</div>
           </div>
         ))}

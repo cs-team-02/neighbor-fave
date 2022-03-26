@@ -14,7 +14,7 @@ const TopMenu = ({ handleClick, isLoggedIn }) => {
             {/* The navbar will show these links after you log in */}
 
             <img className='thumb-img' src={currentUser.ImageURL} />
-            <Link to={`/users/${currentUser.id}`}>
+            <Link to={`/profile`}>
               <b>{currentUser.name}</b>
             </Link>
             <a href='#' onClick={handleClick}>
