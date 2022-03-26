@@ -28,12 +28,12 @@ const CreateBid = (props) => {
   };
 
   return (
-    <div>
-      <h2>Bid Form</h2>
-      <h4>
+    <div id="create-bid-form">
+      <h3>Your bid: </h3>
+      <p>
         Provide details for {favor.author.name} about how you can assist with{" "}
         {favor.title}
-      </h4>
+      </p>
       <form onSubmit={handleSubmitBid}>
         <label>Message : </label>
         <input

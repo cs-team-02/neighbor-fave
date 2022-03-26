@@ -27,14 +27,14 @@ const BidsList = (props) => {
             <div>
               {" "}
               {CurrentUser.bids.some((bid) => bid.favorId === favor.id) ? (
-                <div>you've already bidded on this favor</div>
+                <div></div>
               ) : (
                 <button
                   onClick={() => {
                     setBidState(true);
                   }}
                 >
-                  Offer help : {favor.title}
+                  Offer help
                 </button>
               )}
             </div>

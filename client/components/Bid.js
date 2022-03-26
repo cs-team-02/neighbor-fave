@@ -39,7 +39,9 @@ const Bid = (props) => {
       <p>{bid.description}</p>
       <div>
         {isAuthor ? (
-          <button onClick={handleAcceptBid}>Accept offer</button>
+          <button onClick={handleAcceptBid}>
+            {bid.status === "ACCEPTED" ? "Revoke" : "Accept offer"}
+          </button>
         ) : null}
         <span id="bid-status">{bid.status}</span>
       </div>

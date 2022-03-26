@@ -144,40 +144,54 @@ form div {
 
 #single-favor-container {
   font-family: sans-serif;
-  margin: 20px;
-
-  display: flex;
-  flex-direction: column;
+  margin: 1em;
 }
 
 #single-favor-container > * {
-  /* padding: 7px; */
+  /* margin: 10px 10px 10px 10px; */
   font-size: large;
+  padding: 3px;
 }
 
-#favor-status {
-  font-size: x-large;
+#single-favor-container button {
+  font-size: large;
+  border-radius: 15px;
+  background-color: rgb(255, 210, 32);
+  text-align: center;
+  padding: 2px;
+  margin: 5px;
+  width: 50%;
+}
+
+#favor-author {
+  font-weight: bold;
+  font-style: oblique;
 }
 
 /* Bid styles */
+
+#all-bids-container {
+  background-color: rgb(226, 226, 226);
+  border-style: 2px outset;
+  border-radius: 25px;
+  padding: 20px;
+}
+
 .single-bid-container {
-  border-style: solid;
-  width: vw;
+  border-radius: 25px;
+  width: 100 vw;
   background-color: whitesmoke;
   margin: 10px;
-
   padding: 10px;
 }
 
 .single-bid-container * {
-  padding: 6px;
+  padding: 7px;
   font-size: large;
 }
 
-#all-bids-container {
-  background-color: rgb(226, 226, 226);
-
-  padding: 30px;
+#create-bid-form * {
+  margin: 10px;
 }
 
 #chat-box {
@@ -187,7 +201,7 @@ form div {
   border-style: solid;
 }
 #bid-status {
-  font-size: x-large;
+  /* font-size: x-large; */
   color: rgb(65, 65, 222);
 }
 
