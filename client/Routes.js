@@ -38,6 +38,7 @@ class Routes extends Component {
             <Route path="/favors/:id" component={SingleFavorView}></Route>
             <Route path="/ChatForm" component={ChatForm}></Route>
             <Route path="/home" component={AllFavorsList} />
+            <Route exact path="/ChatForm" component={ChatForm} />
             <Redirect to="/home" />
           </Switch>
         ) : (
