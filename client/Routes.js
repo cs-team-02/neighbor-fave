@@ -12,6 +12,7 @@ import AllUsersList from './components/AllUsersList';
 import CreateFavor from './components/CreateFavor';
 import SingleUserView from './components/SingleUserView';
 import UserProfile from './components/UserProfile';
+import TopContributors from './components/ViewTopContributors';
 
 /**
  * COMPONENT
@@ -37,6 +38,7 @@ class Routes extends Component {
             <Route path='/users/:id' component={SingleUserView}></Route>
             <Route path='/favors/create' component={CreateFavor}></Route>
             <Route path='/favors/:id' component={SingleFavorView}></Route>
+            <Route path='/topContributors' component={TopContributors}></Route>
             <Route path='/home' component={AllFavorsList} />
             <Redirect to='/home' />
           </Switch>

@@ -3,8 +3,9 @@ import axios from "axios";
 //ACTION TYPES  -------------------------------------------
 const SET_FAVORS = "SET_FAVORS";
 const CREATE_FAVOR = "CREATE_FAVOR";
-const ACCEPTED_BID = "ACCEPTED_BID";
-// added by tedi Thursday
+
+const UPDATED_BID = "UPDATED_BID";
+
 const CREATED_BID = "CREATED_BID";
 const UPDATED_FAVOR = "UPDATED_FAVOR";
 
@@ -18,17 +19,17 @@ const favorCreate = (favor) => ({
   type: CREATE_FAVOR,
   favor,
 });
-const acceptedTheBid = (bid, favorId) => ({
-  type: ACCEPTED_BID,
+
+const updatedTheBid = (bid) => ({
+  type: UPDATED_BID,
   bid,
-  theFavorId: favorId,
 });
-// added by tedi Thursday
+
 const createdABid = (bid) => ({
   type: CREATED_BID,
   bid,
 });
-// added by tedi Thursday
+
 const updatedTheFavor = (favor) => ({
   type: UPDATED_FAVOR,
   favor,
@@ -54,17 +55,18 @@ export const createFavor = (favor) => {
     }
   };
 };
-// thunk to update bid status in DB from "PENDING" to "ACCEPTED"
-export const acceptBid = (bidId, favorId) => {
+// thunk to update bid in DB (to change status from "PENDING"/"ACCEPTED"/"REJECTED"/"FUFILLED")
+export const updateBid = (bid, bidUpdateObj) => {
   return async (dispatch) => {
-    const { data } = await axios.put(`/api/bids/${bidId}`, {
-      status: "ACCEPTED",
-    });
-    dispatch(acceptedTheBid(data, favorId));
+    try {
+      const { data } = await axios.put(`/api/bids/${bid.id}`, bidUpdateObj);
+      dispatch(updatedTheBid(data));
+    } catch (err) {
+      console.log(err);
+    }
   };
 };
 
-// added by tedi Thursday
 // thunk to create a bid in DB and update store
 export const createBid = (newBidObj) => {
   return async (dispatch) => {
@@ -77,7 +79,6 @@ export const createBid = (newBidObj) => {
   };
 };
 
-// added by tedi Thursday
 // thunk to update a favor in the DB and update the store
 export const updateFavor = (favorId, updateObject) => {
   return async (dispatch) => {
@@ -96,9 +97,9 @@ export default function favors(state = [], action) {
       return action.favors;
     case CREATE_FAVOR:
       return [...favors, action.favor];
-    case ACCEPTED_BID: {
+    case UPDATED_BID: {
       let updatedFavorsArray = state.map((favor) => {
-        if (favor.id === action.theFavorId) {
+        if (favor.id === action.bid.favorId) {
           let updatedBidsArray = favor.bids.map((bid) => {
             if (bid.id === action.bid.id) return action.bid;
             else return bid;
@@ -109,7 +110,6 @@ export default function favors(state = [], action) {
       });
       return updatedFavorsArray;
     }
-    // added by tedi thursday
     case CREATED_BID: {
       let updatedFavorsArray = state.map((favor) => {
         if (favor.id === action.bid.favorId) {
