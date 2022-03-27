@@ -22,6 +22,10 @@ const SingleFavor = (props) => {
       {/* <Link to="/favors">
         <button>Back to map view</button>
       </Link> */}
+      <br />
+      <br />
+      <br />
+      <br />
       <span> {favor.title} </span>
       <span id="favor-status">
         ({favor.status === "OPEN" ? "Open" : "Closed"})
