@@ -19,9 +19,6 @@ const SingleFavor = (props) => {
 
   return (
     <div id="single-favor-container">
-      {/* <Link to="/favors">
-        <button>Back to map view</button>
-      </Link> */}
       <br />
 
       <h1> {favor.title} </h1>
