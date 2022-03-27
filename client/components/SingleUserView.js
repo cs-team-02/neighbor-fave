@@ -16,16 +16,6 @@ export default function SingleUserView(props) {
     dispatch(fetchSingleUser(props.match.params.id));
   }, [props.match.params.id]);
 
-  // ensureArray ensures that array is returned
-
-  // const ensureArray = function (array) {
-  //   if (array === undefined) {
-  //     return [];
-  //   } else {
-  //     return array;
-  //   }
-  // };
-
   // openFavors and openBids takes arrays of favors, bids and returns only active favors, bids for active favors
   const openFavors = function (favors) {
     const openFavors = favors.filter(
@@ -84,7 +74,11 @@ export default function SingleUserView(props) {
             <div>
               {user.bids &&
                 openBids(user.bids).map((bid) => (
-                  <VolunteeringCard favor={bid.favor} />
+                  <VolunteeringCard
+                    bid={bid}
+                    user={user}
+                    loggedInId={loggedInId}
+                  />
                 ))}
             </div>
           </div>

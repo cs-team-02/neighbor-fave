@@ -111,9 +111,25 @@ form div {
 .grey-text {
   color: grey;
 }
+
+.green-text {
+  color: rgb(10, 116, 0);
+}
+
+.italic-text {
+  font-style: italic;
+}
+
 .center-text-div {
   text-align: center;
   margin-top: 5px;
+  /* padding: 2px; */
+}
+.right-text-div {
+  text-align: right;
+  font-style: italic;
+  color: grey;
+
   /* padding: 2px; */
 }
 
@@ -154,7 +170,6 @@ form div {
   padding: 10px;
   border-radius: 7px;
   /* border: 2px solid rgb(255, 210, 32); */
-  font-style: italic;
 }
 
 .orange-button {

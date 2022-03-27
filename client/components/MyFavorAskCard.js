@@ -26,7 +26,7 @@ export default function MyFavorAskCard(props) {
   return (
     <div className='ask-card-div' key={favor.id}>
       <div className='grey-text'>Favor needed: {favor.favorDate}</div>
-      <div>
+      <div className='center-text-div'>
         <Link to={`/favors/${favor.id}`}>
           <b>{favor.title}</b>
         </Link>

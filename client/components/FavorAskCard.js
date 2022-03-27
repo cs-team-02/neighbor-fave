@@ -10,11 +10,41 @@ export default function FavorAskCard(props) {
   const favor = props.favor;
   const loggedInId = props.loggedInId;
 
-  const renderVolunteerButton = function () {
-    if (favor.bids.find((bid) => bid.volunteerId === loggedInId)) {
+  const renderVolunteersNumber = function () {
+    if (favor.bids.length === 1) {
+      return <b>1 Volunteer</b>;
+    } else {
+      return <b>{favor.bids.length} Volunteers</b>;
+    }
+  };
+
+  const renderStatus = function (bid) {
+    if (bid.status === 'ACCEPTED') {
+      return (
+        <div className='green-text'>
+          <b>{bid.status}!</b>
+        </div>
+      );
+    } else {
       return (
         <div className='grey-text'>
-          <b>You are volunteering!</b>
+          <b>{bid.status}...</b>
+        </div>
+      );
+    }
+  };
+
+  const renderVolunteerButton = function () {
+    const loggedInUserBid = favor.bids.find(
+      (bid) => bid.volunteerId === loggedInId
+    );
+    if (loggedInUserBid) {
+      return (
+        <div>
+          <div className='grey-text'>
+            <b>You are volunteering!</b>
+          </div>
+          <div>{renderStatus(loggedInUserBid)}</div>
         </div>
       );
     } else {
@@ -28,18 +58,10 @@ export default function FavorAskCard(props) {
     }
   };
 
-  const renderVolunteersNumber = function () {
-    if (favor.bids.length === 1) {
-      return <b>1 Volunteer</b>;
-    } else {
-      return <b>{favor.bids.length} Volunteers</b>;
-    }
-  };
-
   return (
     <div className='ask-card-div' key={favor.id}>
       <div className='grey-text'>Favor needed: {favor.favorDate}</div>
-      <div>
+      <div className='center-text-div'>
         <Link to={`/favors/${favor.id}`}>
           <b>{favor.title}</b>
         </Link>
