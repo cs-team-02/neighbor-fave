@@ -37,13 +37,14 @@ const SingleFavor = (props) => {
       <p id="favor-author">{favor.author ? favor.author.name : "Loading"}:</p>
 
       <p id="favor-description"> "{favor.description}"</p>
-      <p id="favors-pending-bids">
-        {favor.bids
-          ? favor.bids.length +
-            ` Pending bid${favor.bids.length > 1 ? "s" : ""}`
-          : "Loading"}
-      </p>
+
       <div id="all-bids-container">
+        <p id="favors-pending-bids">
+          {favor.bids
+            ? favor.bids.length +
+              ` Pending bid${favor.bids.length > 1 ? "s" : ""}`
+            : "Loading"}
+        </p>
         <BidsList
           CurrentUser={CurrentUser}
           favor={favor}

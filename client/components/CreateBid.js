@@ -6,7 +6,7 @@ import { fetchSingleFavor } from "../store/SingleFavor";
 // NOW ADD THE REQUIRED ADDITIONS/FIXES TO favors reducer and bids route
 // to accommodate this { createBid } import ^^
 const CreateBid = (props) => {
-  const { favor, setBidState } = props;
+  const { favor, setBidState, setDidBid } = props;
   const dispatch = useDispatch();
   const currentUser = useAuth();
 
@@ -24,21 +24,23 @@ const CreateBid = (props) => {
     await dispatch(fetchSingleFavor(favor.id));
 
     setMessage("");
+    setDidBid(true);
     setBidState(false);
   };
 
   return (
     <div id="create-bid-form">
-      <h3>Your bid: </h3>
+      <h4>Your bid: </h4>
       <p>
         Provide details for {favor.author.name} about how you can assist with{" "}
         {favor.title}
       </p>
       <form onSubmit={handleSubmitBid}>
-        <label>Message : </label>
-        <input
+        <label htmlFor="message"> </label>
+        <textarea
           onChange={(e) => setMessage(e.target.value)}
-          type="text"
+          // type="textarea"
+          rows="5"
           name="message"
           value={message}
         />

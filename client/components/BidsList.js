@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Bid from "./Bid.js";
 import CreateBid from "./CreateBid";
 
 const BidsList = (props) => {
   const { CurrentUser, favor, bidState, setBidState } = props;
-  console.log(CurrentUser);
+  // bidState is true when user has clicked button to expand section to offer a bid
+  // didBid turns true when user submits bid on this favor
+  const [didBid, setDidBid] = useState(false);
   return (
     <div>
       {CurrentUser.id === favor.authorId ? (
@@ -26,7 +28,8 @@ const BidsList = (props) => {
           {CurrentUser.bids ? (
             <div>
               {" "}
-              {CurrentUser.bids.some((bid) => bid.favorId === favor.id) ? (
+              {CurrentUser.bids.some((bid) => bid.favorId === favor.id) ||
+              didBid ? (
                 <div></div>
               ) : (
                 <button
@@ -43,8 +46,12 @@ const BidsList = (props) => {
           )}
 
           <br />
-          {bidState ? (
-            <CreateBid favor={favor} setBidState={setBidState} />
+          {bidState && !didBid ? (
+            <CreateBid
+              favor={favor}
+              setBidState={setBidState}
+              setDidBid={setDidBid}
+            />
           ) : (
             <div></div>
           )}
