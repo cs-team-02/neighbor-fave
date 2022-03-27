@@ -28,7 +28,7 @@ const users = [
     username: 'konstantin',
     password: '123',
     ImageURL:
-      'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
+      'https://www.naijavibes.com/wp-content/uploads/2020/07/Kanye-West.jpg',
     address: '156 Ash St, Milwaukee, WI',
   },
   {
@@ -36,7 +36,7 @@ const users = [
     username: 'bobsyourneighbor',
     password: 'bobrocks',
     ImageURL:
-      'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
+      'https://yt3.ggpht.com/a/AATXAJyfr3vDsfoP1tO6U6R9_hOFmgnEnpZO-o38UQ=s900-c-k-c0xffffffff-no-rj-mo',
     address: '111 Tree St, Milwaukee, WI',
   },
   {

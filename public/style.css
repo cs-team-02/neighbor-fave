@@ -8,7 +8,7 @@ body {
   font-family: sans-serif;
 }
 hr {
-  border-top: 2px solid rgb(92, 92, 92);
+  border-top: 2px solid rgb(204, 204, 204);
   border-bottom: none;
   border-left: none;
   border-right: none;
@@ -17,31 +17,43 @@ hr {
 
 a {
   color: black;
+  /* border-style: dotted; */
 }
 
 a:hover {
   text-decoration: none;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 label {
   display: block;
 }
 
-nav a {
+/* nav a {
   display: inline-block;
   margin: 1em;
-}
+} */
 
 form div {
   margin: 1em;
   display: inline-block;
 }
 #top-spacer-div {
-  height: 50px;
+  height: 70px;
 }
 
 #bottom-spacer-div {
   height: 200px;
+}
+.icon-small {
+  font-size: 15px;
+}
+
+.icon-medium {
+  font-size: 25px;
+}
+.icon-large {
+  font-size: 40px;
 }
 
 .no-margin-div {
@@ -53,20 +65,51 @@ form div {
   overflow: hidden;
   position: fixed;
   top: 0;
-  background-color: rgb(255, 210, 32);
+  /* background-color: rgba(255, 255, 255, 0.692); */
   width: 100%;
   z-index: 2;
+  backdrop-filter: blur(5px);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.205);
+  margin: 0;
+}
+#top-menu-div {
+  height: auto;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  width: 100%;
+  position: relative;
+  /* padding: 5px; */
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  /* border-style: dashed; */
+}
+.padding-div {
+  padding: 10px 20px 10px 20px;
 }
 
-.navbar-bottom {
-  background-color: rgb(255, 210, 32);
+#navbar-bottom-wrap {
+  height: auto;
+  background-color: rgba(255, 210, 32, 0.8);
   overflow: hidden;
   position: fixed;
   bottom: 0;
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
   box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.205);
+  backdrop-filter: blur(5px);
+}
+
+#navbar {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
 }
 
 .li-picture-div {
@@ -81,19 +124,37 @@ form div {
 } */
 
 .profile-img {
-  max-width: 40%;
+  /* clip-path: circle(20px at center); */
+  clip-path: circle(50px at center);
+  width: 100px;
+  /* max-width: 10%; */
   height: auto;
   align-content: center;
 }
 
 .li-img {
-  max-width: 100%;
+  clip-path: circle(40px at center);
+  width: 80px;
+  /* max-width: 100%; */
   height: auto;
 }
 
+#profile-thumb-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  /* border-style: dotted; */
+}
+
 .thumb-img {
-  max-width: 10%;
+  clip-path: circle(25px at center);
+  max-width: 50px;
   height: auto;
+  margin: 0px;
+  padding: 0px;
 }
 
 .li-div {
@@ -105,39 +166,68 @@ form div {
 .grey-text {
   color: grey;
 }
+
+.green-text {
+  color: rgb(10, 116, 0);
+}
+
+.italic-text {
+  font-style: italic;
+}
+
 .center-text-div {
   text-align: center;
   margin-top: 5px;
   /* padding: 2px; */
 }
+.right-text-div {
+  text-align: right;
+  font-style: italic;
+  color: grey;
 
-#top-menu-div {
-  display: flex;
-  align-items: center;
-  z-index: 100;
-  width: 100%;
-  position: relative;
-  padding: 10px;
-  background-color: rgb(255, 210, 32);
+  /* padding: 2px; */
 }
 
 .spacer-div {
   height: 7px;
 }
+.small-spacer-div {
+  height: 1px;
+}
 
-.card-div {
+.ask-card-div {
   background-color: rgb(226, 226, 226);
   padding: 5px;
+  padding-bottom: 15px;
+  border-radius: 7px;
+  border: 2px solid rgb(255, 210, 32);
 }
+
+.volunteer-card-div {
+  background-color: rgb(226, 226, 226);
+  padding: 5px;
+  padding-bottom: 15px;
+  border-radius: 7px;
+}
+
+.bid-card-div {
+  background-color: rgba(255, 210, 32, 0.349);
+  padding: 10px;
+  border-radius: 7px;
+  /* border: 2px solid rgb(255, 210, 32); */
+}
+
 .orange-button {
   background-color: rgb(255, 210, 32);
   text-align: center;
   padding: 2px;
   margin: auto;
   width: 50%;
+  border-radius: 4px;
 }
 .grey-box {
   background-color: rgb(224, 224, 224);
+  text-align: center;
 }
 
 /* Single Favor Styles */
