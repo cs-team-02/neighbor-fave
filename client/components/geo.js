@@ -29,12 +29,25 @@ return (
     <div>
           <br />
           <br />
-    <label htmlFor='address'>Address: </label>
-    <input
-      type='text'
-      name='address'
-      onChange={handleAddress} value={input}
-      />
+        <div>
+            <label htmlFor='address'>Address: </label>
+            <input
+            type='text'
+            name='address'
+            onChange={handleAddress} value={input}
+            />
+            <ul className='list-group'>
+                {results.map((result, index) =>{
+                    return (
+                    <button type="button" key={index}>
+                        {result.label}
+                    </button>   
+                    )
+
+                })}
+
+            </ul>
+        </div>
   </div>
 )
 }
