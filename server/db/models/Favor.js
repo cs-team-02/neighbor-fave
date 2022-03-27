@@ -1,8 +1,8 @@
 // const { STRING } = require('sequelize');
-const Sequelize = require("sequelize");
-const db = require("../db");
+const Sequelize = require('sequelize');
+const db = require('../db');
 
-const Favor = db.define("favor", {
+const Favor = db.define('favor', {
   title: {
     type: Sequelize.STRING,
     unique: true,
@@ -14,25 +14,25 @@ const Favor = db.define("favor", {
   ImageURL: {
     type: Sequelize.TEXT,
     allowNull: false,
-    defaultValue: "",
+    defaultValue: '',
   },
   description: {
     type: Sequelize.TEXT,
     allowNull: false,
   },
   status: {
-    type: Sequelize.ENUM("OPEN","ASSIGNED","CLOSED"),
-    defaultValue: "OPEN",
+    type: Sequelize.ENUM('OPEN', 'ASSIGNED', 'CLOSED'),
+    defaultValue: 'OPEN',
   },
   favorDate: {
     type: Sequelize.DATEONLY,
   },
   lat: {
-    type: Sequelize.FLOAT
+    type: Sequelize.FLOAT,
   },
   lng: {
-    type: Sequelize.FLOAT
-  }
+    type: Sequelize.FLOAT,
+  },
 });
 
 module.exports = Favor;
