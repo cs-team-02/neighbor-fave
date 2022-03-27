@@ -51,7 +51,7 @@ form div {
 
 .menu-bar {
   overflow: hidden;
-  position:fixed;
+  position: fixed;
   top: 0;
   background-color: rgb(255, 210, 32);
   width: 100%;
@@ -140,12 +140,58 @@ form div {
   background-color: rgb(224, 224, 224);
 }
 
+/* Single Favor Styles */
+
+#single-favor-container {
+  font-family: sans-serif;
+  margin: 1em;
+}
+
+#single-favor-container > * {
+  /* margin: 10px 10px 10px 10px; */
+  font-size: large;
+  padding: 3px;
+}
+
+#single-favor-container button {
+  font-size: large;
+  border-radius: 5px;
+  background-color: rgb(255, 210, 32);
+  text-align: center;
+  padding: 2px;
+  margin: 5px;
+  width: 50%;
+}
+
+#favor-author {
+  font-weight: bold;
+  font-style: oblique;
+}
+
 /* Bid styles */
-.bid-container {
-  border-style: solid;
-  width: vw;
-  margin: 20px;
+
+#all-bids-container {
+  background-color: rgb(226, 226, 226);
+  border-style: 2px outset;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.single-bid-container {
+  border-radius: 25px;
+  width: 100 vw;
+  background-color: whitesmoke;
+  margin: 10px;
   padding: 10px;
+}
+
+.single-bid-container * {
+  padding: 7px;
+  font-size: large;
+}
+
+#create-bid-form * {
+  margin: 10px;
 }
 
 #chat-box {
@@ -154,16 +200,8 @@ form div {
   height: 100px;
   border-style: solid;
 }
-.bid-container button,
-span,
-div,
-p,
-h1,
-h2 {
-  margin: 10px 10px 0px 10px;
-}
-
 #bid-status {
+  /* font-size: x-large; */
   color: rgb(65, 65, 222);
 }
 
@@ -173,5 +211,5 @@ h2 {
 .map {
   display: flex;
   width: 100%;
-  margin-top:90px;
+  margin-top: 90px;
 }

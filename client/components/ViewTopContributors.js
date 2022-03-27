@@ -1,18 +1,44 @@
-import React, { useEffect, useSelector } from "react";
-import { useDispatch } from "react-redux";
-import { fetchUsers } from "../store/usersReducer";
-
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import users, { fetchUsers } from "../store/usersReducer";
+import { fetchFavors } from "../store/favors";
+import { Link } from "react-router-dom";
 const TopContributors = () => {
+  const allUsers = useSelector((state) => state.users);
+  const dispatch = useDispatch();
+  const usersFiltered = allUsers.filter(
+    (user) => user.bids.filter((bid) => bid.status === "PENDING").length > 1
+  );
 
-
-  const allUsers = useSelector(state => state.users)
-  const usersFiltered = allUsers.filter(user => user.bids.filter(bid => bid.status === "FULFILLED").length > 50)
   useEffect(() => {
     dispatch(fetchUsers());
     dispatch(fetchFavors());
+    console.log("top users: ", usersFiltered);
   }, []);
 
   return (
-    // MAP OVER usersFiltered array
-  )
+    <div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <h1>Top contributors:</h1>
+
+      {usersFiltered.length ? (
+        <div>
+          {usersFiltered.map((user) => {
+            return (
+              <Link to={`/users/${user.id}`} key={user.id}>
+                {user.name} ( {user.bids.length} bids )
+              </Link>
+            );
+          })}
+        </div>
+      ) : (
+        <div>Loading</div>
+      )}
+    </div>
+  );
 };
+
+export default TopContributors;
