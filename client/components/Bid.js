@@ -46,7 +46,7 @@ const Bid = (props) => {
           {/* <button onClick={toggleShowChat}>
             {!showChat ? `Show Chat` : 'Hide Chat'}
           </button> */}
-          <Link to={`/favors/${favor.id}/chatform`}>Show Chat</Link>
+          <Link to="/ChatForm">Show Chat</Link>
           {showChat ? <div id="chat-box">Chat box here:</div> : <div></div>}
         </div>
       ) : (
