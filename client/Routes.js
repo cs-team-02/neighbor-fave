@@ -30,14 +30,17 @@ class Routes extends Component {
             {/* create a component for Single Favor View
             and Link to each single favor in every marker's popup */}
             <Route path="/mapView" component={Map}></Route>
+            <Route
+              exact
+              path="/favors/:id/chatform"
+              component={ChatForm}
+            ></Route>
             <Route exact path="/favors" component={AllFavorsList}></Route>
             <Route exact path="/users" component={AllUsersList}></Route>
             <Route path="/users/:id" component={SingleUserView}></Route>
             <Route path="/favors/create" component={CreateFavor}></Route>
             <Route path="/favors/:id" component={SingleFavorView}></Route>
-            <Route path="/ChatForm" component={ChatForm}></Route>
             <Route path="/home" component={AllFavorsList} />
-            <Route exact path="/ChatForm" component={ChatForm} />
             <Redirect to="/home" />
           </Switch>
         ) : (
