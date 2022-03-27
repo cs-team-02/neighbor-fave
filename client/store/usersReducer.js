@@ -14,7 +14,6 @@ const setUsers = (users) => ({
 export const fetchUsers = () => {
   return async (dispatch) => {
     const { data } = await axios.get('/api/users');
-    // console.log(data)
     dispatch(setUsers(data));
   };
 };

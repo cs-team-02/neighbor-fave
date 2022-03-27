@@ -5,7 +5,6 @@ import { Login, Signup } from './components/AuthForm';
 import Home from './components/Home';
 import { me } from './store';
 import ChatForm from './Chat/ChatForm';
-// created a single favor view:
 import SingleFavorView from './components/SingleFavorView';
 import Map from './components/Map';
 import AllFavorsList from './components/AllFavorsList';
