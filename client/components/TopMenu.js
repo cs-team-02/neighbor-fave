@@ -3,23 +3,26 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logout } from '../store';
 import useAuth from './utils/useAuthHook';
+import { CgLogOut } from 'react-icons/cg';
 
 const TopMenu = ({ handleClick, isLoggedIn }) => {
   const currentUser = useAuth();
   return (
     <div className='menu-bar'>
-      <nav>
+      <nav className='padding-div'>
         {isLoggedIn ? (
           <div id='top-menu-div'>
             {/* The navbar will show these links after you log in */}
-
-            <img className='thumb-img' src={currentUser.ImageURL} />
-            <Link to={`/profile`}>
-              <b>{currentUser.name}</b>
-            </Link>
             <a href='#' onClick={handleClick}>
-              Logout
+              <CgLogOut className='icon-medium' />
             </a>
+            <div id='profile-thumb-div'>
+              <img className='thumb-img' src={currentUser.ImageURL} />
+
+              <Link to={`/profile`}>
+                <b>{currentUser.name}</b>
+              </Link>
+            </div>
           </div>
         ) : (
           <div className='right-text-div'>

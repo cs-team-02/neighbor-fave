@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import favors, { fetchFavors } from '../store/favors';
 import Map from './Map';
 import { Link } from 'react-router-dom';
+import { RiMapPinFill } from 'react-icons/ri';
 
 export default function FavorAskCard(props) {
   const favor = props.favor;

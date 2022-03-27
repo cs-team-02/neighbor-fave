@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import favors, { fetchFavors } from '../store/favors';
 import Map from './Map';
 import { Link } from 'react-router-dom';
+import { RiMapPinFill } from 'react-icons/ri';
 
 export default function MyVolunteeringCard(props) {
   const bid = props.bid;
@@ -56,7 +57,9 @@ export default function MyVolunteeringCard(props) {
         </Link>
       </div>
       <div>{favor.description}</div>
-      <div>{favor.author.address}</div>
+      <div>
+        <RiMapPinFill className='icon-small' /> {favor.author.address}
+      </div>
       <div className='center-text-div'>
         {renderVolunteersNumber(favor.bids.length)}{' '}
       </div>

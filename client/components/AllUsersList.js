@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUsers } from '../store/usersReducer';
 import { Link } from 'react-router-dom';
+import { RiMapPinFill } from 'react-icons/ri';
 
 export default function AllUsersList() {
   const dispatch = useDispatch();
@@ -53,7 +54,9 @@ export default function AllUsersList() {
                       <b>{user.name}</b>
                     </Link>
                   </div>
-                  <div>{user.address}</div>
+                  <div>
+                    <RiMapPinFill className='icon-small' /> {user.address}
+                  </div>
                   <div>
                     Asks: {openFavors(user.favors).length} | Volunteering:
                     {openBids(user.bids).length}

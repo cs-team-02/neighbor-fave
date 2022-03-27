@@ -36,7 +36,7 @@ const users = [
     username: 'bobsyourneighbor',
     password: 'bobrocks',
     ImageURL:
-      'https://www.pngitem.com/pimgs/m/76-765913_bob-ross-hair-png-transparent-png.png',
+      'https://yt3.ggpht.com/a/AATXAJyfr3vDsfoP1tO6U6R9_hOFmgnEnpZO-o38UQ=s900-c-k-c0xffffffff-no-rj-mo',
     address: '111 Tree St, Milwaukee, WI',
   },
   {

@@ -5,6 +5,7 @@ import { fetchFavors } from '../store/favors';
 import { Link } from 'react-router-dom';
 import VolunteeringCard from './VolunteeringCard';
 import FavorAskCard from './FavorAskCard';
+import { RiMapPinFill } from 'react-icons/ri';
 
 export default function SingleUserView(props) {
   const dispatch = useDispatch();
@@ -43,7 +44,9 @@ export default function SingleUserView(props) {
           <div className='center-text-div'>
             <b>{user.name}</b>
           </div>
-          <div className='center-text-div'>{user.address}</div>
+          <div className='center-text-div'>
+            <RiMapPinFill className='icon-small' /> {user.address}
+          </div>
           <div className='spacer-div' />
         </div>
         <div>

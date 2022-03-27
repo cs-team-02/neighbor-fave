@@ -17,20 +17,22 @@ hr {
 
 a {
   color: black;
+  /* border-style: dotted; */
 }
 
 a:hover {
   text-decoration: none;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 label {
   display: block;
 }
 
-nav a {
+/* nav a {
   display: inline-block;
   margin: 1em;
-}
+} */
 
 form div {
   margin: 1em;
@@ -43,6 +45,16 @@ form div {
 #bottom-spacer-div {
   height: 200px;
 }
+.icon-small {
+  font-size: 15px;
+}
+
+.icon-medium {
+  font-size: 25px;
+}
+.icon-large {
+  font-size: 40px;
+}
 
 .no-margin-div {
   margin: 0;
@@ -53,20 +65,51 @@ form div {
   overflow: hidden;
   position: fixed;
   top: 0;
-  background-color: rgb(255, 210, 32);
+  /* background-color: rgba(255, 255, 255, 0.692); */
   width: 100%;
   z-index: 2;
+  backdrop-filter: blur(5px);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.205);
+  margin: 0;
+}
+#top-menu-div {
+  height: auto;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  width: 100%;
+  position: relative;
+  /* padding: 5px; */
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  /* border-style: dashed; */
+}
+.padding-div {
+  padding: 10px 20px 10px 20px;
 }
 
-.navbar-bottom {
-  background-color: rgb(255, 210, 32);
+#navbar-bottom-wrap {
+  height: auto;
+  background-color: rgba(255, 210, 32, 0.8);
   overflow: hidden;
   position: fixed;
   bottom: 0;
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
   box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.205);
+  backdrop-filter: blur(5px);
+}
+
+#navbar {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
 }
 
 .li-picture-div {
@@ -96,10 +139,22 @@ form div {
   height: auto;
 }
 
+#profile-thumb-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  /* border-style: dotted; */
+}
+
 .thumb-img {
-  clip-path: circle(20px at center);
-  max-width: 40px;
+  clip-path: circle(25px at center);
+  max-width: 50px;
   height: auto;
+  margin: 0px;
+  padding: 0px;
 }
 
 .li-div {
@@ -131,16 +186,6 @@ form div {
   color: grey;
 
   /* padding: 2px; */
-}
-
-#top-menu-div {
-  display: flex;
-  align-items: center;
-  z-index: 100;
-  width: 100%;
-  position: relative;
-  padding: 10px;
-  background-color: rgb(255, 210, 32);
 }
 
 .spacer-div {
