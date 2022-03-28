@@ -236,12 +236,14 @@ form div {
   font-family: sans-serif;
   margin: 2em;
 
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   /* align-items: center; */
 }
 #single-favor-container img {
-  width: 80vw;
+  width: auto;
+  border-radius: 25px;
+  margin: 10px 10px 10px -20px;
 }
 
 #favor-heading {
@@ -262,7 +264,7 @@ form div {
   text-align: center;
   padding: 2px;
   margin: 5px;
-  width: 50%;
+  width: auto;
 }
 
 #favor-author {

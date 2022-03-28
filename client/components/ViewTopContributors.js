@@ -7,7 +7,7 @@ const TopContributors = () => {
   const allUsers = useSelector((state) => state.users);
   const dispatch = useDispatch();
   const usersFiltered = allUsers.filter(
-    (user) => user.bids.filter((bid) => bid.status === "PENDING").length > 1
+    (user) => user.bids.filter((bid) => bid.status === "PENDING").length > 0
   );
 
   useEffect(() => {
@@ -29,7 +29,9 @@ const TopContributors = () => {
           {usersFiltered.map((user) => {
             return (
               <Link to={`/users/${user.id}`} key={user.id}>
+                <img height="40px" width="40px" src={user.ImageURL} />
                 {user.name} ( {user.bids.length} bids )
+                <br />
               </Link>
             );
           })}
