@@ -48,7 +48,7 @@ const Bid = (props) => {
       {canViewChat ? (
         <div id="chat-div">
           <button onClick={toggleShowChat}>
-            {!showChat ? `Show Chat` : "Hide Chat"}
+            {!showChat ? `Discuss` : "Hide Chat"}
           </button>
           {showChat ? <div id="chat-box">Chat box here:</div> : <div></div>}
         </div>
