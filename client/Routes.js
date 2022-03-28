@@ -11,7 +11,9 @@ import AllFavorsList from './components/AllFavorsList';
 import AllUsersList from './components/AllUsersList';
 import CreateFavor from './components/CreateFavor';
 import SingleUserView from './components/SingleUserView';
-
+import UserProfile from './components/UserProfile';
+import TopContributors from './components/ViewTopContributors';
+import ChatForm from './Chat/ChatForm';
 /**
  * COMPONENT
  */
@@ -31,13 +33,14 @@ class Routes extends Component {
             and Link to each single favor in every marker's popup */}
             <Route path="/mapView" component={Map}></Route>
             <Route exact path="/favors" component={AllFavorsList}></Route>
+            <Route path="/ChatForm" component={ChatForm}></Route>
             <Route exact path="/users" component={AllUsersList}></Route>
+            <Route path="/profile" component={UserProfile}></Route>
             <Route path="/users/:id" component={SingleUserView}></Route>
             <Route path="/favors/create" component={CreateFavor}></Route>
             <Route path="/favors/:id" component={SingleFavorView}></Route>
-            <Route path="/ChatForm" component={ChatForm}></Route>
+            <Route path="/topContributors" component={TopContributors}></Route>
             <Route path="/home" component={AllFavorsList} />
-
             <Redirect to="/home" />
           </Switch>
         ) : (

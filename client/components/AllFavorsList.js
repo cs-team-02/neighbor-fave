@@ -14,17 +14,37 @@ export default function AllFavorsList() {
     dispatch(fetchFavors());
   }, []);
 
+  const renderVolunteersNumber = function (number) {
+    if (number === 1) {
+      return (
+        <div>
+          <b>1 Volunteer</b>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <b>{number} Volunteers</b>
+        </div>
+      );
+    }
+  };
+
   const renderButton = function (favor) {
     if (loggedInId === favor.authorId) {
       return (
         <div className='orange-button'>
           <Link to={`/favors/${favor.id}`}>
-            <b>Your ask: {favor.bids.length} Volunteers</b>
+            <b>Your ask: {renderVolunteersNumber(favor.bids.length)}</b>
           </Link>
         </div>
       );
     } else {
-      return <div>{favor.bids.length} Volunteers</div>;
+      return (
+        <div className='center-text-div'>
+          {renderVolunteersNumber(favor.bids.length)}
+        </div>
+      );
     }
   };
 
@@ -46,7 +66,7 @@ export default function AllFavorsList() {
               </Link>
             </div>
             <div>{favor.description}</div>
-            <div>Address: {favor.author.address}</div>
+            <div>{favor.author.address}</div>
             <div>{renderButton(favor)}</div>
           </div>
         ))}

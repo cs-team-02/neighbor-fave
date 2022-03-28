@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { acceptBid } from '../store/favors';
+import { updateBid } from '../store/favors';
 import { fetchSingleFavor } from '../store/SingleFavor';
 import { Link } from 'react-router-dom';
 import useAuth from './utils/useAuthHook';
@@ -17,7 +17,13 @@ const Bid = (props) => {
   const canViewChat = isAuthor || isVolunteer;
 
   const handleAcceptBid = async () => {
-    await dispatch(acceptBid(bid.id, bid.favorId));
+    // await dispatch(acceptBid(bid.id, bid.favorId));
+    // INSTEAD
+    if (bid.status === 'PENDING') {
+      await dispatch(updateBid(bid, { status: 'ACCEPTED' }));
+    } else if (bid.status === 'ACCEPTED') {
+      await dispatch(updateBid(bid, { status: 'PENDING' }));
+    }
     await dispatch(fetchSingleFavor(bid.favorId));
   };
 
@@ -26,20 +32,18 @@ const Bid = (props) => {
   // };
 
   return (
-    <div className="bid-container">
+    <div className="single-bid-container">
       <span id="bidder-name">
-        from
-        <Link to={`/users/${bid.volunteer.id}`}>{bid.volunteer.name}</Link>:
+        <Link to={`/users/${bid.volunteer.id}`}> {bid.volunteer.name}</Link>:
       </span>
-      <div>{bid.description}</div>
-
+      <p>{bid.description}</p>
       <div>
-        <span id="bid-status">{bid.status}</span>
-        <br></br>
         {isAuthor ? (
-          <button onClick={handleAcceptBid}>Accept offer</button>
+          <button onClick={handleAcceptBid}>
+            {bid.status === 'ACCEPTED' ? 'Revoke' : 'Accept offer'}
+          </button>
         ) : null}
-        <br />
+        <span id="bid-status">{bid.status}</span>
       </div>
       {canViewChat ? (
         <div id="chat-div">
@@ -52,8 +56,6 @@ const Bid = (props) => {
       ) : (
         <div>Not your chat</div>
       )}
-
-      <br />
     </div>
   );
 };
