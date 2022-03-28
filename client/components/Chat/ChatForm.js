@@ -1,13 +1,21 @@
 import io from 'socket.io-client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Chat from './Chat';
-
+import useAuth from '../utils/useAuthHook';
 export const socket = io.connect('http://localhost:8080');
 
-function ChatForm() {
+function ChatForm(props) {
   const [username, setUsername] = useState('');
   const [room, setRoom] = useState('');
   const [showChat, setShowChat] = useState(false);
+  const currentUser = useAuth();
+  useEffect(async () => {
+    await setUsername(currentUser.name);
+    await setRoom(props.match.params.id);
+    joinRoom();
+  }, []);
+
+  // console.log('--------', props.match.params.id);
 
   const joinRoom = () => {
     if (username !== '' && room !== '') {
@@ -20,7 +28,7 @@ function ChatForm() {
       {!showChat ? (
         <div className="joinChatContainer">
           <h3>Let's chat!</h3>
-          <input
+          {/* <input
             type="text"
             placeholder="Username..."
             onChange={(event) => {
@@ -33,7 +41,7 @@ function ChatForm() {
             onChange={(event) => {
               setRoom(event.target.value);
             }}
-          />
+          /> */}
           <button onClick={joinRoom}>Join A Room</button>
         </div>
       ) : (

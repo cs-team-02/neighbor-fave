@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { updateBid } from "../store/favors";
-import { fetchSingleFavor } from "../store/SingleFavor";
-import { Link } from "react-router-dom";
-import useAuth from "./utils/useAuthHook";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateBid } from '../store/favors';
+import { fetchSingleFavor } from '../store/SingleFavor';
+import { Link } from 'react-router-dom';
+import useAuth from './utils/useAuthHook';
 // import css from "./Bidstyle.css";
 
 const Bid = (props) => {
@@ -19,10 +19,10 @@ const Bid = (props) => {
   const handleAcceptBid = async () => {
     // await dispatch(acceptBid(bid.id, bid.favorId));
     // INSTEAD
-    if (bid.status === "PENDING") {
-      await dispatch(updateBid(bid, { status: "ACCEPTED" }));
-    } else if (bid.status === "ACCEPTED") {
-      await dispatch(updateBid(bid, { status: "PENDING" }));
+    if (bid.status === 'PENDING') {
+      await dispatch(updateBid(bid, { status: 'ACCEPTED' }));
+    } else if (bid.status === 'ACCEPTED') {
+      await dispatch(updateBid(bid, { status: 'PENDING' }));
     }
     await dispatch(fetchSingleFavor(bid.favorId));
   };
@@ -40,16 +40,17 @@ const Bid = (props) => {
       <div>
         {isAuthor ? (
           <button onClick={handleAcceptBid}>
-            {bid.status === "ACCEPTED" ? "Revoke" : "Accept offer"}
+            {bid.status === 'ACCEPTED' ? 'Revoke' : 'Accept offer'}
           </button>
         ) : null}
         <span id="bid-status">{bid.status}</span>
       </div>
       {canViewChat ? (
         <div id="chat-div">
-          <button onClick={toggleShowChat}>
+          {/* <button onClick={toggleShowChat}>
             {!showChat ? `Show Chat` : "Hide Chat"}
-          </button>
+          </button> */}
+          <Link to={`/ChatForm/${bid.id}`}>Show Chat</Link>
           {showChat ? <div id="chat-box">Chat box here:</div> : <div></div>}
         </div>
       ) : (
