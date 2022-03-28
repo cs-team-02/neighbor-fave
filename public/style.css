@@ -39,7 +39,7 @@ form div {
   display: inline-block;
 }
 #top-spacer-div {
-  height: 70px;
+  height: 80px;
 }
 
 #bottom-spacer-div {
@@ -112,7 +112,7 @@ form div {
   margin: 0;
 }
 
-.li-picture-div {
+.li-img-div {
   /* border-width: 1px;
   border-style: dotted; */
   width: 75px;
@@ -133,8 +133,8 @@ form div {
 }
 
 .li-img {
-  clip-path: circle(40px at center);
-  width: 80px;
+  clip-path: circle(35px at center);
+  width: 70px;
   /* max-width: 100%; */
   height: auto;
 }
@@ -161,6 +161,7 @@ form div {
   display: flex;
   flex-direction: row;
   align-content: flex-start;
+  gap: 5px;
 }
 
 .grey-text {
@@ -194,11 +195,15 @@ form div {
 .small-spacer-div {
   height: 1px;
 }
+.side-padding-div {
+  padding: 15px;
+}
 
 .ask-card-div {
   background-color: rgb(226, 226, 226);
   padding: 5px;
   padding-bottom: 15px;
+  margin-bottom: 5px;
   border-radius: 7px;
   border: 2px solid rgb(255, 210, 32);
 }
@@ -207,6 +212,7 @@ form div {
   background-color: rgb(226, 226, 226);
   padding: 5px;
   padding-bottom: 15px;
+  margin-bottom: 5px;
   border-radius: 7px;
 }
 
@@ -226,8 +232,10 @@ form div {
   border-radius: 4px;
 }
 .grey-box {
+  width: auto;
   background-color: rgb(224, 224, 224);
   text-align: center;
+  border-radius: 4px;
 }
 
 /* Single Favor Styles */
@@ -301,5 +309,5 @@ form div {
 .map {
   display: flex;
   width: 100%;
-  margin-top: 90px;
+  margin-top: 19px;
 }
