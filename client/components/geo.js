@@ -34,6 +34,7 @@ return (
             <input
             type='text'
             name='address'
+            className='signup'
             onChange={handleAddress} value={input}
             />
             <ul className='list-group'>
@@ -41,7 +42,8 @@ return (
                     return (
                     <button type="button" key={index}>
                         {result.label}
-                    </button>   
+                        <br /> 
+                    </button>  
                     )
 
                 })}
