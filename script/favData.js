@@ -147,9 +147,15 @@ const bids = [
     favorId: 2,
   },
   {
-    description: "I'm free all weekend",
+    description: "Name a time and a place",
+    volunteerId: 6,
+    status: "FULFILLED",
+    favorId: 2,
+  },
+  {
+    description: "here's my number 555-5555 call me",
     volunteerId: 5,
-    status: "PENDING",
+    status: "FULFILLED",
     favorId: 2,
   },
 ];
