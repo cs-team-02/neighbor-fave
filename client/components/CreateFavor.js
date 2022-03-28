@@ -1,36 +1,37 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { createFavor } from '../store/favors';
 import useForm from './utils/useForm';
 import useAuth from './utils/useAuthHook';
 import { useHistory } from 'react-router-dom';
-import { OpenStreetMapProvider } from 'leaflet-geosearch';
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
+import { useMap } from 'react-leaflet';
+const SearchField = () => {
+  const provider = new OpenStreetMapProvider();
 
+  // @ts-ignore
+  const searchControl = new GeoSearchControl({
+    provider: provider,
+    //style: 'bar',
+    searchLabel: 'Enter address',
+  });
+
+  const map = useMap();
+  useEffect(() => {
+    map.addControl(searchControl);
+    return () => map.removeControl(searchControl);
+  }, []);
+
+  return null;
+};
+// import { nodeGeocoder } from 'node-geocoder';
 
 function CreateFavor() {
   const dispatch = useDispatch();
   let history = useHistory();
   const [values, handleChange] = useForm();
   const currentUser = useAuth();
-  const timeout = useRef();
-  const [input, setInput] = useState('');
-  const [results, setResults] = useState([]);
-  const provider = new OpenStreetMapProvider();
-
-  const handleAddress = e =>{
-    setInput(e.target.value);
-
-    if(timeout.current){
-      clearTimeout(timeout.current);
-    }
-
-    timeout.current = setTimeout(async() => {
-      const result = await provider.search({query: e.target.value});
-      setResults(result);
-    }, 500);
-  }
-  
-//const results = await provider.search({ query: input.value });
 
   const create = (e) => {
     e.preventDefault();
@@ -39,18 +40,7 @@ function CreateFavor() {
     history.push('/favors');
   };
   const userLocation = [51.615, -0.09];
-  // let options = {
-  //   provider: 'openstreetmap'
-  // };
-   
-  // let geoCoder = nodeGeocoder(options);
-  // geoCoder.geocode('Luray Caverns')
-  // .then((res)=> {
-  //   console.log(res);
-  // })
-  // .catch((err)=> {
-  //   console.log(err);
-  // });
+
     return (
       <div className='create-favor-form'>
         <div>
@@ -110,14 +100,6 @@ function CreateFavor() {
             </button>
           </div>
         </form>
-        <div>
-          <label htmlFor='address'>Address: </label>
-          <input
-            type='text'
-            name='address'
-            onChange={handleAddress} value={input}
-          />
-        </div>
       </div>
     );
   }
