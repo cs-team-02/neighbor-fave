@@ -23,7 +23,31 @@ const User = db.define("user", {
     allowNull: false,
     defaultValue: "",
   },
-  address: {
+  streetNumber: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  streetName: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  city: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  state: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  zipcode: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },  
+  lat: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },  
+  lng: {
     type: Sequelize.STRING,
     allowNull: false,
   },
