@@ -27,10 +27,6 @@ const Bid = (props) => {
     await dispatch(fetchSingleFavor(bid.favorId));
   };
 
-  const toggleShowChat = () => {
-    setShowChat(!showChat);
-  };
-
   return (
     <div className="single-bid-container">
       <span id="bidder-name">
@@ -47,10 +43,10 @@ const Bid = (props) => {
       </div>
       {canViewChat ? (
         <div id="chat-div">
-          {/* <button onClick={toggleShowChat}>
-            {!showChat ? `Show Chat` : "Hide Chat"}
-          </button> */}
-          <Link to={`/ChatForm/${bid.id}`}>Show Chat</Link>
+          <Link to={`/ChatForm/${bid.id}`}>
+            {' '}
+            <button>Discuss</button>
+          </Link>
           {showChat ? <div id="chat-box">Chat box here:</div> : <div></div>}
         </div>
       ) : (
