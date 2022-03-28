@@ -13,7 +13,7 @@ import CreateFavor from './components/CreateFavor';
 import SingleUserView from './components/SingleUserView';
 import UserProfile from './components/UserProfile';
 import TopContributors from './components/ViewTopContributors';
-import ChatForm from './Chat/ChatForm';
+import ChatForm from './components/Chat/ChatForm';
 
 /**
  * COMPONENT
