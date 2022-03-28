@@ -234,12 +234,24 @@ form div {
 
 #single-favor-container {
   font-family: sans-serif;
-  margin: 1em;
+  margin: 2em;
+
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+#single-favor-container img {
+  width: 80vw;
+}
+
+#favor-heading {
+  font-size: 27px;
+  /* align-self: center; */
 }
 
 #single-favor-container > * {
   /* margin: 10px 10px 10px 10px; */
-  font-size: large;
+  /* font-size: large; */
   padding: 3px;
 }
 
