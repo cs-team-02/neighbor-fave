@@ -41,9 +41,19 @@ return (
                 {results.map((result, index) =>{
                     return (
                     <button type="button" key={index} onClick={(e) => {
+                        const address = result.label.split(',');
                         console.log(e.target.innerText)
                         console.log('result', 'x', result.x, 'y', result.y)
-                        console.log({address: result.label, lat: result.x, lng: result.y})
+                        console.log({
+                            streetNumber: address[0],
+                            streetName: address[1], 
+                            city: address[2],
+                            state: address[address.length-3],
+                            zipcode: address[address.length-2],
+                            country: address[address.length-1],
+                            lat: result.x,
+                            lng: result.y
+                        })
                     }}>
                         {result.label}
                         <br /> 
