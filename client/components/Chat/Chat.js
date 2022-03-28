@@ -22,6 +22,11 @@ function Chat({ socket, username, room }) {
       setCurrentMessage('');
     }
   };
+  useEffect(() => {
+    socket.on('receive_message', (data) => {
+      setMessageList((list) => [...list, data]);
+    });
+  }, [socket]);
   return (
     <div className="chat-window">
       <div className="chat-header">
