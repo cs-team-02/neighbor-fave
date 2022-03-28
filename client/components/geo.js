@@ -6,7 +6,7 @@ import useAuth from './utils/useAuthHook';
 import { useHistory } from 'react-router-dom';
 import { OpenStreetMapProvider } from 'leaflet-geosearch';
 
- function searchField() {
+ function SearchField() {
   const timeout = useRef();
   const [input, setInput] = useState('');
   const [results, setResults] = useState([]);
@@ -40,7 +40,11 @@ return (
             <ul className='list-group'>
                 {results.map((result, index) =>{
                     return (
-                    <button type="button" key={index}>
+                    <button type="button" key={index} onClick={(e) => {
+                        console.log(e.target.innerText)
+                        console.log('result', 'x', result.x, 'y', result.y)
+                        console.log({address: result.label, lat: result.x, lng: result.y})
+                    }}>
                         {result.label}
                         <br /> 
                     </button>  
@@ -53,4 +57,4 @@ return (
   </div>
 )
 }
-export default searchField
+export default SearchField

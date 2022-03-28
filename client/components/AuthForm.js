@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {authenticate} from '../store'
+import SearchField from './geo'
 
 /**
  * COMPONENT
@@ -23,6 +24,7 @@ const AuthForm = props => {
           </label>
           <input name="password" type="password" />
         </div>
+        {name === 'signup' && <SearchField/>}
         <div>
           <button type="submit">{displayName}</button>
         </div>
