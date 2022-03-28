@@ -57,7 +57,7 @@ export default function AllFavorsList() {
       <div>
         <Map favors={favors} />
         {favors.map((favor) => (
-          <div key={favor.id}>
+          <div key={favor.id} className='side-padding-div'>
             <hr />
             <div className='grey-box'>Favor needed: {favor.favorDate}</div>
             <div>

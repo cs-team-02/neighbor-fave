@@ -35,7 +35,7 @@ export default function SingleUserView(props) {
     return <h3>Loading user...</h3>;
   } else {
     return (
-      <div>
+      <div className='side-padding-div'>
         <div className='user-info-card'>
           <div className='spacer-div'></div>
           <div className='center-text-div'>

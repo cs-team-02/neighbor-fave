@@ -40,11 +40,11 @@ export default function AllUsersList() {
     return <h3>Couldn't find any neighbors using this app...</h3>;
   } else {
     return (
-      <div>
+      <div className='side-padding-div'>
         {neighborsFilter(users, loggedInId).map((user) => (
           <div>
             <div className='li-div'>
-              <div className='li-picture-div'>
+              <div className='li-img-div'>
                 <img className='li-img' src={user.ImageURL} />
               </div>
               <div className='li-info-div'>
