@@ -238,6 +238,10 @@ form div {
   border-radius: 4px;
 }
 
+.test-class {
+  border: rgb(10, 116, 0);
+}
+
 /* Single Favor Styles */
 
 #single-favor-container {
