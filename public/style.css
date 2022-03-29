@@ -288,12 +288,21 @@ form div {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: large;
   margin: 2em;
+  padding: 10px;
+  background-color: rgb(226, 226, 226);
+  border-radius: 25px;
 }
 
 #top-contributors-container * {
   margin: 10px 10px 10px 0px;
   padding: 3px;
   text-decoration: none;
+}
+
+.contributor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .top-con-img {

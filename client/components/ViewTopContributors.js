@@ -43,14 +43,16 @@ const TopContributors = (props) => {
             .map((user) => {
               return (
                 <Link to={`/users/${user.id}`} key={user.id}>
-                  <img
-                    className="top-con-img"
-                    height="40px"
-                    width="40px"
-                    src={user.ImageURL}
-                  />
-                  {user.name} ({favorsDone(user)} favors done)
-                  <br />
+                  <div className="contributor">
+                    <img
+                      className="top-con-img"
+                      height="40px"
+                      width="40px"
+                      src={user.ImageURL}
+                    />
+                    {user.name} ({favorsDone(user)} favors done)
+                    <br />
+                  </div>
                 </Link>
               );
             })}
@@ -72,14 +74,17 @@ const TopContributors = (props) => {
             .map((user) => {
               return (
                 <Link to={`/users/${user.id}`} key={user.id}>
-                  <img
-                    className="top-con-img"
-                    height="40px"
-                    width="40px"
-                    src={user.ImageURL}
-                  />
-                  {user.name} ({bidsOffered(user)} bids)
-                  <br />
+                  <div className="contributor">
+                    {" "}
+                    <img
+                      className="top-con-img"
+                      height="40px"
+                      width="40px"
+                      src={user.ImageURL}
+                    />
+                    {user.name} ({bidsOffered(user)} bids)
+                    <br />
+                  </div>
                 </Link>
               );
             })}
