@@ -65,10 +65,10 @@ form div {
   overflow: hidden;
   position: fixed;
   top: 0;
-  /* background-color: rgba(255, 255, 255, 0.692); */
+  background-color: rgb(255, 255, 255);
   width: 100%;
   z-index: 2;
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); */
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.205);
   margin: 0;
 }
@@ -139,6 +139,19 @@ form div {
   height: auto;
 }
 
+.tiny-img {
+  clip-path: circle(10px at center);
+  width: 20px;
+  height: auto;
+}
+
+.tiny-img-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1px;
+}
+
 #profile-thumb-div {
   display: flex;
   flex-direction: column;
@@ -150,8 +163,8 @@ form div {
 }
 
 .thumb-img {
-  clip-path: circle(25px at center);
-  max-width: 50px;
+  clip-path: circle(20px at center);
+  max-width: 40px;
   height: auto;
   margin: 0px;
   padding: 0px;
@@ -236,6 +249,10 @@ form div {
   background-color: rgb(224, 224, 224);
   text-align: center;
   border-radius: 4px;
+}
+
+.test-class {
+  border: rgb(10, 116, 0);
 }
 
 /* Single Favor Styles */
