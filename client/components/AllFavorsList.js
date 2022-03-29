@@ -57,7 +57,7 @@ export default function AllFavorsList() {
 
   const renderVolunteerImages = function (bids) {
     return bids.map((bid) => (
-      <img className='tiny-img' src={bid.volunteer.ImageURL} />
+      <img className="tiny-img" src={bid.volunteer.ImageURL} />
     ));
   };
 
@@ -68,7 +68,7 @@ export default function AllFavorsList() {
   const renderButton = function (favor) {
     if (loggedInId === favor.authorId) {
       return (
-        <div className='orange-button'>
+        <div className="orange-button">
           <Link to={`/favors/${favor.id}`}>
             <b>Your ask: {renderVolunteersNumber(favor.bids.length)}</b>
           </Link>
@@ -76,7 +76,7 @@ export default function AllFavorsList() {
       );
     } else {
       return (
-        <div className='center-text-div'>
+        <div className="center-text-div">
           {renderVolunteersNumber(favor.bids.length)}
         </div>
       );
@@ -100,29 +100,29 @@ export default function AllFavorsList() {
     return (
       <div>
         <Map favors={filterFavorsByNeighbors(favors)} />
-        <div className='favors-list-wrapper'></div>
+        <div className="favors-list-wrapper"></div>
         {filterFavorsByNeighbors(favors).map((favor) => (
-          <div key={favor.id} className='side-padding-div'>
+          <div key={favor.id} className="side-padding-div">
             <hr />
-            <div className='grey-box'>Favor needed: {favor.favorDate}</div>
-            <div>
+            <div className="grey-box">Favor needed: {favor.favorDate}</div>
+            <div className="singlefavor">
               <Link to={`/favors/${favor.id}`}>
-                <b>{favor.title}</b>
+                <div>{favor.title}</div>
+                <div>{favor.description}</div>
+                <div>
+                  <RiMapPinFill className="icon-small" /> {favor.author.address}
+                </div>
+                <div className="grey-text">
+                  {favor.authorId !== loggedInId &&
+                    distanceToUser(favor.author).toFixed(1) + ' miles away'}
+                </div>
+                <div>{renderButton(favor)}</div>
+                <div className="tiny-img-wrap">
+                  {renderVolunteerImages(favor.bids)}
+                </div>
+                {console.log('TYPE OF DATE', typeof favors[0].createdAt)}
               </Link>
             </div>
-            <div>{favor.description}</div>
-            <div>
-              <RiMapPinFill className='icon-small' /> {favor.author.address}
-            </div>
-            <div className='grey-text'>
-              {favor.authorId !== loggedInId &&
-                distanceToUser(favor.author).toFixed(1) + ' miles away'}
-            </div>
-            <div>{renderButton(favor)}</div>
-            <div className='tiny-img-wrap'>
-              {renderVolunteerImages(favor.bids)}
-            </div>
-            {console.log('TYPE OF DATE', typeof favors[0].createdAt)}
           </div>
         ))}
       </div>
