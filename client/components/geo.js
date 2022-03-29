@@ -6,7 +6,7 @@ import useAuth from './utils/useAuthHook';
 import { useHistory } from 'react-router-dom';
 import { OpenStreetMapProvider } from 'leaflet-geosearch';
 
- function SearchField() {
+ function SearchField({onChange}) {
   const timeout = useRef();
   const [input, setInput] = useState('');
   const [results, setResults] = useState([]);
@@ -42,9 +42,9 @@ return (
                     return (
                     <button type="button" key={index} onClick={(e) => {
                         const address = result.label.split(',');
-                        console.log(e.target.innerText)
-                        console.log('result', 'x', result.x, 'y', result.y)
-                        console.log({
+                        // console.log(e.target.innerText)
+                        // console.log('result', 'x', result.x, 'y', result.y)
+                        onChange({
                             streetNumber: address[0],
                             streetName: address[1], 
                             city: address[2],

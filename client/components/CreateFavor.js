@@ -13,7 +13,6 @@ const SearchField = () => {
   // @ts-ignore
   const searchControl = new GeoSearchControl({
     provider: provider,
-    //style: 'bar',
     searchLabel: 'Enter address',
   });
 
