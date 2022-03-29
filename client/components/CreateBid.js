@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import useAuth from "./utils/useAuthHook";
 import { createBid } from "../store/favors.js";
 import { fetchSingleFavor } from "../store/SingleFavor";
+import { me } from "../store/auth";
 // NOW ADD THE REQUIRED ADDITIONS/FIXES TO favors reducer and bids route
 // to accommodate this { createBid } import ^^
 const CreateBid = (props) => {
@@ -22,6 +23,7 @@ const CreateBid = (props) => {
     };
     await dispatch(createBid(newBidObj));
     await dispatch(fetchSingleFavor(favor.id));
+    await dispatch(me());
 
     setMessage("");
     setDidBid(true);
