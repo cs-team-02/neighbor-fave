@@ -193,10 +193,29 @@ const bids = [
     status: "PENDING",
     favorId: 4,
   },
+  {
+    description: "I've got 2 of every tool under the sun. What do you need?",
+    volunteerId: 12,
+    status: "PENDING",
+    favorId: 5,
+  },
+  {
+    description: "No problem! We'll fix it up",
+    volunteerId: 12,
+    status: "PENDING",
+    favorId: 6,
+  },
 
   {
     description: "Available any morning next week",
     volunteerId: 7,
+    status: "PENDING",
+    favorId: 7,
+  },
+  {
+    description:
+      "Depending on the size of the trailer, my husband's truck may be able to move it",
+    volunteerId: 8,
     status: "PENDING",
     favorId: 7,
   },
@@ -220,6 +239,12 @@ const bids = [
     favorId: 9,
   },
   {
+    description: "I have more extra light bulbs than I can handle",
+    volunteerId: 9,
+    status: "PENDING",
+    favorId: 9,
+  },
+  {
     description: "Available any morning next week",
     volunteerId: 7,
     status: "PENDING",
@@ -229,21 +254,8 @@ const bids = [
   {
     description: "Is it chain link or picket? Let's chat",
     volunteerId: 9,
-    status: "FULFILLED",
-    favorId: 10,
-  },
-  {
-    description:
-      "Depending on the size of the trailer, my husband's truck may be able to move it",
-    volunteerId: 8,
-    status: "FULFILLED",
-    favorId: 7,
-  },
-  {
-    description: "I have more extra light bulbs than I can handle",
-    volunteerId: 9,
     status: "PENDING",
-    favorId: 9,
+    favorId: 10,
   },
 ];
 
