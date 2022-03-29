@@ -19,24 +19,38 @@ const SingleFavor = (props) => {
 
   return (
     <div id="single-favor-container">
-      <br />
+      {/* <br /> */}
+      <div id="favor-info-and-picture">
+        <div>
+          <h1 id="favor-heading">{favor.title} </h1>
+          <span id="favor-status">
+            ({favor.status === "OPEN" ? "Open" : "Closed"})
+          </span>{" "}
+          <br></br>
+          <span>
+            {CurrentUser.id === favor.authorId ? (
+              <button onClick={() => toggleFavorResolved(dispatch, favor)}>
+                {favor.status === "OPEN" ? "Resolve" : "Reopen"}
+              </button>
+            ) : (
+              <div></div>
+            )}
+          </span>
+          <br />
+          <br />
+        </div>
 
-      <h1> {favor.title} </h1>
-      <span id="favor-status">
-        ({favor.status === "OPEN" ? "Open" : "Closed"})
-      </span>
-      {CurrentUser.id === favor.authorId ? (
-        <button onClick={() => toggleFavorResolved(dispatch, favor)}>
-          {favor.status === "OPEN" ? "Resolve" : "Reopen"}
-        </button>
-      ) : (
-        <div></div>
-      )}
+        <div id="favor-img-container">
+          {favor.ImageURL ? (
+            <img height="200px" width="200px" src={favor.ImageURL} />
+          ) : (
+            <div></div>
+          )}
+        </div>
+      </div>
 
       <p id="favor-author">{favor.author ? favor.author.name : "Loading"}:</p>
-
       <p id="favor-description"> "{favor.description}"</p>
-
       <div id="all-bids-container">
         <p id="favors-pending-bids">
           {favor.bids

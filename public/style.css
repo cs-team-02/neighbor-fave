@@ -39,7 +39,7 @@ form div {
   display: inline-block;
 }
 #top-spacer-div {
-  height: 70px;
+  height: 80px;
 }
 
 #bottom-spacer-div {
@@ -65,10 +65,10 @@ form div {
   overflow: hidden;
   position: fixed;
   top: 0;
-  /* background-color: rgba(255, 255, 255, 0.692); */
+  background-color: rgb(255, 255, 255);
   width: 100%;
   z-index: 2;
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); */
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.205);
   margin: 0;
 }
@@ -112,7 +112,7 @@ form div {
   margin: 0;
 }
 
-.li-picture-div {
+.li-img-div {
   /* border-width: 1px;
   border-style: dotted; */
   width: 75px;
@@ -133,10 +133,23 @@ form div {
 }
 
 .li-img {
-  clip-path: circle(40px at center);
-  width: 80px;
+  clip-path: circle(35px at center);
+  width: 70px;
   /* max-width: 100%; */
   height: auto;
+}
+
+.tiny-img {
+  clip-path: circle(10px at center);
+  width: 20px;
+  height: auto;
+}
+
+.tiny-img-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1px;
 }
 
 #profile-thumb-div {
@@ -150,8 +163,8 @@ form div {
 }
 
 .thumb-img {
-  clip-path: circle(25px at center);
-  max-width: 50px;
+  clip-path: circle(20px at center);
+  max-width: 40px;
   height: auto;
   margin: 0px;
   padding: 0px;
@@ -161,6 +174,7 @@ form div {
   display: flex;
   flex-direction: row;
   align-content: flex-start;
+  gap: 5px;
 }
 
 .grey-text {
@@ -194,11 +208,15 @@ form div {
 .small-spacer-div {
   height: 1px;
 }
+.side-padding-div {
+  padding: 15px;
+}
 
 .ask-card-div {
   background-color: rgb(226, 226, 226);
   padding: 5px;
   padding-bottom: 15px;
+  margin-bottom: 5px;
   border-radius: 7px;
   border: 2px solid rgb(255, 210, 32);
 }
@@ -207,6 +225,7 @@ form div {
   background-color: rgb(226, 226, 226);
   padding: 5px;
   padding-bottom: 15px;
+  margin-bottom: 5px;
   border-radius: 7px;
 }
 
@@ -226,20 +245,128 @@ form div {
   border-radius: 4px;
 }
 .grey-box {
+  width: auto;
   background-color: rgb(224, 224, 224);
   text-align: center;
+  border-radius: 4px;
+}
+
+.test-class {
+  border: rgb(10, 116, 0);
+}
+.favors-list-wrapper {
+  border-radius: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+/* Top Contributor Styles */
+
+@media only screen and (max-width: 600px) {
+  /* body {
+    background-color: lightblue;
+  } */
+  #favor-info-and-picture {
+    display: flex;
+    flex-direction: column;
+  }
+  #favor-info-and-picture > * {
+    flex-grow: 1;
+    margin: 10px;
+    align-self: center;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  /* body {
+    background-color: pink;
+  } */
+  #favor-img-container {
+    display: flex;
+  }
+  #favor-img-container img {
+    flex: 0;
+    align-self: flex-end;
+  }
+  #favor-info-and-picture {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: row;
+  }
+  #favor-info-and-picture * {
+    flex-grow: 1;
+    margin: 10px;
+  }
+
+  #top-contributors-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #top-contributors-container * {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  /* #all-bids-container * {
+    flex: 1 1;
+  } */
+}
+#top-contributors-container {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: large;
+  margin: 2em;
+  padding: 10px;
+  /* background-color: rgb(226, 226, 226); */
+  border-color: rgb(226, 226, 226);
+  border-style: outset;
+  border-radius: 25px;
+}
+
+#top-contributors-container * {
+  margin: 5px;
+  padding: 2px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contributor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.top-con-img {
+  clip-path: circle(25px at center);
+  width: 80px;
+  /* max-width: 100%; */
+  height: auto;
 }
 
 /* Single Favor Styles */
 
 #single-favor-container {
   font-family: sans-serif;
-  margin: 1em;
+  margin: 2em;
+
+  /* display: flex;
+  flex-direction: column; */
+  /* align-items: center; */
+}
+
+#single-favor-container img {
+  width: 80vw;
+  border-radius: 25px;
+}
+
+#favor-heading {
+  font-size: 27px;
 }
 
 #single-favor-container > * {
-  /* margin: 10px 10px 10px 10px; */
-  font-size: large;
+  margin: 10px 10px 10px 0px;
   padding: 3px;
 }
 
@@ -250,14 +377,17 @@ form div {
   text-align: center;
   padding: 2px;
   margin: 5px;
-  width: 50%;
+  width: auto;
 }
 
 #favor-author {
   font-weight: bold;
+  font-size: large;
   font-style: oblique;
 }
-
+#favor-status {
+  font-size: x-large;
+}
 /* Bid styles */
 
 #all-bids-container {
@@ -278,6 +408,7 @@ form div {
 .single-bid-container * {
   padding: 7px;
   font-size: large;
+  margin: 5px;
 }
 
 #create-bid-form * {
@@ -301,7 +432,7 @@ form div {
 .map {
   display: flex;
   width: 100%;
-  margin-top: 90px;
+  margin-top: -2px;
 }
 .App {
   width: 100vw;
