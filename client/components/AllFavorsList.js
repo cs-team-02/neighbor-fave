@@ -104,7 +104,7 @@ export default function AllFavorsList() {
               <RiMapPinFill className='icon-small' /> {favor.author.address}
             </div>
             <div className='grey-text'>
-              {distanceToUser(favor.author).toFixed(2)} miles away
+              {distanceToUser(favor.author).toFixed(1)} miles away
             </div>
             <div>{renderButton(favor)}</div>
             <div className='tiny-img-wrap'>
