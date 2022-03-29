@@ -289,14 +289,17 @@ form div {
   font-size: large;
   margin: 2em;
   padding: 10px;
-  background-color: rgb(226, 226, 226);
+  /* background-color: rgb(226, 226, 226); */
+  border-color: rgb(226, 226, 226);
+  border-style: outset;
   border-radius: 25px;
 }
 
 #top-contributors-container * {
-  margin: 10px 10px 10px 0px;
-  padding: 3px;
+  margin: 5px;
+  padding: 2px;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .contributor {
