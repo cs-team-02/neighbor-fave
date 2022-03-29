@@ -139,6 +139,19 @@ form div {
   height: auto;
 }
 
+.tiny-img {
+  clip-path: circle(10px at center);
+  width: 20px;
+  height: auto;
+}
+
+.tiny-img-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1px;
+}
+
 #profile-thumb-div {
   display: flex;
   flex-direction: column;

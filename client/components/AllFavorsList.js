@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { RiMapPinFill } from 'react-icons/ri';
 
 // RADIUS in miles exports to AllUsersList.js
-export const RADIUS = 5;
+export const RADIUS = 1;
 
 export default function AllFavorsList() {
   const dispatch = useDispatch();
@@ -20,19 +20,16 @@ export default function AllFavorsList() {
   }, []);
 
   const distanceToUser = function (user) {
-    const deltaLat = Math.abs(loggedInUser.lat - user.lat);
-    const deltaLng = Math.abs(loggedInUser.lng - user.lng);
+    const deltaLat = Math.abs(loggedInUser.lat - user.lat) * 69;
+    const deltaLng = Math.abs(loggedInUser.lng - user.lng) * 69;
     return Math.sqrt(Math.pow(deltaLat, 2) + Math.pow(deltaLng, 2));
   };
 
   // filterFavorByNeighbors takes an array of neighborsnand returns an array of neighbors who live within a RADIUS from loggedInUser
   const filterFavorsByNeighbors = function (favorsArray) {
-    //converting radius from miles to degrees
-    const radiusInDegrees = RADIUS / 60;
-
     function isNeighborsFavor(favor) {
       const distance = distanceToUser(favor.author);
-      if (distance < radiusInDegrees) {
+      if (distance < RADIUS) {
         return true;
       } else {
         return false;
@@ -56,6 +53,12 @@ export default function AllFavorsList() {
         </div>
       );
     }
+  };
+
+  const renderVolunteerImages = function (bids) {
+    return bids.map((bid) => (
+      <img className='tiny-img' src={bid.volunteer.ImageURL} />
+    ));
   };
 
   const renderButton = function (favor) {
@@ -98,10 +101,15 @@ export default function AllFavorsList() {
             </div>
             <div>{favor.description}</div>
             <div>
-              <RiMapPinFill className='icon-small' />
-              {favor.author.address}
+              <RiMapPinFill className='icon-small' /> {favor.author.address}
+            </div>
+            <div className='grey-text'>
+              {distanceToUser(favor.author).toFixed(2)} miles away
             </div>
             <div>{renderButton(favor)}</div>
+            <div className='tiny-img-wrap'>
+              {renderVolunteerImages(favor.bids)}
+            </div>
           </div>
         ))}
       </div>

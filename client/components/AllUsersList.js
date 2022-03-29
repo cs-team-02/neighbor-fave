@@ -12,11 +12,15 @@ export default function AllUsersList() {
   const loggedInUser = useSelector((state) => state.auth);
   const loggedIn = useSelector((state) => !!state.auth.id);
 
-  console.log('RADIUS', RADIUS);
-
   useEffect(() => {
     dispatch(fetchUsers());
   }, []);
+
+  const distanceToUser = function (user) {
+    const deltaLat = Math.abs(loggedInUser.lat - user.lat) * 69;
+    const deltaLng = Math.abs(loggedInUser.lng - user.lng) * 69;
+    return Math.sqrt(Math.pow(deltaLat, 2) + Math.pow(deltaLng, 2));
+  };
 
   // can this be a custom hook to filter favors by status?
   const openFavors = function (favors) {
@@ -34,14 +38,9 @@ export default function AllUsersList() {
   };
 
   const neighborsFilter = function (users, filteredId) {
-    //converting radius from miles to degrees
-    const radiusInDegrees = RADIUS / 60;
-
     function isNeighbor(user) {
-      const deltaLat = Math.abs(loggedInUser.lat - user.lat);
-      const deltaLng = Math.abs(loggedInUser.lng - user.lng);
-      const distance = Math.sqrt(deltaLat * deltaLat + deltaLng * deltaLng);
-      if (distance < radiusInDegrees) {
+      const distance = distanceToUser(user);
+      if (distance < RADIUS) {
         return true;
       } else {
         return false;
