@@ -61,9 +61,6 @@ export default function AllFavorsList() {
     ));
   };
 
-  const date = new Date('2022-03-11');
-  console.log('DATE', date);
-
   const sortFavorsByDate = function (favors) {
     return favors.sort((a, b) => b.favorDate - a.favroDate);
   };
@@ -95,6 +92,11 @@ export default function AllFavorsList() {
   } else {
     // console.log('UNFILTERED FAVORS', favors);
     // console.log('FILTERED FAVORS', filterFavorsByNeighbors(favors));
+
+    const date = new Date('2022-03-11');
+    const date2 = favors[0];
+    console.log('DATE', date);
+    console.log('DATE2', date2);
 
     return (
       <div>
