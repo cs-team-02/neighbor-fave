@@ -60,15 +60,15 @@ export default function AllFavorsList() {
           <div key={favor.id}>
             <hr />
             <div className="grey-box">Favor needed: {favor.favorDate}</div>
-            <div>
-              {/* <button> */}
+            <div className="singlefavor">
               <Link to={`/favors/${favor.id}`}>
+                {/* <div> */}
                 <div>{favor.title}</div>
                 <div>{favor.description}</div>
                 <div>{favor.author.address}</div>
                 <div>{renderButton(favor)}</div>
+                {/* </div> */}
               </Link>
-              {/* </button> */}
             </div>
           </div>
         ))}

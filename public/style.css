@@ -515,3 +515,6 @@ body {
   display: grid;
   place-items: center;
 }
+.singlefavor * {
+  text-decoration: none;
+}
