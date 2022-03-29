@@ -23,7 +23,7 @@ function ChatForm(props) {
     }
   };
   return (
-    <div className="App">
+    <div className="chatbox">
       {!showChat ? (
         <div className="joinChatContainer">
           <h3>Let's chat!</h3>

@@ -505,3 +505,13 @@ body {
 .hide {
   opacity: 0 !important;
 }
+.chatbox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #fff;
+  color: #212121;
+  font-family: 'Open Sans', sans-serif;
+  display: grid;
+  place-items: center;
+}
