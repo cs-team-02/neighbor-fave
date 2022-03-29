@@ -13,6 +13,7 @@ import CreateFavor from './components/CreateFavor';
 import SingleUserView from './components/SingleUserView';
 import UserProfile from './components/UserProfile';
 import TopContributors from './components/ViewTopContributors';
+import ChatForm from './components/Chat/ChatForm';
 
 /**
  * COMPONENT
@@ -26,27 +27,28 @@ class Routes extends Component {
     const { isLoggedIn } = this.props;
 
     return (
-      <div className='no-div-margin'>
+      <div className="no-div-margin">
         {isLoggedIn ? (
           <Switch>
             {/* create a component for Single Favor View
             and Link to each single favor in every marker's popup */}
-            <Route path='/mapView' component={Map}></Route>
-            <Route exact path='/favors' component={AllFavorsList}></Route>
-            <Route exact path='/users' component={AllUsersList}></Route>
-            <Route path='/profile' component={UserProfile}></Route>
-            <Route path='/users/:id' component={SingleUserView}></Route>
-            <Route path='/favors/create' component={CreateFavor}></Route>
-            <Route path='/favors/:id' component={SingleFavorView}></Route>
-            <Route path='/topContributors' component={TopContributors}></Route>
-            <Route path='/home' component={AllFavorsList} />
-            <Redirect to='/home' />
+            <Route path="/mapView" component={Map}></Route>
+            <Route exact path="/favors" component={AllFavorsList}></Route>
+            <Route path="/ChatForm/:id" component={ChatForm}></Route>
+            <Route exact path="/users" component={AllUsersList}></Route>
+            <Route path="/profile" component={UserProfile}></Route>
+            <Route path="/users/:id" component={SingleUserView}></Route>
+            <Route path="/favors/create" component={CreateFavor}></Route>
+            <Route path="/favors/:id" component={SingleFavorView}></Route>
+            <Route path="/topContributors" component={TopContributors}></Route>
+            <Route path="/home" component={AllFavorsList} />
+            <Redirect to="/home" />
           </Switch>
         ) : (
           <Switch>
-            <Route path='/' exact component={Login} />
-            <Route path='/login' component={Login} />
-            <Route path='/signup' component={Signup} />
+            <Route path="/" exact component={Login} />
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={Signup} />
           </Switch>
         )}
       </div>

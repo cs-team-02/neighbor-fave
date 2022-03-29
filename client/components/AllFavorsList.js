@@ -10,7 +10,7 @@ export const RADIUS = 1;
 
 export default function AllFavorsList() {
   const dispatch = useDispatch();
-  const favors = useSelector((state) => state.favors);
+  let favors = useSelector((state) => state.favors);
   const loggedInId = useSelector((state) => state.auth.id);
   const loggedInUser = useSelector((state) => state.auth);
   const loggedIn = useSelector((state) => !!state.auth.id);
@@ -57,14 +57,18 @@ export default function AllFavorsList() {
 
   const renderVolunteerImages = function (bids) {
     return bids.map((bid) => (
-      <img className='tiny-img' src={bid.volunteer.ImageURL} />
+      <img className="tiny-img" src={bid.volunteer.ImageURL} />
     ));
+  };
+
+  const sortFavorsByDate = function (favors) {
+    return favors.sort((a, b) => b.favorDate - a.favroDate);
   };
 
   const renderButton = function (favor) {
     if (loggedInId === favor.authorId) {
       return (
-        <div className='orange-button'>
+        <div className="orange-button">
           <Link to={`/favors/${favor.id}`}>
             <b>Your ask: {renderVolunteersNumber(favor.bids.length)}</b>
           </Link>
@@ -72,43 +76,52 @@ export default function AllFavorsList() {
       );
     } else {
       return (
-        <div className='center-text-div'>
+        <div className="center-text-div">
           {renderVolunteersNumber(favor.bids.length)}
         </div>
       );
     }
   };
 
+  // let arrayToSort = [{ id: 1, favorDate: 2022 - 03 - 09 }];
+
   if (favors === undefined) {
     return <h3>Loading favors...</h3>;
   } else if (favors === 0) {
     return <h3>Looks like noone needs a favor...</h3>;
   } else {
-    console.log('UNFILTERED FAVORS', favors);
-    console.log('FILTERED FAVORS', filterFavorsByNeighbors(favors));
+    // console.log('UNFILTERED FAVORS', favors);
+    // console.log('FILTERED FAVORS', filterFavorsByNeighbors(favors));
+    // const date = new Date('2022-03-11');
+    // const date2 = favors[0];
+    // console.log('DATE', date);
+    // console.log('DATE2', date2);
 
     return (
       <div>
         <Map favors={filterFavorsByNeighbors(favors)} />
+        <div className="favors-list-wrapper"></div>
         {filterFavorsByNeighbors(favors).map((favor) => (
-          <div key={favor.id} className='side-padding-div'>
+          <div key={favor.id} className="side-padding-div">
             <hr />
-            <div className='grey-box'>Favor needed: {favor.favorDate}</div>
-            <div>
+            <div className="grey-box">Favor needed: {favor.favorDate}</div>
+            <div className="singlefavor">
               <Link to={`/favors/${favor.id}`}>
-                <b>{favor.title}</b>
+                <div>{favor.title}</div>
+                <div>{favor.description}</div>
+                <div>
+                  <RiMapPinFill className="icon-small" /> {favor.author.address}
+                </div>
+                <div className="grey-text">
+                  {favor.authorId !== loggedInId &&
+                    distanceToUser(favor.author).toFixed(1) + ' miles away'}
+                </div>
+                <div>{renderButton(favor)}</div>
+                <div className="tiny-img-wrap">
+                  {renderVolunteerImages(favor.bids)}
+                </div>
+                {console.log('TYPE OF DATE', typeof favors[0].createdAt)}
               </Link>
-            </div>
-            <div>{favor.description}</div>
-            <div>
-              <RiMapPinFill className='icon-small' /> {favor.author.address}
-            </div>
-            <div className='grey-text'>
-              {distanceToUser(favor.author).toFixed(1)} miles away
-            </div>
-            <div>{renderButton(favor)}</div>
-            <div className='tiny-img-wrap'>
-              {renderVolunteerImages(favor.bids)}
             </div>
           </div>
         ))}
