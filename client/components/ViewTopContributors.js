@@ -38,20 +38,22 @@ const TopContributors = (props) => {
       {/* <h4>(1+ favors)</h4> */}
       {usersMostFulfilled.length ? (
         <div>
-          {usersMostFulfilled.map((user) => {
-            return (
-              <Link to={`/users/${user.id}`} key={user.id}>
-                <img
-                  className="top-con-img"
-                  height="40px"
-                  width="40px"
-                  src={user.ImageURL}
-                />
-                {user.name} ({favorsDone(user)} favors done)
-                <br />
-              </Link>
-            );
-          })}
+          {usersMostFulfilled
+            .sort((a, b) => b.bids.length - a.bids.length)
+            .map((user) => {
+              return (
+                <Link to={`/users/${user.id}`} key={user.id}>
+                  <img
+                    className="top-con-img"
+                    height="40px"
+                    width="40px"
+                    src={user.ImageURL}
+                  />
+                  {user.name} ({favorsDone(user)} favors done)
+                  <br />
+                </Link>
+              );
+            })}
         </div>
       ) : (
         <div>No neighbors with more than 1 fulfilled favor right now</div>
@@ -65,20 +67,22 @@ const TopContributors = (props) => {
 
       {usersMostBids.length ? (
         <div>
-          {usersMostBids.map((user) => {
-            return (
-              <Link to={`/users/${user.id}`} key={user.id}>
-                <img
-                  className="top-con-img"
-                  height="40px"
-                  width="40px"
-                  src={user.ImageURL}
-                />
-                {user.name} ({bidsOffered(user)} bids)
-                <br />
-              </Link>
-            );
-          })}
+          {usersMostBids
+            .sort((a, b) => b.bids.length - a.bids.length)
+            .map((user) => {
+              return (
+                <Link to={`/users/${user.id}`} key={user.id}>
+                  <img
+                    className="top-con-img"
+                    height="40px"
+                    width="40px"
+                    src={user.ImageURL}
+                  />
+                  {user.name} ({bidsOffered(user)} bids)
+                  <br />
+                </Link>
+              );
+            })}
         </div>
       ) : (
         <div>No neighbors with more than 3 pending bids right now</div>

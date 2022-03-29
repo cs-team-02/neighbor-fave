@@ -267,6 +267,18 @@ form div {
     flex-grow: 1;
     margin: 10px;
   }
+
+  #top-contributors-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #top-contributors-container * {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
   /* #all-bids-container * {
     flex: 1 1;
   } */
@@ -281,6 +293,7 @@ form div {
 #top-contributors-container * {
   margin: 10px 10px 10px 0px;
   padding: 3px;
+  text-decoration: none;
 }
 
 .top-con-img {
