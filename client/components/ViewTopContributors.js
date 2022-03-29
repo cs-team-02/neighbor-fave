@@ -15,6 +15,12 @@ const TopContributors = (props) => {
   const usersMostFulfilled = allUsers.filter(
     (user) => user.bids.filter((bid) => bid.status === "FULFILLED").length > 1
   );
+  const bidsOffered = (user) => {
+    return user.bids.filter((bid) => bid.status === "PENDING").length;
+  };
+  const favorsDone = (user) => {
+    return user.bids.filter((bid) => bid.status === "FULFILLED").length;
+  };
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -25,34 +31,23 @@ const TopContributors = (props) => {
   return (
     <div id="top-contributors-container">
       <h1>Top contributors:</h1>
-      <h2>Offered most bids </h2>
-      <h4>(3+ bids)</h4>
-
-      {usersMostBids.length ? (
-        <div>
-          {usersMostBids.map((user) => {
-            return (
-              <Link to={`/users/${user.id}`} key={user.id}>
-                <img height="40px" width="40px" src={user.ImageURL} />
-                {user.name} ( {user.bids.length} bids ) <WiStars />
-                <br />
-              </Link>
-            );
-          })}
-        </div>
-      ) : (
-        <div>No neighbors with more than 3 pending bids right now</div>
-      )}
-      <hr></hr>
-      <h2>Fulfillled most favors </h2>
-      <h4>(1+ favors)</h4>
+      <h2>
+        <RiStarSmileLine />
+        Most Favors <RiStarSmileLine />
+      </h2>
+      {/* <h4>(1+ favors)</h4> */}
       {usersMostFulfilled.length ? (
         <div>
           {usersMostFulfilled.map((user) => {
             return (
               <Link to={`/users/${user.id}`} key={user.id}>
-                <img height="40px" width="40px" src={user.ImageURL} />
-                {user.name} ( {user.bids.length} bids ) <RiStarSmileLine />
+                <img
+                  className="top-con-img"
+                  height="40px"
+                  width="40px"
+                  src={user.ImageURL}
+                />
+                {user.name} ({favorsDone(user)} favors done)
                 <br />
               </Link>
             );
@@ -60,6 +55,33 @@ const TopContributors = (props) => {
         </div>
       ) : (
         <div>No neighbors with more than 1 fulfilled favor right now</div>
+      )}
+      <hr></hr>
+
+      <h2>
+        Offered most bids <WiStars />{" "}
+      </h2>
+      {/* <h4>(3+ bids)</h4> */}
+
+      {usersMostBids.length ? (
+        <div>
+          {usersMostBids.map((user) => {
+            return (
+              <Link to={`/users/${user.id}`} key={user.id}>
+                <img
+                  className="top-con-img"
+                  height="40px"
+                  width="40px"
+                  src={user.ImageURL}
+                />
+                {user.name} ({bidsOffered(user)} bids)
+                <br />
+              </Link>
+            );
+          })}
+        </div>
+      ) : (
+        <div>No neighbors with more than 3 pending bids right now</div>
       )}
     </div>
   );

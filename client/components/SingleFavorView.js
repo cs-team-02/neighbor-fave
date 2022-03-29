@@ -19,7 +19,7 @@ const SingleFavor = (props) => {
 
   return (
     <div id="single-favor-container">
-      <br />
+      {/* <br /> */}
       <h1 id="favor-heading">{favor.title} </h1>
       <span id="favor-status">
         ({favor.status === "OPEN" ? "Open" : "Closed"})
