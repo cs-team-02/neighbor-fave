@@ -3,7 +3,7 @@ const favors = [
     id: 1,
     title: "Moving Sofa",
     ImageURL:
-      "https://firedawgsjunkremoval.com/wp-content/uploads/2015/02/old-sofa-removal-in-indianapolis.jpg",
+      "https://cdn.distinctivechesterfields.com/wp-content/uploads/sites/4/2019/12/Wally_Sofa2-1024x556.png?w=600&ch=DPR&dpr=2",
     description:
       "I could use a hand this weekend moving my old couch to the curb.",
     //status should be a boolean on open, "OPEN" is open "CLOSED" closed

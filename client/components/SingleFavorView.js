@@ -31,6 +31,7 @@ const SingleFavor = (props) => {
       ) : (
         <div></div>
       )}
+      <br />
       {favor.ImageURL ? (
         <img height="200px" width="200px" src={favor.ImageURL} />
       ) : (

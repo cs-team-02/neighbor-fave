@@ -241,19 +241,16 @@ form div {
   /* align-items: center; */
 }
 #single-favor-container img {
-  width: auto;
+  width: 80vw;
   border-radius: 25px;
-  margin: 10px 10px 10px -20px;
 }
 
 #favor-heading {
   font-size: 27px;
-  /* align-self: center; */
 }
 
 #single-favor-container > * {
-  /* margin: 10px 10px 10px 10px; */
-  /* font-size: large; */
+  margin: 10px 10px 10px 0px;
   padding: 3px;
 }
 
@@ -269,9 +266,12 @@ form div {
 
 #favor-author {
   font-weight: bold;
+  font-size: large;
   font-style: oblique;
 }
-
+#favor-status {
+  font-size: x-large;
+}
 /* Bid styles */
 
 #all-bids-container {
