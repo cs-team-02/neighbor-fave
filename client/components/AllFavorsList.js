@@ -10,7 +10,7 @@ export const RADIUS = 1;
 
 export default function AllFavorsList() {
   const dispatch = useDispatch();
-  const favors = useSelector((state) => state.favors);
+  let favors = useSelector((state) => state.favors);
   const loggedInId = useSelector((state) => state.auth.id);
   const loggedInUser = useSelector((state) => state.auth);
   const loggedIn = useSelector((state) => !!state.auth.id);
@@ -61,6 +61,10 @@ export default function AllFavorsList() {
     ));
   };
 
+  const sortFavorsByDate = function (favors) {
+    return favors.sort((a, b) => b.favorDate - a.favroDate);
+  };
+
   const renderButton = function (favor) {
     if (loggedInId === favor.authorId) {
       return (
@@ -79,17 +83,24 @@ export default function AllFavorsList() {
     }
   };
 
+  // let arrayToSort = [{ id: 1, favorDate: 2022 - 03 - 09 }];
+
   if (favors === undefined) {
     return <h3>Loading favors...</h3>;
   } else if (favors === 0) {
     return <h3>Looks like noone needs a favor...</h3>;
   } else {
-    console.log('UNFILTERED FAVORS', favors);
-    console.log('FILTERED FAVORS', filterFavorsByNeighbors(favors));
+    // console.log('UNFILTERED FAVORS', favors);
+    // console.log('FILTERED FAVORS', filterFavorsByNeighbors(favors));
+    // const date = new Date('2022-03-11');
+    // const date2 = favors[0];
+    // console.log('DATE', date);
+    // console.log('DATE2', date2);
 
     return (
       <div>
         <Map favors={filterFavorsByNeighbors(favors)} />
+        <div className='favors-list-wrapper'></div>
         {filterFavorsByNeighbors(favors).map((favor) => (
           <div key={favor.id} className='side-padding-div'>
             <hr />
@@ -104,12 +115,14 @@ export default function AllFavorsList() {
               <RiMapPinFill className='icon-small' /> {favor.author.address}
             </div>
             <div className='grey-text'>
-              {distanceToUser(favor.author).toFixed(1)} miles away
+              {favor.authorId !== loggedInId &&
+                distanceToUser(favor.author).toFixed(1) + ' miles away'}
             </div>
             <div>{renderButton(favor)}</div>
             <div className='tiny-img-wrap'>
               {renderVolunteerImages(favor.bids)}
             </div>
+            {console.log('TYPE OF DATE', typeof favors[0].createdAt)}
           </div>
         ))}
       </div>

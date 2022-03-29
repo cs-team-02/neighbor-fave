@@ -254,6 +254,11 @@ form div {
 .test-class {
   border: rgb(10, 116, 0);
 }
+.favors-list-wrapper {
+  border-radius: 15px;
+  padding: 0;
+  margin: 0;
+}
 
 /* Top Contributor Styles */
 
@@ -427,5 +432,5 @@ form div {
 .map {
   display: flex;
   width: 100%;
-  margin-top: 19px;
+  margin-top: -2px;
 }
