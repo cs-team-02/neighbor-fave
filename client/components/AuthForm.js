@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {authenticate} from '../store'
+import {authenticate, authenticateSignup} from '../store'
 import SearchField from './geo'
 import useForm from './utils/useForm';
 
@@ -10,13 +10,19 @@ import useForm from './utils/useForm';
 const AuthForm = ({ name, displayName }) => {
   const { error } = useSelector(state => state.auth)
   const dispatch = useDispatch()
+  const [address, setAddress] = useState([]);
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
-    const formName = evt.target.name
+    const name = evt.target.nameofuser.value
     const username = evt.target.username.value
     const password = evt.target.password.value
-    dispatch(authenticate(username, password, formName))
+    if(evt.target.name === 'login'){
+      dispatch(authenticate(username, password))
+      console.log('still in login')
+    }else{
+      dispatch(authenticateSignup({name, username,address, password}))
+    }
   }
 
   return (
@@ -24,10 +30,10 @@ const AuthForm = ({ name, displayName }) => {
       <form onSubmit={handleSubmit} name={name}>
         {name === 'signup' && 
       <div>
-          <label htmlFor="name">
+          <label htmlFor="nameofuser">
             <small>Name</small>
           </label>
-          <input name="name" type="text" />
+          <input name="nameofuser" type="text" />
         </div>}
         <div>
           <label htmlFor="username">

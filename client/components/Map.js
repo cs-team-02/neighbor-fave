@@ -8,15 +8,6 @@ import ListView from './ListView';
 // and use that for the center of the map
 const userLocation = [51.615, -0.09];
 
-const dummyData = [
-  { id: 1, name: 'mow my lawn please', lat: 51.615, long: -0.09 },
-  { id: 2, name: 'cup of flour', lat: 51.605, long: -0.09 },
-  { id: 3, name: 'shovel driveway', lat: 51.611, long: -0.09 },
-  { id: 4, name: 'help moving couch', lat: 51.611, long: -0.1 },
-  { id: 5, name: 'walk my dog on saturday', lat: 51.621, long: -0.095 },
-  { id: 6, name: 'borrow a ladder', lat: 51.618, long: -0.092 },
-  { id: 7, name: 'someone ran over my mailbox', lat: 51.615, long: -0.11 },
-];
 const Map = (props) => {
   return (
     // change it so the center is always the (logged in) user's address
@@ -46,13 +37,7 @@ const Map = (props) => {
                 </Marker>
               );
             })}
-        {/* <Marker position={[51.505, -0.09]}>
-          <Popup>
-            my Favor please <br /> anyone have a shovel?
-          </Popup>
-        </Marker> */}
       </MapContainer>
-      {/* <ListView /> */}
     </div>
   );
 };
