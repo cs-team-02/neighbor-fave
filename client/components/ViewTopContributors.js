@@ -25,9 +25,8 @@ const TopContributors = (props) => {
   return (
     <div id="top-contributors-container">
       <h1>Top contributors:</h1>
-
-      <br></br>
-      <h2>Offered most bids (3+ bids)</h2>
+      <h2>Offered most bids </h2>
+      <h4>(3+ bids)</h4>
 
       {usersMostBids.length ? (
         <div>
@@ -45,7 +44,8 @@ const TopContributors = (props) => {
         <div>No neighbors with more than 3 pending bids right now</div>
       )}
       <hr></hr>
-      <h2>Fulfillled most favors (1+ favors)</h2>
+      <h2>Fulfillled most favors </h2>
+      <h4>(1+ favors)</h4>
       {usersMostFulfilled.length ? (
         <div>
           {usersMostFulfilled.map((user) => {
