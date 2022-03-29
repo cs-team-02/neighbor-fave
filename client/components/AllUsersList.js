@@ -48,7 +48,7 @@ export default function AllUsersList() {
                 <img className="li-img" src={user.ImageURL} />
               </div>
               <div className="li-info-div">
-                <div>
+                <div className="singleuser">
                   <Link to={`/users/${user.id}`}>
                     <div>{user.name}</div>
                     <div>
