@@ -9,13 +9,12 @@ function ChatForm(props) {
   const [room, setRoom] = useState('');
   const [showChat, setShowChat] = useState(false);
   const currentUser = useAuth();
+
   useEffect(async () => {
-    await setUsername(currentUser.name);
     await setRoom(props.match.params.id);
+    await setUsername(currentUser.name);
     joinRoom();
   }, []);
-
-  // console.log('--------', props.match.params.id);
 
   const joinRoom = () => {
     if (username !== '' && room !== '') {
