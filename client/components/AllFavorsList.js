@@ -92,17 +92,16 @@ export default function AllFavorsList() {
   } else {
     // console.log('UNFILTERED FAVORS', favors);
     // console.log('FILTERED FAVORS', filterFavorsByNeighbors(favors));
-
-    const date = new Date('2022-03-11');
-    const date2 = favors[0];
-    console.log('DATE', date);
-    console.log('DATE2', date2);
+    // const date = new Date('2022-03-11');
+    // const date2 = favors[0];
+    // console.log('DATE', date);
+    // console.log('DATE2', date2);
 
     return (
       <div>
         <Map favors={filterFavorsByNeighbors(favors)} />
         <div className='favors-list-wrapper'></div>
-        {sortFavorsByDate(filterFavorsByNeighbors(favors)).map((favor) => (
+        {filterFavorsByNeighbors(favors).map((favor) => (
           <div key={favor.id} className='side-padding-div'>
             <hr />
             <div className='grey-box'>Favor needed: {favor.favorDate}</div>
