@@ -43,24 +43,22 @@ export default function AllUsersList() {
       <div>
         {neighborsFilter(users, loggedInId).map((user) => (
           <div>
-            <div className='li-div'>
-              <div className='li-picture-div'>
-                <img className='li-img' src={user.ImageURL} />
+            <div className="li-div">
+              <div className="li-picture-div">
+                <img className="li-img" src={user.ImageURL} />
               </div>
-              <div className='li-info-div'>
+              <div className="li-info-div">
                 <div>
-                  <div>
-                    <Link to={`/users/${user.id}`}>
-                      <b>{user.name}</b>
-                    </Link>
-                  </div>
-                  <div>
-                    <RiMapPinFill className='icon-small' /> {user.address}
-                  </div>
-                  <div>
-                    Asks: {openFavors(user.favors).length} | Volunteering:
-                    {openBids(user.bids).length}
-                  </div>
+                  <Link to={`/users/${user.id}`}>
+                    <div>{user.name}</div>
+                    <div>
+                      <RiMapPinFill className="icon-small" /> {user.address}
+                    </div>
+                    <div>
+                      Asks: {openFavors(user.favors).length} | Volunteering:
+                      {openBids(user.bids).length}
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
