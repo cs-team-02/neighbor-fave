@@ -33,7 +33,7 @@ export default function AllFavorsList() {
   const renderButton = function (favor) {
     if (loggedInId === favor.authorId) {
       return (
-        <div className='orange-button'>
+        <div className="orange-button">
           <Link to={`/favors/${favor.id}`}>
             <b>Your ask: {renderVolunteersNumber(favor.bids.length)}</b>
           </Link>
@@ -41,7 +41,7 @@ export default function AllFavorsList() {
       );
     } else {
       return (
-        <div className='center-text-div'>
+        <div className="center-text-div">
           {renderVolunteersNumber(favor.bids.length)}
         </div>
       );
@@ -59,15 +59,17 @@ export default function AllFavorsList() {
         {favors.map((favor) => (
           <div key={favor.id}>
             <hr />
-            <div className='grey-box'>Favor needed: {favor.favorDate}</div>
+            <div className="grey-box">Favor needed: {favor.favorDate}</div>
             <div>
+              {/* <button> */}
               <Link to={`/favors/${favor.id}`}>
-                <b>{favor.title}</b>
+                <div>{favor.title}</div>
+                <div>{favor.description}</div>
+                <div>{favor.author.address}</div>
+                <div>{renderButton(favor)}</div>
               </Link>
+              {/* </button> */}
             </div>
-            <div>{favor.description}</div>
-            <div>{favor.author.address}</div>
-            <div>{renderButton(favor)}</div>
           </div>
         ))}
       </div>
