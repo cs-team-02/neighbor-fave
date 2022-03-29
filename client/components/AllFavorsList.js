@@ -5,6 +5,9 @@ import Map from './Map';
 import { Link } from 'react-router-dom';
 import { RiMapPinFill } from 'react-icons/ri';
 
+// RADIUS in miles exports to AllUsersList.js
+export const RADIUS = 5;
+
 export default function AllFavorsList() {
   const dispatch = useDispatch();
   const favors = useSelector((state) => state.favors);
@@ -16,19 +19,19 @@ export default function AllFavorsList() {
     dispatch(fetchFavors());
   }, []);
 
-  // coordinatesFilter takes an array of neighbors, logged-in user and a radius (im miles)
-  // and returns an array of neighbors who live within a radius from loggedInUser
+  const distanceToUser = function (user) {
+    const deltaLat = Math.abs(loggedInUser.lat - user.lat);
+    const deltaLng = Math.abs(loggedInUser.lng - user.lng);
+    return Math.sqrt(Math.pow(deltaLat, 2) + Math.pow(deltaLng, 2));
+  };
 
+  // filterFavorByNeighbors takes an array of neighborsnand returns an array of neighbors who live within a RADIUS from loggedInUser
   const filterFavorsByNeighbors = function (favorsArray) {
-    //radius in miles
-    const radius = 0.3;
     //converting radius from miles to degrees
-    const radiusInDegrees = radius / 60;
+    const radiusInDegrees = RADIUS / 60;
 
     function isNeighborsFavor(favor) {
-      const deltaLat = Math.abs(loggedInUser.lat - favor.author.lat);
-      const deltaLng = Math.abs(loggedInUser.lng - favor.author.lng);
-      const distance = Math.sqrt(deltaLat * deltaLat + deltaLng * deltaLng);
+      const distance = distanceToUser(favor.author);
       if (distance < radiusInDegrees) {
         return true;
       } else {

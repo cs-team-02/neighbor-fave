@@ -3,12 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchUsers } from '../store/usersReducer';
 import { Link } from 'react-router-dom';
 import { RiMapPinFill } from 'react-icons/ri';
+import { RADIUS } from './AllFavorsList';
 
 export default function AllUsersList() {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
   const loggedInId = useSelector((state) => state.auth.id);
+  const loggedInUser = useSelector((state) => state.auth);
   const loggedIn = useSelector((state) => !!state.auth.id);
+
+  console.log('RADIUS', RADIUS);
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -30,7 +34,23 @@ export default function AllUsersList() {
   };
 
   const neighborsFilter = function (users, filteredId) {
-    const neighborFilter = users.filter((user) => user.id !== filteredId);
+    //converting radius from miles to degrees
+    const radiusInDegrees = RADIUS / 60;
+
+    function isNeighbor(user) {
+      const deltaLat = Math.abs(loggedInUser.lat - user.lat);
+      const deltaLng = Math.abs(loggedInUser.lng - user.lng);
+      const distance = Math.sqrt(deltaLat * deltaLat + deltaLng * deltaLng);
+      if (distance < radiusInDegrees) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    const neighborFilter = users
+      .filter(isNeighbor)
+      .filter((user) => user.id !== filteredId);
     return neighborFilter;
   };
 
@@ -58,7 +78,7 @@ export default function AllUsersList() {
                     <RiMapPinFill className='icon-small' /> {user.address}
                   </div>
                   <div>
-                    Asks: {openFavors(user.favors).length} | Volunteering:
+                    Asks: {openFavors(user.favors).length} | Volunteering:{' '}
                     {openBids(user.bids).length}
                   </div>
                 </div>
