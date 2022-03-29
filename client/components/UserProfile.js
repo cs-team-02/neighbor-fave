@@ -7,7 +7,7 @@ import MyVolunteeringCard from './MyVolunteeringCard';
 import MyFavorAskCard from './MyFavorAskCard';
 import { RiMapPinFill } from 'react-icons/ri';
 
-export default function UserProfile(props) {
+export default function UserProfile(props, handleClick) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const loggedInId = useSelector((state) => state.auth.id);
@@ -45,7 +45,7 @@ export default function UserProfile(props) {
     return <h3>Loading user...</h3>;
   } else {
     return (
-      <div>
+      <div className='side-padding-div'>
         <div className='user-info-card'>
           <div className='spacer-div'></div>
           <div className='center-text-div'>
@@ -56,6 +56,11 @@ export default function UserProfile(props) {
           </div>
           <div className='center-text-div'>
             <RiMapPinFill className='icon-small' /> {user.address}
+          </div>
+          <div className='center-text-div'>
+            <a href='#' onClick={handleClick}>
+              Sign Out
+            </a>
           </div>
           <div className='spacer-div' />
         </div>

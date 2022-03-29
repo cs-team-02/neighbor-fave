@@ -18,7 +18,7 @@ router.get('/', async (req, res, next) => {
           as: 'author',
           include: { model: Bid },
         },
-        { model: Bid },
+        { model: Bid, include: { model: User, as: 'volunteer' } },
       ],
     });
     res.json(favors);

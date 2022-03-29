@@ -39,7 +39,7 @@ form div {
   display: inline-block;
 }
 #top-spacer-div {
-  height: 70px;
+  height: 80px;
 }
 
 #bottom-spacer-div {
@@ -65,10 +65,10 @@ form div {
   overflow: hidden;
   position: fixed;
   top: 0;
-  /* background-color: rgba(255, 255, 255, 0.692); */
+  background-color: rgb(255, 255, 255);
   width: 100%;
   z-index: 2;
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); */
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.205);
   margin: 0;
 }
@@ -112,7 +112,7 @@ form div {
   margin: 0;
 }
 
-.li-picture-div {
+.li-img-div {
   /* border-width: 1px;
   border-style: dotted; */
   width: 75px;
@@ -133,10 +133,23 @@ form div {
 }
 
 .li-img {
-  clip-path: circle(40px at center);
-  width: 80px;
+  clip-path: circle(35px at center);
+  width: 70px;
   /* max-width: 100%; */
   height: auto;
+}
+
+.tiny-img {
+  clip-path: circle(10px at center);
+  width: 20px;
+  height: auto;
+}
+
+.tiny-img-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1px;
 }
 
 #profile-thumb-div {
@@ -150,8 +163,8 @@ form div {
 }
 
 .thumb-img {
-  clip-path: circle(25px at center);
-  max-width: 50px;
+  clip-path: circle(20px at center);
+  max-width: 40px;
   height: auto;
   margin: 0px;
   padding: 0px;
@@ -161,6 +174,7 @@ form div {
   display: flex;
   flex-direction: row;
   align-content: flex-start;
+  gap: 5px;
 }
 
 .grey-text {
@@ -194,11 +208,15 @@ form div {
 .small-spacer-div {
   height: 1px;
 }
+.side-padding-div {
+  padding: 15px;
+}
 
 .ask-card-div {
   background-color: rgb(226, 226, 226);
   padding: 5px;
   padding-bottom: 15px;
+  margin-bottom: 5px;
   border-radius: 7px;
   border: 2px solid rgb(255, 210, 32);
 }
@@ -207,6 +225,7 @@ form div {
   background-color: rgb(226, 226, 226);
   padding: 5px;
   padding-bottom: 15px;
+  margin-bottom: 5px;
   border-radius: 7px;
 }
 
@@ -226,8 +245,14 @@ form div {
   border-radius: 4px;
 }
 .grey-box {
+  width: auto;
   background-color: rgb(224, 224, 224);
   text-align: center;
+  border-radius: 4px;
+}
+
+.test-class {
+  border: rgb(10, 116, 0);
 }
 
 /* Top Contributor Styles */
@@ -402,5 +427,5 @@ form div {
 .map {
   display: flex;
   width: 100%;
-  margin-top: 90px;
+  margin-top: 19px;
 }

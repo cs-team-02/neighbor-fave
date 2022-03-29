@@ -6,7 +6,7 @@ import useAuth from "./utils/useAuthHook";
 import { CgLogOut } from "react-icons/cg";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 
-const TopMenu = ({ handleClick, isLoggedIn }) => {
+const TopMenu = ({ isLoggedIn }) => {
   const currentUser = useAuth();
   return (
     <div className="menu-bar">
@@ -15,13 +15,13 @@ const TopMenu = ({ handleClick, isLoggedIn }) => {
           <div id="top-menu-div">
             {/* The navbar will show these links after you log in */}
 
+
             <MdOutlineArrowBackIosNew onClick={() => history.back()} />
 
-            <a href="#" onClick={handleClick}>
-              <CgLogOut className="icon-medium" />
-            </a>
-            <div id="profile-thumb-div">
-              <img className="thumb-img" src={currentUser.ImageURL} />
+            
+            <div id='profile-thumb-div'>
+              <img className='thumb-img' src={currentUser.ImageURL} />
+
 
               <Link to={`/profile`}>
                 <b>{currentUser.name}</b>
