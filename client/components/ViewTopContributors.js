@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import users, { fetchUsers } from "../store/usersReducer";
+import { fetchUsers } from "../store/usersReducer";
 import { fetchFavors } from "../store/favors";
 import { Link } from "react-router-dom";
+// import { FiStar } from "react-icons/fi";
+import { WiStars } from "react-icons/wi";
+import { RiStarSmileLine } from "react-icons/ri";
 const TopContributors = (props) => {
   const allUsers = useSelector((state) => state.users);
   const dispatch = useDispatch();
@@ -20,23 +23,19 @@ const TopContributors = (props) => {
   }, []);
 
   return (
-    <div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
+    <div id="top-contributors-container">
       <h1>Top contributors:</h1>
-      <br></br>
-      <br></br>
 
+      <br></br>
       <h2>Offered most bids (3+ bids)</h2>
+
       {usersMostBids.length ? (
         <div>
           {usersMostBids.map((user) => {
             return (
               <Link to={`/users/${user.id}`} key={user.id}>
                 <img height="40px" width="40px" src={user.ImageURL} />
-                {user.name} ( {user.bids.length} bids )
+                {user.name} ( {user.bids.length} bids ) <WiStars />
                 <br />
               </Link>
             );
@@ -45,6 +44,7 @@ const TopContributors = (props) => {
       ) : (
         <div>No neighbors with more than 3 pending bids right now</div>
       )}
+      <hr></hr>
       <h2>Fulfillled most favors (1+ favors)</h2>
       {usersMostFulfilled.length ? (
         <div>
@@ -52,7 +52,7 @@ const TopContributors = (props) => {
             return (
               <Link to={`/users/${user.id}`} key={user.id}>
                 <img height="40px" width="40px" src={user.ImageURL} />
-                {user.name} ( {user.bids.length} bids )
+                {user.name} ( {user.bids.length} bids ) <RiStarSmileLine />
                 <br />
               </Link>
             );
