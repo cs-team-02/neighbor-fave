@@ -10,10 +10,13 @@ function ChatForm(props) {
   const [showChat, setShowChat] = useState(false);
   const currentUser = useAuth();
 
-  useEffect(async () => {
-    await setRoom(props.match.params.id);
-    await setUsername(currentUser.name);
-    joinRoom();
+  useEffect(() => {
+    const asyncfunc = async () => {
+      await setRoom(props.match.params.id);
+      await setUsername(currentUser.name);
+      joinRoom();
+    };
+    asyncfunc().then(console.log('hello'));
   }, []);
 
   const joinRoom = () => {
