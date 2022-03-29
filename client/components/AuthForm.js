@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {authenticate, authenticateSignup} from '../store'
 import SearchField from './geo'
-import useForm from './utils/useForm';
 
 /**
  * COMPONENT
@@ -14,13 +13,12 @@ const AuthForm = ({ name, displayName }) => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
-    const name = evt.target.nameofuser.value
-    const username = evt.target.username.value
-    const password = evt.target.password.value
+    const username = evt.target.username.value;
+    const password = evt.target.password.value;
     if(evt.target.name === 'login'){
       dispatch(authenticate(username, password))
-      console.log('still in login')
     }else{
+      const name = evt.target.nameofuser.value;
       dispatch(authenticateSignup({name, username,address, password}))
     }
   }

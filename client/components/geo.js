@@ -42,8 +42,8 @@ return (
                             city: address[2],
                             state: address[address.length-3],
                             zipcode: address[address.length-2],
-                            lat: result.x,
-                            lng: result.y
+                            lat: result.y,
+                            lng: result.x
                         })
                     }}>
                         {result.label}
