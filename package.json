@@ -36,8 +36,7 @@
     "react-leaflet": "^3.2.5",
     "react-scroll-to-bottom": "^4.2.0",
     "sequelize": "^6.3.5",
-    "socket.io": "^4.4.1",
-    "socket.io-client": "^4.4.1"
+    "socket.io": "^4.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
