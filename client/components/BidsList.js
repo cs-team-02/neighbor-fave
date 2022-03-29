@@ -14,7 +14,7 @@ const BidsList = (props) => {
           return <Bid key={bid.id} bid={bid} favor={favor} />;
         })
       ) : (
-        <div>
+        <div id="list-of-bids">
           {favor.bids ? (
             favor.bids
               .filter((bid) => bid.volunteer.id === CurrentUser.id)
