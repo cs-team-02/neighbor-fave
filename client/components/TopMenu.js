@@ -13,6 +13,7 @@ const TopMenu = ({ isLoggedIn }) => {
         {isLoggedIn ? (
           <div id='top-menu-div'>
             {/* The navbar will show these links after you log in */}
+            <div></div>
             <div id='profile-thumb-div'>
               <img className='thumb-img' src={currentUser.ImageURL} />
 
