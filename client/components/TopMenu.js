@@ -1,23 +1,27 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { logout } from '../store';
-import useAuth from './utils/useAuthHook';
-import { CgLogOut } from 'react-icons/cg';
+import React from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { logout } from "../store";
+import useAuth from "./utils/useAuthHook";
+import { CgLogOut } from "react-icons/cg";
+import { MdOutlineArrowBackIosNew } from "react-icons/md";
 
 const TopMenu = ({ handleClick, isLoggedIn }) => {
   const currentUser = useAuth();
   return (
-    <div className='menu-bar'>
-      <nav className='padding-div'>
+    <div className="menu-bar">
+      <nav className="padding-div">
         {isLoggedIn ? (
-          <div id='top-menu-div'>
+          <div id="top-menu-div">
             {/* The navbar will show these links after you log in */}
-            <a href='#' onClick={handleClick}>
-              <CgLogOut className='icon-medium' />
+
+            <MdOutlineArrowBackIosNew onClick={() => history.back()} />
+
+            <a href="#" onClick={handleClick}>
+              <CgLogOut className="icon-medium" />
             </a>
-            <div id='profile-thumb-div'>
-              <img className='thumb-img' src={currentUser.ImageURL} />
+            <div id="profile-thumb-div">
+              <img className="thumb-img" src={currentUser.ImageURL} />
 
               <Link to={`/profile`}>
                 <b>{currentUser.name}</b>
@@ -25,10 +29,10 @@ const TopMenu = ({ handleClick, isLoggedIn }) => {
             </div>
           </div>
         ) : (
-          <div className='right-text-div'>
+          <div className="right-text-div">
             {/* The navbar will show these links before you log in */}
-            <Link to='/login'>Login</Link>
-            <Link to='/signup'>Sign Up</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/signup">Sign Up</Link>
           </div>
         )}
       </nav>
