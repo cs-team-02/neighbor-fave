@@ -43,7 +43,7 @@ export default function SingleUserView(props) {
           <div className='center-text-div'>
             <b>{user.name}</b>
           </div>
-          <div className='center-text-div'>{user.address}</div>
+          <div className='center-text-div'>{user.streetName}</div>
           <div className='spacer-div' />
         </div>
         <div>

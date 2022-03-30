@@ -159,7 +159,6 @@ const users = [
     password: '1011011',
     ImageURL:
       'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
-    address: '111 Tree St, Milwaukee, WI',
     streetNumber: '3463',
     streetName: 'South 9th Street',
     city: 'Milwaukee',

@@ -20,8 +20,8 @@ export default function AllUsersList() {
   } else {
     return (
       <div>
-        {users.map((user) => (
-          <div>
+        {users.map((user, index) => (
+          <div key={index}>
             <div className='li-div'>
               <div className='li-picture-div'>
                 <img className='li-img' src={user.ImageURL} />
@@ -33,7 +33,7 @@ export default function AllUsersList() {
                       <b>{user.name}</b>
                     </Link>
                   </div>
-                  <div>{user.address}</div>
+                  <div>{user.streetName}</div>
                   <div>
                     Asks: {user.favors.length} | Volunteering:{' '}
                     {user.bids.length}
