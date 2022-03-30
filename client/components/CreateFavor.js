@@ -62,7 +62,7 @@ function CreateFavor() {
             onChange={handleChange}
             value={values.description || ''}
           />
-          <label htmlFor='favorDate'>When do you need this favor: </label>
+          <label htmlFor='favorDate'>Favor Timeframe: </label>
           <input
             type='date'
             name='favorDate'
