@@ -9,8 +9,8 @@ const favors = [
     status: 'OPEN',
     favorDate: '2022-03-09',
     authorId: '1',
-    lat: 51.615,
-    lng: -0.09,
+    lat: 43.01114408227486,
+    lng: -87.91168416348074
   },
   {
     title: 'New Printer Setup',
@@ -20,8 +20,8 @@ const favors = [
     status: 'CLOSED',
     favorDate: '2022-03-15',
     authorId: '3',
-    lat: 51.605,
-    lng: -0.09,
+    lat: 43.012224,
+    lng: -87.91289414285716
   },
   {
     title: 'Broken Mailbox',
@@ -32,8 +32,8 @@ const favors = [
     status: 'OPEN',
     favorDate: '2022-03-06',
     authorId: '2',
-    lat: 51.611,
-    lng: -0.1,
+    lat: 43.0525455,
+    lng: -87.914427
   },
   {
     title: 'Tree blocking stop sign',
@@ -44,8 +44,8 @@ const favors = [
     status: 'OPEN',
     favorDate: '2022-03-12',
     authorId: '5',
-    lat: 51.621,
-    lng: -0.095,
+    lat: 42.996119740187375,
+    lng: -87.92628676152603
   },
   {
     title: 'Need to borrow a toolset',
@@ -56,8 +56,8 @@ const favors = [
     status: 'OPEN',
     favorDate: '2022-03-16',
     authorId: '4',
-    lat: 51.618,
-    lng: -0.092,
+    lat: 43.015858019981046,
+    lng: -87.91411147259828
   },
   {
     title: 'Help changing a tail light',
@@ -67,8 +67,8 @@ const favors = [
     status: 'OPEN',
     favorDate: '2022-03-05',
     authorId: '2',
-    lat: 51.615,
-    lng: -0.11,
+    lat: 43.0525455,
+    lng: -87.914427
   },
   {
     title: 'Moving trailer in driveway',
@@ -79,8 +79,8 @@ const favors = [
     status: 'OPEN',
     favorDate: '2022-03-06',
     authorId: '6',
-    lat: 51.611,
-    lng: -0.09,
+    lat: 42.992022270568064,
+    lng: -87.92914826052883
   },
   {
     title: 'Basketball hoop',
@@ -91,8 +91,8 @@ const favors = [
     status: 'CLOSED',
     favorDate: '2022-03-09',
     authorId: '7',
-    lat: 51.615,
-    lng: -0.12,
+    lat: 42.99151262921522,
+    lng: -87.93019677942696
   },
   {
     title: 'Porch light bulb blown',
@@ -103,8 +103,8 @@ const favors = [
     status: 'CLOSED',
     favorDate: '2022-03-09',
     authorId: '8',
-    lat: 51.613,
-    lng: -0.099,
+    lat: 42.99006241490951,
+    lng: -87.92192638784873
   },
   {
     title: 'Broken fence',
@@ -115,8 +115,8 @@ const favors = [
     status: 'OPEN',
     favorDate: '2022-03-08',
     authorId: '7',
-    lat: 51.601,
-    lng: -0.112,
+    lat: 42.99151262921522,
+    lng: -87.93019677942696
   },
 ];
 
