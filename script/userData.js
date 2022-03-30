@@ -19,13 +19,13 @@ const users = [
     password: '123',
     ImageURL:
       'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
-    streetNumber: '145',
-    streetName: 'West Walnut Street',
+    streetNumber: '1912',
+    streetName: 'South Muskego Avenue',
     city: 'Milwaukee',
     state: 'Wisconsin',
-    zipcode: '53208',
-    lat: 43.0525455,
-    lng: -87.914427
+    zipcode: '53204',
+    lat: 43.00998114151013,
+    lng: -87.94022537617863
   },
   {
     name: 'Sulaiman',

@@ -32,8 +32,8 @@ const favors = [
     status: 'OPEN',
     favorDate: '2022-03-06',
     authorId: '2',
-    lat: 43.0525455,
-    lng: -87.914427
+    lat: 43.00998114151013,
+    lng: -87.94022537617863
   },
   {
     title: 'Tree blocking stop sign',
@@ -67,8 +67,8 @@ const favors = [
     status: 'OPEN',
     favorDate: '2022-03-05',
     authorId: '2',
-    lat: 43.0525455,
-    lng: -87.914427
+    lat: 43.00998114151032,
+    lng: -87.94022537617844
   },
   {
     title: 'Moving trailer in driveway',
@@ -116,7 +116,7 @@ const favors = [
     favorDate: '2022-03-08',
     authorId: '7',
     lat: 42.99151262921522,
-    lng: -87.93019677942696
+    lng: -87.93019677942642
   },
 ];
 
