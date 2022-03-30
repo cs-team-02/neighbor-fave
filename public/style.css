@@ -477,7 +477,7 @@ body {
 .joinChatContainer input {
   font-family: 'Roboto', sans-serif;
   outline: 0;
-  background: #f2f2f2;
+  background: #ffd89b;
   width: 100%;
   border: 0;
   margin: 0 0 15px;
@@ -494,13 +494,13 @@ body {
   border-radius: 5px;
   padding: 5px;
   font-size: 16px;
-  background: #43a047;
+  background: #ffd89b;
   color: #fff;
   cursor: pointer;
 }
 
 .joinChatContainer button:hover {
-  background: #2e7d32;
+  background: #ffd89b;
 }
 
 .chat-window {
@@ -556,7 +556,7 @@ body {
   height: auto;
   min-height: 40px;
   max-width: 120px;
-  background-color: #d1d1d1;
+  background-color: #b2b1b9;
   border-radius: 5px;
   color: white;
   display: flex;
@@ -588,7 +588,7 @@ body {
 
 #other .message-content {
   justify-content: flex-end;
-  background-color: #ffe162;
+  background-color: #f3c623;
 }
 
 #other .message-meta {
