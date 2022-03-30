@@ -20,8 +20,8 @@ const favors = [
     status: 'CLOSED',
     favorDate: '2022-03-15',
     authorId: '3',
-    lat: 43.012224,
-    lng: -87.91289414285716
+    lat: 43.00997295315792,
+    lng: -87.93098498631797
   },
   {
     title: 'Broken Mailbox',

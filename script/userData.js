@@ -33,13 +33,13 @@ const users = [
     password: '123',
     ImageURL:
       'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
-    streetNumber: '215',
-    streetName: 'West Mitchell Street',
+    streetNumber: '1905',
+    streetName: 'South 15th Street',
     city: 'Milwaukee',
     state: 'Wisconsin',
     zipcode: '53204',
-    lat: 43.012224,
-    lng: -87.91289414285716
+    lat: 43.00997295315792,
+    lng: -87.93098498631797
   },
   {
     name: 'Konstantin',
