@@ -1,5 +1,6 @@
 const users = [
   {
+    id: 1,
     name: 'Tedi',
     username: 'tedi',
     password: '123',
@@ -14,6 +15,7 @@ const users = [
     lng: -87.91168416348074
   },
   {
+    id: 2,
     name: 'Kwame',
     username: 'kwame',
     password: '123',
@@ -28,6 +30,7 @@ const users = [
     lng: -87.94022537617863
   },
   {
+    id: 3,
     name: 'Sulaiman',
     username: 'sulaiman',
     password: '123',
@@ -42,6 +45,7 @@ const users = [
     lng: -87.93098498631797
   },
   {
+    id: 4,
     name: 'Konstantin',
     username: 'konstantin',
     password: '123',
@@ -56,6 +60,7 @@ const users = [
     lng: -87.91411147259828
   },
   {
+    id: 5,
     name: 'Bob',
     username: 'bobsyourneighbor',
     password: 'bobrocks',
@@ -70,6 +75,7 @@ const users = [
     lng: -87.92628676152603
   },
   {
+    id: 6,
     name: 'Susan',
     username: 'soccermom34',
     password: 'go0o0o0al',
@@ -84,6 +90,7 @@ const users = [
     lng: -87.92914826052883
   },
   {
+    id: 7,
     name: 'Peter',
     username: 'musicianpete',
     password: 'beethoven13th',
@@ -98,6 +105,7 @@ const users = [
     lng: -87.93019677942696
   },
   {
+    id: 8,
     name: 'Cheryl',
     username: 'momof3',
     password: 'password',
@@ -112,6 +120,7 @@ const users = [
     lng: -87.92192638784873
   },
   {
+    id: 9,
     name: 'Tim',
     username: 'itstim',
     password: 'fisher45',
@@ -126,6 +135,7 @@ const users = [
     lng: -87.92038563604434
   },
   {
+    id: 10,
     name: 'Sean',
     username: 'purepositivity',
     password: 'whiskeyincoffee',
@@ -140,6 +150,7 @@ const users = [
     lng: -87.92060285758559
   },
   {
+    id: 11,
     name: 'Jibron',
     username: 'oshawattenthusiast',
     password: 'saurottsucks',
@@ -154,6 +165,7 @@ const users = [
     lng: -87.91888937930764
   },
   {
+    id: 12,
     name: 'Bart',
     username: 'bartbot',
     password: '1011011',

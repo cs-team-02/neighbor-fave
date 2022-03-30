@@ -1,21 +1,35 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchSingleUser } from '../store/singleUserReducer';
+import { logout } from '../store';
 import { fetchFavors } from '../store/favors';
 import { Link } from 'react-router-dom';
-import VolunteeringCard from './VolunteeringCard';
-import FavorAskCard from './FavorAskCard';
+import MyVolunteeringCard from './MyVolunteeringCard';
+import MyFavorAskCard from './MyFavorAskCard';
 import { RiMapPinFill } from 'react-icons/ri';
 
-export default function SingleUserView(props) {
+export default function UserProfile() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const loggedInId = useSelector((state) => state.auth.id);
   const loggedIn = useSelector((state) => !!state.auth.id);
 
   useEffect(() => {
-    dispatch(fetchSingleUser(props.match.params.id));
-  }, [props.match.params.id]);
+    dispatch(fetchSingleUser(loggedInId));
+  }, []);
+
+  const handleClick = function () {
+    dispatch(logout());
+  };
+  // ensureArray only returns array if it is defined
+
+  const ensureArray = function (array) {
+    if (array === undefined) {
+      return [];
+    } else {
+      return array;
+    }
+  };
 
   // openFavors and openBids takes arrays of favors, bids and returns only active favors, bids for active favors
   const openFavors = function (favors) {
@@ -45,7 +59,12 @@ export default function SingleUserView(props) {
             <b>{user.name}</b>
           </div>
           <div className='center-text-div'>
-            <RiMapPinFill className='icon-small' /> {user.streetName}
+            <RiMapPinFill className='icon-small' /> {user.address}
+          </div>
+          <div className='center-text-div'>
+            <a href='#' onClick={handleClick}>
+              Sign Out
+            </a>
           </div>
           <div className='spacer-div' />
         </div>
@@ -53,15 +72,19 @@ export default function SingleUserView(props) {
           <div>
             <div>
               <b>
-                {user.name}'s Favor Asks:{' '}
-                <b>{user.favors && openFavors(user.favors).length}</b>
+                My Favor Asks:{' '}
+                <b>{openFavors(ensureArray(user.favors)).length}</b>
               </b>
             </div>
             <hr />
             <div>
               {user.favors &&
                 openFavors(user.favors).map((favor) => (
-                  <FavorAskCard favor={favor} loggedInId={loggedInId} />
+                  <MyFavorAskCard
+                    favor={favor}
+                    user={user}
+                    loggedInId={loggedInId}
+                  />
                 ))}
             </div>
           </div>
@@ -69,19 +92,15 @@ export default function SingleUserView(props) {
             <div className='spacer-div'></div>
             <div>
               <b>
-                {user.name}'s Volunteering:{' '}
-                <b>{user.bids && openBids(user.bids).length}</b>
+                My Volunteering:{' '}
+                <b>{openBids(ensureArray(user.bids)).length}</b>
               </b>
             </div>
             <hr />
             <div>
               {user.bids &&
                 openBids(user.bids).map((bid) => (
-                  <VolunteeringCard
-                    bid={bid}
-                    user={user}
-                    loggedInId={loggedInId}
-                  />
+                  <MyVolunteeringCard bid={bid} />
                 ))}
             </div>
           </div>

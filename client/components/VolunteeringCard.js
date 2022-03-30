@@ -1,27 +1,40 @@
+//This component renders favor for which neighbor volunteered
+
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import favors, { fetchFavors } from '../store/favors';
 import Map from './Map';
 import { Link } from 'react-router-dom';
 
-export default function VolunteeringFavorCard(props) {
-  const favor = props.favor;
+export default function VolunteeringCard(props) {
+  const bid = props.bid;
+  const favor = props.bid.favor;
   const user = props.user;
+  const loggedInId = props.loggedInId;
 
-  const renderButton = function () {
-    if (favor.authorId === user.id) {
+  const renderStatus = function (bid) {
+    if (bid.status === 'ACCEPTED') {
       return (
-        <div className='orange-button'>
-          <Link to={`/favors/${favor.id}`}>
-            <b>Volunteer</b>
-          </Link>
+        <div className='green-text'>
+          <b>{user.name}'s offer accepted!</b>
         </div>
       );
+    } else {
+      return <div className='grey-text'>{user.name} offered help</div>;
     }
   };
 
-  const renderFavorAuthorName = function () {
-    if (favor.authorId !== user.id) {
+  const myFavorAskCheck = function () {
+    if (favor.author.id === loggedInId) {
+      return (
+        <div className='orange-button'>
+          {/* <Link to={`/profile`}>
+          <b>You asked for this favor!</b>
+        </Link> */}
+          <b>Your favor ask</b>
+        </div>
+      );
+    } else {
       return (
         <div>
           <Link to={`/users/${favor.authorId}`}>
@@ -29,26 +42,19 @@ export default function VolunteeringFavorCard(props) {
           </Link>
         </div>
       );
-    } else {
-      return <div className='grey-text'>Favor needed: {favor.favorDate}</div>;
     }
   };
 
   return (
-    <div className='card-div' key={favor.id}>
-      {/* <hr /> */}
-      {renderFavorAuthorName()}
-
-      <div>
+    <div className='volunteer-card-div' key={favor.id}>
+      {myFavorAskCheck()}
+      <div className='center-text-div'>
         <Link to={`/favors/${favor.id}`}>
           <b>{favor.title}</b>
         </Link>
       </div>
       <div>{favor.description}</div>
-      <div className='center-text-div'>
-        <b>{favor.bids.length} Volunteers</b>
-      </div>
-      {renderButton()}
+      <div className='center-text-div'>{renderStatus(bid)}</div>
     </div>
   );
 }
