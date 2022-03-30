@@ -46,6 +46,7 @@
     "axios-mock-adapter": "^1.16.0",
     "babel-loader": "^8.2.2",
     "chai": "^4.2.0",
+    "css-loader": "^6.7.1",
     "esm": "^3.2.25",
     "mocha": "^6.2.3",
     "nodemon": "^1.19.4",
@@ -59,6 +60,7 @@
     "redux-logger": "^3.0.6",
     "redux-mock-store": "^1.5.3",
     "redux-thunk": "^2.3.0",
+    "style-loader": "^3.3.1",
     "supertest": "^4.0.2",
     "webpack": "^5.15.0",
     "webpack-cli": "^4.3.1"
