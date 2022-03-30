@@ -66,8 +66,8 @@ export default function AllUsersList() {
             Contributors
           </span>
         </Link>
-        {neighborsFilter(users, loggedInId).map((user) => (
-          <div>
+        {neighborsFilter(users, loggedInId).map((user, index) => (
+          <div key={index}>
             <div className="li-div">
               <div className="li-img-div">
                 <img className="li-img" src={user.ImageURL} />
@@ -80,7 +80,7 @@ export default function AllUsersList() {
                     </Link>
                   </div>
                   <div>
-                    <RiMapPinFill className="icon-small" /> {user.address}
+                    <RiMapPinFill className="icon-small" /> {user.streetName}
                   </div>
                   <div>
                     Asks: {openFavors(user.favors).length} | Volunteering:{" "}

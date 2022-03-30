@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { RiMapPinFill } from 'react-icons/ri';
 
 // RADIUS in miles exports to AllUsersList.js
-export const RADIUS = 1;
+export const RADIUS = 10;
 
 export default function AllFavorsList() {
   const dispatch = useDispatch();
@@ -83,19 +83,12 @@ export default function AllFavorsList() {
     }
   };
 
-  // let arrayToSort = [{ id: 1, favorDate: 2022 - 03 - 09 }];
 
   if (favors === undefined) {
     return <h3>Loading favors...</h3>;
   } else if (favors === 0) {
     return <h3>Looks like noone needs a favor...</h3>;
   } else {
-    // console.log('UNFILTERED FAVORS', favors);
-    // console.log('FILTERED FAVORS', filterFavorsByNeighbors(favors));
-    // const date = new Date('2022-03-11');
-    // const date2 = favors[0];
-    // console.log('DATE', date);
-    // console.log('DATE2', date2);
 
     return (
       <div>
@@ -110,7 +103,7 @@ export default function AllFavorsList() {
                 <div>{favor.title}</div>
                 <div>{favor.description}</div>
                 <div>
-                  <RiMapPinFill className="icon-small" /> {favor.author.address}
+                  <RiMapPinFill className="icon-small" /> {favor.author.streetName}
                 </div>
                 <div className="grey-text">
                   {favor.authorId !== loggedInId &&
