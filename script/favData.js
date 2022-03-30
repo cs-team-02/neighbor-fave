@@ -14,6 +14,7 @@ const favors = [
     lng: -87.91168416348074
   },
   {
+    id:2,
     title: 'New Printer Setup',
     imageUrl:
       'https://i.rtings.com/assets/products/yJMWE5vx/hp-envy-photo-7855/design-medium.jpg',

@@ -44,28 +44,7 @@ const User = db.define('user', {
   lng: {
     type: Sequelize.FLOAT,
   },
-  streetNumber: {
-    type: Sequelize.STRING,
-  },
-  streetName: {
-    type: Sequelize.STRING,
-  },
-  city: {
-    type: Sequelize.STRING,
-  },
-
-  state: {
-    type: Sequelize.STRING,
-  },
-  zipCode: {
-    type: Sequelize.STRING,
-  },
-  lat: {
-    type: Sequelize.FLOAT,
-  },
-  lng: {
-    type: Sequelize.FLOAT,
-  },
+ 
 });
 
 module.exports = User;
