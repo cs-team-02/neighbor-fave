@@ -760,6 +760,7 @@ body {
   width: 408px;
 }
 .fav-button {
+  font-size: large;
   background-color: rgb(255, 210, 32);
   padding: 2px;
   margin: auto;
@@ -767,12 +768,14 @@ body {
   border-radius: 4px;
 }
 .create-favor-form {
+  font-size: x-large;
   text-align: center;
   border-style: outset;
   border-radius: 15px;
   width: fit-content;
 }
 .xl-form {
+  margin: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
