@@ -16,6 +16,7 @@ import { OpenStreetMapProvider } from 'leaflet-geosearch';
 
     timeout.current = setTimeout(async() => {
       const results = await provider.search({query: e.target.value});
+      console.log(results)
       setResults(results);
     }, 500);
 }

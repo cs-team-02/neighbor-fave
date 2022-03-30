@@ -5,7 +5,13 @@ const users = [
     password: '123',
     ImageURL:
       'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
-    address: '134 Maple Ave, Milwaukee, WI',
+    streetNumber: '134',
+    streetName: 'West Maple Street',
+    city: 'Milwaukee',
+    state: 'Wisconsin',
+    zipcode: '53204',
+    lat: 43.01114408227486,
+    lng: -87.91168416348074
   },
   {
     name: 'Kwame',
@@ -13,7 +19,13 @@ const users = [
     password: '123',
     ImageURL:
       'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
-    address: '145 W Walnut St, Milwaukee, WI',
+    streetNumber: '145',
+    streetName: 'West Walnut Street',
+    city: 'Milwaukee',
+    state: 'Wisconsin',
+    zipcode: '53208',
+    lat: 43.0525455,
+    lng: -87.914427
   },
   {
     name: 'Sulaiman',
@@ -21,7 +33,13 @@ const users = [
     password: '123',
     ImageURL:
       'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
-    address: '123 Walnut St, Milwaukee, WI',
+    streetNumber: '215',
+    streetName: 'West Mitchell Street',
+    city: 'Milwaukee',
+    state: 'Wisconsin',
+    zipcode: '53204',
+    lat: 43.012224,
+    lng: -87.91289414285716
   },
   {
     name: 'Konstantin',
@@ -29,7 +47,13 @@ const users = [
     password: '123',
     ImageURL:
       'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
-    address: '156 Ash St, Milwaukee, WI',
+    streetNumber: '1505',
+    streetName: 'South 3rd Street',
+    city: 'Milwaukee',
+    state: 'Wisconsin',
+    zipcode: '53204',
+    lat: 43.015858019981046,
+    lng: -87.91411147259828
   },
   {
     name: 'Bob',
@@ -37,7 +61,13 @@ const users = [
     password: 'bobrocks',
     ImageURL:
       'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
-    address: '111 Tree St, Milwaukee, WI',
+    streetNumber: '2685',
+    streetName: 'South 11th Street',
+    city: 'Milwaukee',
+    state: 'Wisconsin',
+    zipcode: '53215',
+    lat: 42.996119740187375,
+    lng: -87.92628676152603
   },
   {
     name: 'Susan',
@@ -45,7 +75,13 @@ const users = [
     password: 'go0o0o0al',
     ImageURL:
       'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
-    address: '111 Tree St, Milwaukee, WI',
+    streetNumber: '1326',
+    streetName: 'West Dakota Street',
+    city: 'Milwaukee',
+    state: 'Wisconsin',
+    zipcode: '53215',
+    lat: 42.992022270568064,
+    lng: -87.92914826052883
   },
   {
     name: 'Peter',
@@ -53,7 +89,13 @@ const users = [
     password: 'beethoven13th',
     ImageURL:
       'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
-    address: '111 Tree St, Milwaukee, WI',
+    streetNumber: '2921',
+    streetName: 'South 14th Street',
+    city: 'Milwaukee',
+    state: 'Wisconsin',
+    zipcode: '53215',
+    lat: 42.99151262921522,
+    lng: -87.93019677942696
   },
   {
     name: 'Cheryl',
@@ -61,7 +103,13 @@ const users = [
     password: 'password',
     ImageURL:
       'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
-    address: '111 Tree St, Milwaukee, WI',
+    streetNumber: '833',
+    streetName: 'West Manitoba Street',
+    city: 'Milwaukee',
+    state: 'Wisconsin',
+    zipcode: '53215',
+    lat: 42.99006241490951,
+    lng: -87.92192638784873
   },
   {
     name: 'Tim',
@@ -69,7 +117,13 @@ const users = [
     password: 'fisher45',
     ImageURL:
       'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
-    address: '111 Tree St, Milwaukee, WI',
+    streetNumber: '3015',
+    streetName: 'South 7th Street',
+    city: 'Milwaukee',
+    state: 'Wisconsin',
+    zipcode: '53215',
+    lat: 42.989797124991284,
+    lng: -87.92038563604434
   },
   {
     name: 'Sean',
@@ -77,7 +131,13 @@ const users = [
     password: 'whiskeyincoffee',
     ImageURL:
       'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
-    address: '111 Tree St, Milwaukee, WI',
+    streetNumber: '715',
+    streetName: 'West Oklahoma Avenue',
+    city: 'Milwaukee',
+    state: 'Wisconsin',
+    zipcode: '53215',
+    lat: 42.98820378571246,
+    lng: -87.92060285758559
   },
   {
     name: 'Jibron',
@@ -85,7 +145,13 @@ const users = [
     password: 'saurottsucks',
     ImageURL:
       'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
-    address: '111 Tree St, Milwaukee, WI',
+    streetNumber: '2303',
+    streetName: 'South 6th Street',
+    city: 'Milwaukee',
+    state: 'Wisconsin',
+    zipcode: '53215',
+    lat: 43.0026858794249,
+    lng: -87.91888937930764
   },
   {
     name: 'Bart',
@@ -94,6 +160,13 @@ const users = [
     ImageURL:
       'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
     address: '111 Tree St, Milwaukee, WI',
+    streetNumber: '3463',
+    streetName: 'South 9th Street',
+    city: 'Milwaukee',
+    state: 'Wisconsin',
+    zipcode: '53215',
+    lat: 42.982131688371034,
+    lng: -87.92295476725828
   },
 ];
 module.exports = users;
