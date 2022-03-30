@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { RiMapPinFill } from 'react-icons/ri';
 
 // RADIUS in miles exports to AllUsersList.js
-export const RADIUS = 10;
+export const RADIUS = 5000;
 
 export default function AllFavorsList() {
   const dispatch = useDispatch();
