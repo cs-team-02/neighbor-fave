@@ -31,22 +31,23 @@ function CreateFavor() {
   //const userLocation = [currentUser.lat, current.lng];
 
     return (
+      <div className='xl-form'>
+
       <div className='create-favor-form'>
         <div>
           <h3>Ask: </h3>
         </div>
-        <hr />
         <form
           id='create-favor-form'
           onSubmit={create}
         >
-          <label htmlFor='title'>Title: </label>
+          <label htmlFor='title'>Ask a Favor: </label>
           <input
             type='text'
             name='title'
             onChange={handleChange}
             value={values.title || ''}
-          />
+            />
           <label htmlFor='imageURL'>Image: </label>
           <input
             type='text'
@@ -54,14 +55,14 @@ function CreateFavor() {
             onChange={handleChange}
             value={values.imageURL || ''}
           />
-          <label htmlFor='description'>Description: </label>
+          <label htmlFor='description'>Give more context: </label>
           <input
             type='text'
             name='description'
             onChange={handleChange}
             value={values.description || ''}
           />
-          <label htmlFor='favorDate'>Date: </label>
+          <label htmlFor='favorDate'>When do you need this favor: </label>
           <input
             type='date'
             name='favorDate'
@@ -76,11 +77,12 @@ function CreateFavor() {
           <br /> */}
           <br />
           <div>
-            <button className='submit-btn'>
+            <button className='fav-button'>
               Ask a Favor
             </button>
           </div>
         </form>
+      </div>
       </div>
     );
   }

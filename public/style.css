@@ -759,3 +759,22 @@ body {
 .list-group {
   width: 408px;
 }
+.fav-button {
+  background-color: rgb(255, 210, 32);
+  padding: 2px;
+  margin: auto;
+  width: 200px;
+  border-radius: 4px;
+}
+.create-favor-form {
+  text-align: center;
+  border-style: outset;
+  border-radius: 15px;
+  width: fit-content;
+}
+.xl-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
