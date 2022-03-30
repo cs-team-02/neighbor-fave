@@ -313,6 +313,16 @@ form div {
     flex: 1 1;
   } */
 }
+
+#top-contributors-link {
+  text-decoration: none;
+  position: absolute;
+  right: 10px;
+  width: fit-content;
+  margin: 10px;
+  font-size: large;
+}
+
 #top-contributors-container {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -439,7 +449,7 @@ form div {
   height: 100vh;
   background: #fff;
   color: #212121;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   display: grid;
   place-items: center;
 }
@@ -447,7 +457,7 @@ body {
   margin: 0%;
   padding: 0%;
 }
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 
 .joinChatContainer {
   position: relative;
@@ -465,7 +475,7 @@ body {
   margin-bottom: 1rem;
 }
 .joinChatContainer input {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
   width: 100%;
@@ -614,7 +624,7 @@ body {
   border-right: 1px dotted #607d8b;
 
   outline: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .chat-window .chat-footer button {
@@ -642,7 +652,7 @@ body {
   position: absolute;
   background: #fff;
   color: #212121;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   display: grid;
   place-items: center;
 }

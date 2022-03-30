@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchUsers } from '../store/usersReducer';
-import { Link } from 'react-router-dom';
-import { RiMapPinFill } from 'react-icons/ri';
-import { RADIUS } from './AllFavorsList';
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchUsers } from "../store/usersReducer";
+import { Link } from "react-router-dom";
+import { RiMapPinFill } from "react-icons/ri";
+import { RADIUS } from "./AllFavorsList";
 
 export default function AllUsersList() {
   const dispatch = useDispatch();
@@ -25,14 +25,14 @@ export default function AllUsersList() {
   // can this be a custom hook to filter favors by status?
   const openFavors = function (favors) {
     const openFavors = favors.filter(
-      (favor) => favor.status === 'OPEN' || favor.status === 'ASSIGNED'
+      (favor) => favor.status === "OPEN" || favor.status === "ASSIGNED"
     );
     return openFavors;
   };
   // can this be a custom hook to filter bids by favor status?
   const openBids = function (bids) {
     const openBids = bids.filter(
-      (bid) => bid.favor.status === 'OPEN' || bid.favor.status === 'ASSIGNED'
+      (bid) => bid.favor.status === "OPEN" || bid.favor.status === "ASSIGNED"
     );
     return openBids;
   };
@@ -60,6 +60,12 @@ export default function AllUsersList() {
   } else {
     return (
       <div className="side-padding-div">
+        <Link to="/topContributors">
+          <span className="orange-button" id="top-contributors-link">
+            See Top <br />
+            Contributors
+          </span>
+        </Link>
         {neighborsFilter(users, loggedInId).map((user) => (
           <div>
             <div className="li-div">
@@ -77,7 +83,7 @@ export default function AllUsersList() {
                     <RiMapPinFill className="icon-small" /> {user.address}
                   </div>
                   <div>
-                    Asks: {openFavors(user.favors).length} | Volunteering:{' '}
+                    Asks: {openFavors(user.favors).length} | Volunteering:{" "}
                     {openBids(user.bids).length}
                   </div>
                 </div>
