@@ -21,7 +21,8 @@ const User = db.define('user', {
   ImageURL: {
     type: Sequelize.STRING,
     allowNull: false,
-    defaultValue:'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
+    defaultValue:
+      'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
   },
   streetNumber: {
     type: Sequelize.STRING,
@@ -35,16 +36,15 @@ const User = db.define('user', {
   state: {
     type: Sequelize.STRING,
   },
-  zipcode: {
+  zipCode: {
     type: Sequelize.STRING,
-  },  
+  },
   lat: {
     type: Sequelize.FLOAT,
-  },  
+  },
   lng: {
     type: Sequelize.FLOAT,
   },
- 
 });
 
 module.exports = User;

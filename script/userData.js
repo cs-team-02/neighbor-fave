@@ -10,9 +10,9 @@ const users = [
     streetName: 'West Maple Street',
     city: 'Milwaukee',
     state: 'Wisconsin',
-    zipcode: '53204',
+    zipCode: '53204',
     lat: 43.01114408227486,
-    lng: -87.91168416348074
+    lng: -87.91168416348074,
   },
   {
     id: 1002,
@@ -25,9 +25,9 @@ const users = [
     streetName: 'South Muskego Avenue',
     city: 'Milwaukee',
     state: 'Wisconsin',
-    zipcode: '53204',
+    zipCode: '53204',
     lat: 43.00998114151013,
-    lng: -87.94022537617863
+    lng: -87.94022537617863,
   },
   {
     id: 1003,
@@ -40,9 +40,9 @@ const users = [
     streetName: 'South 15th Street',
     city: 'Milwaukee',
     state: 'Wisconsin',
-    zipcode: '53204',
+    zipCode: '53204',
     lat: 43.00997295315792,
-    lng: -87.93098498631797
+    lng: -87.93098498631797,
   },
   {
     id: 1004,
@@ -55,9 +55,9 @@ const users = [
     streetName: 'South 3rd Street',
     city: 'Milwaukee',
     state: 'Wisconsin',
-    zipcode: '53204',
+    zipCode: '53204',
     lat: 43.015858019981046,
-    lng: -87.91411147259828
+    lng: -87.91411147259828,
   },
   {
     id: 1005,
@@ -70,9 +70,9 @@ const users = [
     streetName: 'South 11th Street',
     city: 'Milwaukee',
     state: 'Wisconsin',
-    zipcode: '53215',
+    zipCode: '53215',
     lat: 42.996119740187375,
-    lng: -87.92628676152603
+    lng: -87.92628676152603,
   },
   {
     id: 1006,
@@ -85,9 +85,9 @@ const users = [
     streetName: 'West Dakota Street',
     city: 'Milwaukee',
     state: 'Wisconsin',
-    zipcode: '53215',
+    zipCode: '53215',
     lat: 42.992022270568064,
-    lng: -87.92914826052883
+    lng: -87.92914826052883,
   },
   {
     id: 1007,
@@ -100,9 +100,9 @@ const users = [
     streetName: 'South 14th Street',
     city: 'Milwaukee',
     state: 'Wisconsin',
-    zipcode: '53215',
+    zipCode: '53215',
     lat: 42.99151262921522,
-    lng: -87.93019677942696
+    lng: -87.93019677942696,
   },
   {
     id: 1008,
@@ -115,9 +115,9 @@ const users = [
     streetName: 'West Manitoba Street',
     city: 'Milwaukee',
     state: 'Wisconsin',
-    zipcode: '53215',
+    zipCode: '53215',
     lat: 42.99006241490951,
-    lng: -87.92192638784873
+    lng: -87.92192638784873,
   },
   {
     id: 1009,
@@ -130,9 +130,9 @@ const users = [
     streetName: 'South 7th Street',
     city: 'Milwaukee',
     state: 'Wisconsin',
-    zipcode: '53215',
+    zipCode: '53215',
     lat: 42.989797124991284,
-    lng: -87.92038563604434
+    lng: -87.92038563604434,
   },
   {
     id: 1010,
@@ -145,9 +145,9 @@ const users = [
     streetName: 'West Oklahoma Avenue',
     city: 'Milwaukee',
     state: 'Wisconsin',
-    zipcode: '53215',
+    zipCode: '53215',
     lat: 42.98820378571246,
-    lng: -87.92060285758559
+    lng: -87.92060285758559,
   },
   {
     id: 1011,
@@ -160,9 +160,9 @@ const users = [
     streetName: 'South 6th Street',
     city: 'Milwaukee',
     state: 'Wisconsin',
-    zipcode: '53215',
+    zipCode: '53215',
     lat: 43.0026858794249,
-    lng: -87.91888937930764
+    lng: -87.91888937930764,
   },
   {
     id: 1012,
@@ -175,9 +175,9 @@ const users = [
     streetName: 'South 9th Street',
     city: 'Milwaukee',
     state: 'Wisconsin',
-    zipcode: '53215',
+    zipCode: '53215',
     lat: 42.982131688371034,
-    lng: -87.92295476725828
+    lng: -87.92295476725828,
   },
 ];
 module.exports = users;
