@@ -29,10 +29,10 @@ const AuthForm = ({ name, displayName }) => {
       <form onSubmit={handleSubmit} name={name} className='sign-form'>
         {name === 'login' && (
           <>
-            <h2 className='padding-div'>Sign In</h2>
+            <h1 className='padding-div'>Sign In</h1>
             <div>
               <label htmlFor='username'>
-                <b>Name</b>
+                <b>Username</b>
               </label>
               <input name='username' type='text' placeholder='Username' />
             </div>
@@ -62,16 +62,50 @@ const AuthForm = ({ name, displayName }) => {
           </>
         )}
 
-        {name === 'signup' && <h2>Sign Up</h2>}
-
         {name === 'signup' && (
-          <div>
-            <label htmlFor='nameofuser'>
-              <small>Name</small>
-            </label>
-            <input name='nameofuser' type='text' className='sign-form-input' />
-          </div>
+          <>
+            <h1 className='padding-div'>Sign Up</h1>
+            <div>
+              <label htmlFor='nameofuser'>Name</label>
+              <input
+                name='nameofuser'
+                type='text'
+                className='sign-form-input'
+              />
+            </div>
+            <div>
+              <label htmlFor='username'>
+                <b>Username</b>
+              </label>
+              <input name='username' type='text' placeholder='Username' />
+            </div>
+            <div>
+              <label htmlFor='password'>
+                <b>Password</b>
+              </label>
+              <input
+                name='password'
+                type='password'
+                className='sign-form-input'
+                placeholder='Password'
+              />
+            </div>
+            <div className='spacer-div'></div>
+            <div className='center-text-div'>
+              <button type='submit' className='medium-button'>
+                <b>{displayName}</b>
+              </button>
+            </div>
+            <div className='spacer-div'></div>
+            <div className='center-text-div'>
+              <Link onClick={() => history.back()}>
+                <b>Back</b>
+              </Link>
+            </div>
+          </>
         )}
+
+        {name === 'signup' && <div></div>}
 
         {name === 'signup' && <SearchField onChange={setAddress} />}
 
