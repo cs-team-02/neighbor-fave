@@ -1,7 +1,7 @@
 {
     "name": "Neighbor-Fave",
     "short_name" : "Neighbor-Fave",
-    "start_url": "./",
+    "start_url": "/",
     "icons": [
         {
             "src": "favicon.ico",
