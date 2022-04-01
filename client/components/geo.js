@@ -38,7 +38,7 @@ function SearchField({ onChange }) {
       <div className='list-group'>
         {results.map((result, index) => {
           return (
-            <div>
+            <div className='geo-button'>
               <a
                 type='button'
                 key={index}
