@@ -47,7 +47,7 @@ const TopContributors = (props) => {
                 <Link to={`/users/${user.id}`} key={user.id}>
                   <div className="contributor">
                     <img
-                      // className="top-con-img"
+                      className="top-con-img"
                       height="30px"
                       width="30px"
                       src={user.ImageURL}
@@ -78,7 +78,7 @@ const TopContributors = (props) => {
                   <div className="contributor">
                     {" "}
                     <img
-                      // className="top-con-img"
+                      className="top-con-img"
                       height="30px"
                       width="30px"
                       src={user.ImageURL}

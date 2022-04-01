@@ -340,9 +340,8 @@ form div {
 }
 
 .top-con-img {
-  clip-path: circle(25px at center);
-  width: 80px;
-  /* max-width: 100%; */
+  clip-path: circle(18px at center);
+  width: 36px;
   height: auto;
 }
 
