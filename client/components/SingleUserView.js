@@ -45,7 +45,7 @@ export default function SingleUserView(props) {
             <b>{user.name}</b>
           </div>
           <div className='center-text-div'>
-            <RiMapPinFill className='icon-small' /> {user.address}
+            <RiMapPinFill className='icon-small' /> {user.streetName}
           </div>
           <div className='spacer-div' />
         </div>

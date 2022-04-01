@@ -22,6 +22,7 @@
   "author": "Fullstack Academy of Code",
   "license": "MIT",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "axios": "^0.21.1",
     "bcrypt": "^5.0.0",
     "compression": "^1.7.3",
@@ -30,7 +31,9 @@
     "history": "^4.9.0",
     "jsonwebtoken": "^8.5.1",
     "leaflet": "^1.7.1",
+    "leaflet-geosearch": "^3.6.0",
     "morgan": "^1.9.1",
+    "node-geocoder": "^4.0.0",
     "pg": "^8.5.1",
     "react-icons": "^4.3.1",
     "react-leaflet": "^3.2.5",
@@ -41,6 +44,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.12.10",
     "@babel/register": "^7.12.10",
     "axios": "^0.21.1",

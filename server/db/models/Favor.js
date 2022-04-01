@@ -26,6 +26,7 @@ const Favor = db.define("favor", {
   },
   favorDate: {
     type: Sequelize.DATEONLY,
+    defaultValue: Sequelize.NOW
   },
   lat: {
     type: Sequelize.FLOAT

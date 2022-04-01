@@ -2,7 +2,6 @@ import React from 'react';
 import TopMenu from './components/TopMenu';
 import Navbar from './components/Navbar';
 import Routes from './Routes';
-import Map from './components/Map';
 
 const App = () => {
   return (
