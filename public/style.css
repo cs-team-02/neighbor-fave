@@ -17,7 +17,6 @@ hr {
 
 a {
   color: black;
-  /* border-style: dotted; */
 }
 
 a:hover {
@@ -28,11 +27,6 @@ a:hover {
 label {
   display: block;
 }
-
-/* nav a {
-  display: inline-block;
-  margin: 1em;
-} */
 
 form div {
   margin: 1em;
@@ -69,7 +63,6 @@ form div {
   width: 100%;
   max-height: 100px;
   z-index: 2;
-  /* backdrop-filter: blur(5px); */
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.205);
   margin: 0;
 }
@@ -80,11 +73,9 @@ form div {
   z-index: 100;
   width: 100%;
   position: relative;
-  /* padding: 5px; */
   justify-content: space-between;
   align-items: center;
   margin: 0;
-  /* border-style: dashed; */
 }
 .padding-div {
   padding: 10px 20px 10px 20px;
@@ -114,21 +105,13 @@ form div {
 }
 
 .li-img-div {
-  /* border-width: 1px;
-  border-style: dotted; */
   width: 75px;
 }
 
-/* .li-info-div {
-  border-width: 1px;
-  border-style: dotted;
-} */
 
 .profile-img {
-  /* clip-path: circle(20px at center); */
   clip-path: circle(50px at center);
   width: 100px;
-  /* max-width: 10%; */
   height: auto;
   align-content: center;
 }
@@ -136,7 +119,6 @@ form div {
 .li-img {
   clip-path: circle(35px at center);
   width: 70px;
-  /* max-width: 100%; */
   height: auto;
 }
 
@@ -159,8 +141,6 @@ form div {
   justify-content: flex-start;
   align-items: center;
   margin: 0;
-  padding: 0;
-  /* border-style: dotted; */
 }
 
 .thumb-img {
@@ -193,14 +173,11 @@ form div {
 .center-text-div {
   text-align: center;
   margin-top: 5px;
-  /* padding: 2px; */
 }
 .right-text-div {
   text-align: right;
   font-style: italic;
   color: grey;
-
-  /* padding: 2px; */
 }
 
 .spacer-div {
@@ -234,7 +211,6 @@ form div {
   background-color: rgba(255, 210, 32, 0.349);
   padding: 10px;
   border-radius: 7px;
-  /* border: 2px solid rgb(255, 210, 32); */
 }
 
 .orange-button {
@@ -264,9 +240,6 @@ form div {
 /* Top Contributor Styles */
 
 @media only screen and (max-width: 600px) {
-  /* body {
-    background-color: lightblue;
-  } */
   #favor-info-and-picture {
     display: flex;
     flex-direction: column;
@@ -279,9 +252,6 @@ form div {
 }
 
 @media only screen and (min-width: 601px) {
-  /* body {
-    background-color: pink;
-  } */
   #favor-img-container {
     display: flex;
   }
@@ -291,7 +261,6 @@ form div {
   }
   #favor-info-and-picture {
     display: flex;
-    /* flex-wrap: wrap; */
     flex-direction: row;
   }
   #favor-info-and-picture * {
@@ -309,10 +278,6 @@ form div {
     flex-direction: row;
     flex-wrap: wrap;
   }
-
-  /* #all-bids-container * {
-    flex: 1 1;
-  } */
 }
 
 #top-contributors-link {
@@ -330,7 +295,6 @@ form div {
   font-size: large;
   margin: 2em;
   padding: 10px;
-  /* background-color: rgb(226, 226, 226); */
   border-color: rgb(226, 226, 226);
   border-style: outset;
   border-radius: 25px;
@@ -352,7 +316,6 @@ form div {
 .top-con-img {
   clip-path: circle(25px at center);
   width: 80px;
-  /* max-width: 100%; */
   height: auto;
 }
 
@@ -361,10 +324,6 @@ form div {
 #single-favor-container {
   font-family: sans-serif;
   margin: 2em;
-
-  /* display: flex;
-  flex-direction: column; */
-  /* align-items: center; */
 }
 
 #single-favor-container img {
@@ -433,7 +392,6 @@ form div {
   border-style: solid;
 }
 #bid-status {
-  /* font-size: x-large; */
   color: rgb(65, 65, 222);
 }
 
@@ -666,93 +624,6 @@ body {
 .createFavorMap {
   display: flex;
 }
-/* global styling */
-.leaflet-control-geosearch *,
-.leaflet-control-geosearch *:before,
-.leaflet-control-geosearch *:after {
-  box-sizing: border-box;
-}
-
-/* search form styling */
-.leaflet-control-geosearch form {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 36px;
-  border-radius: 0 4px 4px 0;
-  background-color: #fff;
-  background-clip: padding-box;
-  z-index: -1;
-  height: auto;
-  margin: 0;
-  padding: 0 8px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
-}
-
-.leaflet-geosearch-button form.open {
-  border-radius: 0 4px 4px 4px;
-}
-.leaflet-control-geosearch.active form {
-  display: block;
-}
-
-.leaflet-geosearch-button.active .leaflet-bar-part {
-  border-radius: 4px 0 0 4px;
-  width: 36px;
-}
-
-.leaflet-geosearch-button form {
-  max-width: 350px;
-}
-
-.leaflet-control-geosearch form input {
-  min-width: 200px;
-  width: 100%;
-  outline: none;
-  border: none;
-  margin: 0;
-  padding: 0;
-  font-size: 12px;
-  height: 26px;
-  border: none;
-  border-radius: 0 4px 4px 0;
-  text-indent: 8px;
-}
-
-.leaflet-touch .leaflet-geosearch-bar form {
-  border: 2px solid rgba(0,0,0,0.2);
-  box-shadow: none;
-}
-
-.leaflet-touch .leaflet-geosearch-bar form input {
-  height: 30px;
-}
-
-.leaflet-control-geosearch .results {
-  background: #fff;
-}
-
-.leaflet-control-geosearch .results > * {
-  line-height: 24px;
-  padding: 0 8px;
-  border: 1px solid transparent;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.leaflet-control-geosearch .results.active {
-  padding: 8px 0;
-  border-top: 1px solid #c6c6c6;
-}
-
-.leaflet-control-geosearch .results > .active,
-.leaflet-control-geosearch .results > :hover {
-  background-color: #f8f8f8;
-  border-color: #c6c6c6;
-  cursor: pointer;
-}
 .signup {
   width: 400px;
 }
@@ -780,4 +651,7 @@ body {
   align-items: center;
   justify-content: center;
   
+}
+.geo-button:focus {
+  background-color: rgb(255, 210, 32);
 }

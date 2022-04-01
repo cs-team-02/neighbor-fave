@@ -45,14 +45,19 @@ const AuthForm = ({ name, displayName }) => {
           </label>
           <input name="password" type="password" />
         </div>
-        {name === 'signup' && <SearchField onChange={setAddress}/>}
+        {name === 'signup' && <SearchField onChange={setAddress} />}
         <div>
-          <button type="submit">{displayName}</button>
+          <button type="submit" onClick={validate(address)}>{displayName}</button>
         </div>
         {error && error.response && <div> {error.response.data} </div>}
       </form>
     </div>
   )
+}
+function validate(address){
+  if(address.length < 10){
+    <span>please select an</span>
+  }
 }
 
 export const Login = () =><AuthForm name="login" displayName="Login" />

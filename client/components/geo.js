@@ -35,7 +35,7 @@ return (
             <ul className='list-group'>
                 {results.map((result, index) =>{
                     return (
-                    <button type="button" key={index} onClick={(e) => {
+                    <button type="button"  className='geo-button' key={index} onClick={(e) => {
                         const address = result.label.split(',');
                         onChange({
                             streetNumber: address[0],
