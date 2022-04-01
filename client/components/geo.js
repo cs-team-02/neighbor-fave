@@ -38,9 +38,10 @@ function SearchField({ onChange }) {
       <div className='list-group'>
         {results.map((result, index) => {
           return (
-            <div className='geo-button'>
+            <div key={index}>
               <a
-                type='button'
+              className='geo-button'
+                //type='button'
                 key={index}
                 onClick={(e) => {
                   const address = result.label.split(',');

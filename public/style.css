@@ -651,12 +651,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 .geo-button:focus {
   background-color: rgb(255, 210, 32);
 }
-
 
 .sign-form-wrapper {
   display: flex;
@@ -669,7 +667,6 @@ body {
   align-content: center;
   width: 100%;
   max-width: 600px;
-  /* background-color: rgb(223, 223, 223); */
   padding: 15px;
 }
 .sign-form input {
