@@ -310,6 +310,7 @@ form div {
   right: 10px;
   width: fit-content;
   margin: 10px;
+  border: solid 1px black;
   font-size: large;
 }
 
