@@ -246,8 +246,6 @@ form div {
   }
   #favor-info-and-picture > * {
     flex-grow: 1;
-    margin: 10px;
-    align-self: center;
   }
 }
 
@@ -258,6 +256,7 @@ form div {
   #favor-img-container img {
     flex: 0;
     align-self: flex-end;
+    margin: 20px;
   }
   #favor-info-and-picture {
     display: flex;
@@ -265,7 +264,6 @@ form div {
   }
   #favor-info-and-picture * {
     flex-grow: 1;
-    margin: 10px;
   }
 
   #top-contributors-container {
@@ -286,23 +284,21 @@ form div {
   right: 10px;
   width: fit-content;
   margin: 10px;
-  font-size: large;
+  border: solid 1px black;
 }
 
 #top-contributors-container {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: large;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 2em;
-  padding: 10px;
   border-color: rgb(226, 226, 226);
-  border-style: outset;
-  border-radius: 25px;
+
+  border-radius: 7px;
 }
 
 #top-contributors-container * {
   margin: 5px;
-  padding: 2px;
+  /* padding: 2px; */
   text-decoration: none;
   font-weight: 500;
 }
@@ -314,8 +310,8 @@ form div {
 }
 
 .top-con-img {
-  clip-path: circle(25px at center);
-  width: 80px;
+  clip-path: circle(18px at center);
+  width: 36px;
   height: auto;
 }
 
@@ -327,22 +323,24 @@ form div {
 }
 
 #single-favor-container img {
-  width: 80vw;
-  border-radius: 25px;
+  width: 90vw;
+  border-radius: 5px;
 }
 
 #favor-heading {
-  font-size: 27px;
+  font-weight: bold;
+  font-size: large;
+  font-style: oblique;
 }
 
 #single-favor-container > * {
-  margin: 10px 10px 10px 0px;
-  padding: 3px;
+  /* margin: 10px 10px 10px 0px; */
+  /* padding: 3px; */
 }
 
 #single-favor-container button {
-  font-size: large;
-  border-radius: 5px;
+  /* font-size: large; */
+  border-radius: 3px;
   background-color: rgb(255, 210, 32);
   text-align: center;
   padding: 2px;
@@ -356,28 +354,29 @@ form div {
   font-style: oblique;
 }
 #favor-status {
-  font-size: x-large;
+  font-style: italic;
 }
+
 /* Bid styles */
 
 #all-bids-container {
   background-color: rgb(226, 226, 226);
   border-style: 2px outset;
-  border-radius: 25px;
-  padding: 20px;
-}
-
-.single-bid-container {
-  border-radius: 25px;
-  width: 100 vw;
-  background-color: whitesmoke;
-  margin: 10px;
+  border-radius: 5px;
   padding: 10px;
 }
 
+.single-bid-container {
+  border-radius: 5px;
+  width: 100 vw;
+  background-color: whitesmoke;
+
+  padding: 5px;
+}
+
 .single-bid-container * {
-  padding: 7px;
-  font-size: large;
+  /* padding: 2px; */
+  /* font-size: large; */
   margin: 5px;
 }
 
@@ -408,7 +407,7 @@ form div {
   height: 100vh;
   background: #fff;
   color: #212121;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   display: grid;
   place-items: center;
 }
@@ -416,7 +415,7 @@ body {
   margin: 0%;
   padding: 0%;
 }
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 
 .joinChatContainer {
   position: relative;
@@ -434,7 +433,7 @@ body {
   margin-bottom: 1rem;
 }
 .joinChatContainer input {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   outline: 0;
   background: #ffd89b;
   width: 100%;
@@ -583,7 +582,7 @@ body {
   border-right: 1px dotted #607d8b;
 
   outline: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .chat-window .chat-footer button {
@@ -611,7 +610,7 @@ body {
   position: absolute;
   background: #fff;
   color: #212121;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   display: grid;
   place-items: center;
 }
@@ -651,7 +650,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 .geo-button:focus {
   background-color: rgb(255, 210, 32);

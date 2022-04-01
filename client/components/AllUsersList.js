@@ -59,41 +59,47 @@ export default function AllUsersList() {
     return <h3>Couldn't find any neighbors using this app...</h3>;
   } else {
     return (
-      <div className="side-padding-div">
-        <Link to="/topContributors">
-          <span className="orange-button" id="top-contributors-link">
-            See Top <br />
-            Contributors
-          </span>
-        </Link>
-        {neighborsFilter(users, loggedInId).map((user, index) => (
-          <div key={index}>
-            <div className="li-div">
-              <div className="li-img-div">
-                <img className="li-img" src={user.ImageURL} />
-              </div>
-              <div className="li-info-div">
-                <div>
+      <>
+        <div>
+          <Link to="/topContributors">
+            <span className="orange-button" id="top-contributors-link">
+              See Top <br />
+              Contributors
+            </span>
+          </Link>
+        </div>
+        <br></br>
+        <br></br>
+        <div className="side-padding-div">
+          {neighborsFilter(users, loggedInId).map((user, index) => (
+            <div key={index}>
+              <div className="li-div">
+                <div className="li-img-div">
+                  <img className="li-img" src={user.ImageURL} />
+                </div>
+                <div className="li-info-div">
                   <div>
-                    <Link to={`/users/${user.id}`}>
-                      <b>{user.name}</b>
-                    </Link>
-                  </div>
-                  <div>
-                    <RiMapPinFill className="icon-small" /> {user.streetName}
-                  </div>
-                  <div>
-                    Asks: {openFavors(user.favors).length} | Volunteering:{" "}
-                    {openBids(user.bids).length}
+                    <div>
+                      <Link to={`/users/${user.id}`}>
+                        <b>{user.name}</b>
+                      </Link>
+                    </div>
+                    <div>
+                      <RiMapPinFill className="icon-small" /> {user.streetName}
+                    </div>
+                    <div>
+                      Asks: {openFavors(user.favors).length} | Volunteering:{" "}
+                      {openBids(user.bids).length}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <hr />
-          </div>
-        ))}
-      </div>
+              <hr />
+            </div>
+          ))}
+        </div>
+      </>
     );
   }
 }
