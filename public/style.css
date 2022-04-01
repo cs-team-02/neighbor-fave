@@ -754,10 +754,11 @@ body {
   cursor: pointer;
 }
 .signup {
-  width: 400px;
+  width: 100%;
 }
 .list-group {
-  width: 408px;
+  width: 100%;
+  font-size: medium;
 }
 .fav-button {
   font-size: large;

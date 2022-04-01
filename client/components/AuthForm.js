@@ -34,7 +34,12 @@ const AuthForm = ({ name, displayName }) => {
               <label htmlFor='username'>
                 <b>Username</b>
               </label>
-              <input name='username' type='text' placeholder='Username' />
+              <input
+                name='username'
+                type='text'
+                placeholder='Username'
+                required
+              />
             </div>
             <div>
               <label htmlFor='password'>
@@ -45,6 +50,7 @@ const AuthForm = ({ name, displayName }) => {
                 type='password'
                 className='sign-form-input'
                 placeholder='Password'
+                required
               />
             </div>
             <div className='spacer-div'></div>
@@ -66,28 +72,39 @@ const AuthForm = ({ name, displayName }) => {
           <>
             <h1 className='padding-div'>Sign Up</h1>
             <div>
-              <label htmlFor='nameofuser'>Name</label>
+              <label htmlFor='nameofuser'>
+                <b>Name*</b>
+              </label>
               <input
                 name='nameofuser'
                 type='text'
-                className='sign-form-input'
+                // className='sign-form-input'
+                placeholder='Your name'
+                required
               />
+              <SearchField onChange={setAddress} />
             </div>
             <div>
               <label htmlFor='username'>
-                <b>Username</b>
+                <b>Username*</b>
               </label>
-              <input name='username' type='text' placeholder='Username' />
+              <input
+                name='username'
+                type='text'
+                placeholder='Username'
+                required
+              />
             </div>
             <div>
               <label htmlFor='password'>
-                <b>Password</b>
+                <b>Password*</b>
               </label>
               <input
                 name='password'
                 type='password'
                 className='sign-form-input'
                 placeholder='Password'
+                required
               />
             </div>
             <div className='spacer-div'></div>
@@ -98,18 +115,13 @@ const AuthForm = ({ name, displayName }) => {
             </div>
             <div className='spacer-div'></div>
             <div className='center-text-div'>
-              <Link onClick={() => history.back()}>
+              <a onClick={() => history.back()}>
                 <b>Back</b>
-              </Link>
+              </a>
+              {error && error.response && <div> {error.response.data} </div>}
             </div>
           </>
         )}
-
-        {name === 'signup' && <div></div>}
-
-        {name === 'signup' && <SearchField onChange={setAddress} />}
-
-        {error && error.response && <div> {error.response.data} </div>}
       </form>
     </div>
   );
