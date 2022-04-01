@@ -280,6 +280,7 @@ form div {
   #favor-img-container img {
     flex: 0;
     align-self: flex-end;
+    margin: 20px;
   }
   #favor-info-and-picture {
     display: flex;
@@ -368,8 +369,8 @@ form div {
 }
 
 #single-favor-container button {
-  font-size: large;
-  border-radius: 5px;
+  /* font-size: large; */
+  border-radius: 3px;
   background-color: rgb(255, 210, 32);
   text-align: center;
   padding: 2px;
