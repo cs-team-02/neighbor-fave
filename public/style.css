@@ -264,24 +264,16 @@ form div {
 /* Top Contributor Styles */
 
 @media only screen and (max-width: 600px) {
-  /* body {
-    background-color: lightblue;
-  } */
   #favor-info-and-picture {
     display: flex;
     flex-direction: column;
   }
   #favor-info-and-picture > * {
     flex-grow: 1;
-    margin: 10px;
-    align-self: center;
   }
 }
 
 @media only screen and (min-width: 601px) {
-  /* body {
-    background-color: pink;
-  } */
   #favor-img-container {
     display: flex;
   }
@@ -296,7 +288,7 @@ form div {
   }
   #favor-info-and-picture * {
     flex-grow: 1;
-    margin: 10px;
+    /* margin: 10px; */
   }
 
   #top-contributors-container {
@@ -309,10 +301,6 @@ form div {
     flex-direction: row;
     flex-wrap: wrap;
   }
-
-  /* #all-bids-container * {
-    flex: 1 1;
-  } */
 }
 
 #top-contributors-link {
@@ -325,15 +313,15 @@ form div {
 }
 
 #top-contributors-container {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: large;
   margin: 2em;
   padding: 10px;
   /* background-color: rgb(226, 226, 226); */
   border-color: rgb(226, 226, 226);
   border-style: outset;
-  border-radius: 25px;
+  border-radius: 7px;
 }
 
 #top-contributors-container * {
@@ -360,25 +348,23 @@ form div {
 
 #single-favor-container {
   font-family: sans-serif;
-  margin: 2em;
-
-  /* display: flex;
-  flex-direction: column; */
-  /* align-items: center; */
+  margin: 1em;
 }
 
 #single-favor-container img {
-  width: 80vw;
-  border-radius: 25px;
+  width: 90vw;
+  border-radius: 5px;
 }
 
 #favor-heading {
-  font-size: 27px;
+  font-weight: bold;
+  font-size: large;
+  font-style: oblique;
 }
 
 #single-favor-container > * {
-  margin: 10px 10px 10px 0px;
-  padding: 3px;
+  /* margin: 10px 10px 10px 0px; */
+  /* padding: 3px; */
 }
 
 #single-favor-container button {
@@ -397,28 +383,29 @@ form div {
   font-style: oblique;
 }
 #favor-status {
-  font-size: x-large;
+  font-style: italic;
 }
+
 /* Bid styles */
 
 #all-bids-container {
   background-color: rgb(226, 226, 226);
   border-style: 2px outset;
-  border-radius: 25px;
-  padding: 20px;
-}
-
-.single-bid-container {
-  border-radius: 25px;
-  width: 100 vw;
-  background-color: whitesmoke;
-  margin: 10px;
+  border-radius: 5px;
   padding: 10px;
 }
 
+.single-bid-container {
+  border-radius: 5px;
+  width: 100 vw;
+  background-color: whitesmoke;
+
+  padding: 5px;
+}
+
 .single-bid-container * {
-  padding: 7px;
-  font-size: large;
+  /* padding: 2px; */
+  /* font-size: large; */
   margin: 5px;
 }
 
@@ -450,7 +437,7 @@ form div {
   height: 100vh;
   background: #fff;
   color: #212121;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   display: grid;
   place-items: center;
 }
@@ -458,7 +445,7 @@ body {
   margin: 0%;
   padding: 0%;
 }
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 
 .joinChatContainer {
   position: relative;
@@ -476,7 +463,7 @@ body {
   margin-bottom: 1rem;
 }
 .joinChatContainer input {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   outline: 0;
   background: #ffd89b;
   width: 100%;
@@ -625,7 +612,7 @@ body {
   border-right: 1px dotted #607d8b;
 
   outline: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .chat-window .chat-footer button {
@@ -653,7 +640,7 @@ body {
   position: absolute;
   background: #fff;
   color: #212121;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   display: grid;
   place-items: center;
 }
@@ -720,7 +707,7 @@ body {
 }
 
 .leaflet-touch .leaflet-geosearch-bar form {
-  border: 2px solid rgba(0,0,0,0.2);
+  border: 2px solid rgba(0, 0, 0, 0.2);
   box-shadow: none;
 }
 
@@ -779,5 +766,4 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }

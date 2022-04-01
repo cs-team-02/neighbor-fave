@@ -19,14 +19,12 @@ const SingleFavor = (props) => {
 
   return (
     <div id="single-favor-container">
-      {/* <br /> */}
       <div id="favor-info-and-picture">
         <div>
-          <h1 id="favor-heading">{favor.title} </h1>
+          <p id="favor-heading">{favor.title} </p>
           <span id="favor-status">
-            ({favor.status === "OPEN" ? "Open" : "Closed"})
+            Favor is {favor.status === "OPEN" ? "Open" : "Closed"}
           </span>{" "}
-          <br></br>
           <span>
             {CurrentUser.id === favor.authorId ? (
               <button onClick={() => toggleFavorResolved(dispatch, favor)}>
@@ -36,7 +34,6 @@ const SingleFavor = (props) => {
               <div></div>
             )}
           </span>
-          <br />
           <br />
         </div>
 
@@ -48,9 +45,11 @@ const SingleFavor = (props) => {
           )}
         </div>
       </div>
+      <hr></hr>
 
       <p id="favor-author">{favor.author ? favor.author.name : "Loading"}:</p>
       <p id="favor-description"> "{favor.description}"</p>
+      <hr></hr>
       <div id="all-bids-container">
         <p id="favors-pending-bids">
           {favor.bids
