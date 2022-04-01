@@ -625,10 +625,11 @@ body {
   display: flex;
 }
 .signup {
-  width: 400px;
+  width: 100%;
 }
 .list-group {
-  width: 408px;
+  width: 100%;
+  font-size: medium;
 }
 .fav-button {
   font-size: large;
@@ -654,4 +655,38 @@ body {
 }
 .geo-button:focus {
   background-color: rgb(255, 210, 32);
+}
+
+
+.sign-form-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.sign-form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 100%;
+  max-width: 600px;
+  /* background-color: rgb(223, 223, 223); */
+  padding: 15px;
+}
+.sign-form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: grey;
+}
+
+.medium-button {
+  background-color: rgb(255, 210, 32);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
 }
