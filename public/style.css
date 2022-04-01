@@ -311,7 +311,7 @@ form div {
   width: fit-content;
   margin: 10px;
   border: solid 1px black;
-  font-size: large;
+  /* font-size: large; */
 }
 
 #top-contributors-container {
