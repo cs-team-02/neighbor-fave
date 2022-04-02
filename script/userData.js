@@ -1,5 +1,20 @@
 const users = [
   {
+    id: 1000,
+    name: 'Demo-User',
+    username: 'demo',
+    password: '123',
+    ImageURL:
+      'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
+    streetNumber: '1824',
+    streetName: 'South 4th Street',
+    city: 'Milwaukee',
+    state: 'Wisconsin',
+    zipcode: '53204',
+    lat: 43.010444,
+    lng: -87.915040,
+  },
+  {
     id: 1001,
     name: 'Tedi',
     username: 'tedi',
