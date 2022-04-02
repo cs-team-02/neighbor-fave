@@ -1,17 +1,29 @@
 const favors = [
   {
+    id: 1000,
+    title: "Borrow wheelbarrow ",
+    ImageURL:
+      "https://cdn.distinctivechesterfields.com/wp-content/uploads/sites/4/2019/12/Wally_Sofa2-1024x556.png?w=600&ch=DPR&dpr=2",
+    description:
+      "Doing a bit of gardening this weenend for the start of spring, I could use a wheelbarrow to speed up the process.",
+    status: 'OPEN',
+    favorDate: '2022-03-09',
+    authorId: '1000',
+    lat: 43.010444,
+    lng: -87.915040,
+  },
+  {
     id: 1001,
     title: "Moving Sofa",
     ImageURL:
       "https://cdn.distinctivechesterfields.com/wp-content/uploads/sites/4/2019/12/Wally_Sofa2-1024x556.png?w=600&ch=DPR&dpr=2",
     description:
       "I could use a hand this weekend moving my old couch to the curb.",
-    //status should be a boolean on open, "OPEN" is open "CLOSED" closed
     status: 'OPEN',
     favorDate: '2022-03-09',
     authorId: '1001',
     lat: 43.01114408227486,
-    lng: -87.91168416348074
+    lng: -87.91168416348074,
   },
   {
     id:1002,
@@ -23,7 +35,7 @@ const favors = [
     favorDate: '2022-03-15',
     authorId: '1003',
     lat: 43.00997295315792,
-    lng: -87.93098498631797
+    lng: -87.93098498631797,
   },
   {
     id: 1003,
@@ -36,7 +48,7 @@ const favors = [
     favorDate: '2022-03-06',
     authorId: '1002',
     lat: 43.00998114151013,
-    lng: -87.94022537617863
+    lng: -87.94022537617863,
   },
   {
     id: 1004,
@@ -49,7 +61,7 @@ const favors = [
     favorDate: '2022-03-12',
     authorId: '1005',
     lat: 42.996119740187375,
-    lng: -87.92628676152603
+    lng: -87.92628676152603,
   },
   {
     id: 1005,
@@ -62,7 +74,7 @@ const favors = [
     favorDate: '2022-03-16',
     authorId: '1004',
     lat: 43.015858019981046,
-    lng: -87.91411147259828
+    lng: -87.91411147259828,
   },
   {
     id: 1006,
@@ -75,7 +87,7 @@ const favors = [
     favorDate: '2022-03-05',
     authorId: '1002',
     lat: 43.00998114151032,
-    lng: -87.94022537617844
+    lng: -87.9402253761784,
   },
   {
     id: 1007,
@@ -88,7 +100,7 @@ const favors = [
     favorDate: '2022-03-06',
     authorId: '1006',
     lat: 42.992022270568064,
-    lng: -87.92914826052883
+    lng: -87.92914826052883,
   },
   {
     id: 1008,
@@ -101,7 +113,7 @@ const favors = [
     favorDate: '2022-03-09',
     authorId: '1007',
     lat: 42.99151262921522,
-    lng: -87.93019677942696
+    lng: -87.93019677942696,
   },
   {
     id: 1009,
@@ -114,7 +126,7 @@ const favors = [
     favorDate: '2022-03-09',
     authorId: '1008',
     lat: 42.99006241490951,
-    lng: -87.92192638784873
+    lng: -87.92192638784873,
   },
   {
     id: 1010,
@@ -127,11 +139,29 @@ const favors = [
     favorDate: '2022-03-08',
     authorId: '1007',
     lat: 42.99151262921522,
-    lng: -87.93019677942642
+    lng: -87.93019677942642,
   },
 ];
 
 const bids = [
+  {
+    description: "I'm available to help",
+    volunteerId: 1000,
+    status: "PENDING",
+    favorId: 1003,
+  },
+  {
+    description: "I have one, but im not available this morning",
+    volunteerId: 1004,
+    status: "PENDING",
+    favorId: 1000,
+  },
+  {
+    description: "Ready when you are",
+    volunteerId: 1001,
+    status: "PENDING",
+    favorId: 1000,
+  },
   {
     description: "I can do it today!",
     volunteerId: 1002,
