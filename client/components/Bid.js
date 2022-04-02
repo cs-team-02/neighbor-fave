@@ -17,8 +17,6 @@ const Bid = (props) => {
   const canViewChat = isAuthor || isVolunteer;
 
   const handleAcceptBid = async () => {
-    // await dispatch(acceptBid(bid.id, bid.favorId));
-    // INSTEAD
     if (bid.status === "PENDING") {
       await dispatch(updateBid(bid, { status: "ACCEPTED" }));
     } else if (bid.status === "ACCEPTED") {

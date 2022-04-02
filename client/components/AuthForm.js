@@ -78,7 +78,6 @@ const AuthForm = ({ name, displayName }) => {
               <input
                 name='nameofuser'
                 type='text'
-                // className='sign-form-input'
                 placeholder='Your name'
                 required
               />

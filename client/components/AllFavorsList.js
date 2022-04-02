@@ -13,7 +13,6 @@ export default function AllFavorsList() {
   let favors = useSelector((state) => state.favors);
   const loggedInId = useSelector((state) => state.auth.id);
   const loggedInUser = useSelector((state) => state.auth);
-  const loggedIn = useSelector((state) => !!state.auth.id);
 
   useEffect(() => {
     dispatch(fetchFavors());
@@ -56,8 +55,8 @@ export default function AllFavorsList() {
   };
 
   const renderVolunteerImages = function (bids) {
-    return bids.map((bid) => (
-      <img className="tiny-img" src={bid.volunteer.ImageURL} />
+    return bids.map((bid, index) => (
+      <img className="tiny-img" key={index} src={bid.volunteer.ImageURL} />
     ));
   };
 
@@ -87,7 +86,7 @@ export default function AllFavorsList() {
   if (favors === undefined) {
     return <h3>Loading favors...</h3>;
   } else if (favors === 0) {
-    return <h3>Looks like noone needs a favor...</h3>;
+    return <h3>Looks like no one needs a favor...</h3>;
   } else {
 
     return (
