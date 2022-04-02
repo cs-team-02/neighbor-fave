@@ -11,6 +11,7 @@ import { HiUsers } from 'react-icons/hi';
 const Navbar = () => {
   const dispatch = useDispatch()
   const isLoggedIn = useSelector(state => !!state.auth.id)
+  
   useEffect(() => {
     dispatch(me())
   }, [])

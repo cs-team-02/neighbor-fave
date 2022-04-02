@@ -112,7 +112,6 @@ export default function AllFavorsList() {
                 <div className="tiny-img-wrap">
                   {renderVolunteerImages(favor.bids)}
                 </div>
-                {console.log('TYPE OF DATE', typeof favors[0].createdAt)}
               </Link>
             </div>
           </div>
