@@ -1,5 +1,6 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, {useEffect} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {me} from '../store'
 import { Link } from 'react-router-dom';
 import { logout } from '../store';
 import useAuth from './utils/useAuthHook';
@@ -7,17 +8,20 @@ import { FaGlobe } from 'react-icons/fa';
 import { BsFillPlusCircleFill } from 'react-icons/bs';
 import { HiUsers } from 'react-icons/hi';
 
-const Navbar = ({ handleClick, isLoggedIn }) => {
-  const currentUser = useAuth();
+const Navbar = () => {
+  const dispatch = useDispatch()
+  const isLoggedIn = useSelector(state => !!state.auth.id)
+  
+  useEffect(() => {
+    dispatch(me())
+  }, [])
+  
   return (
     <div id='navbar-bottom-wrap'>
       <nav>
         {isLoggedIn ? (
           <div id='navbar'>
             {/* The navbar will show these links after you log in */}
-            {/* <div className='center-text-div'>
-              <h5>Hello, {currentUser.name}</h5>
-            </div> */}
             <Link to='/home'>
               <FaGlobe className='icon-medium' />
             </Link>
@@ -39,21 +43,4 @@ const Navbar = ({ handleClick, isLoggedIn }) => {
   );
 };
 
-/**
- * CONTAINER
- */
-const mapState = (state) => {
-  return {
-    isLoggedIn: !!state.auth.id,
-  };
-};
-
-const mapDispatch = (dispatch) => {
-  return {
-    handleClick() {
-      dispatch(logout());
-    },
-  };
-};
-
-export default connect(mapState, mapDispatch)(Navbar);
+export default Navbar

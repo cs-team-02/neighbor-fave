@@ -1,13 +1,21 @@
-import React from "react";
-import { connect } from "react-redux";
+import React, {useEffect} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 import { logout } from "../store";
+import {me} from '../store'
 import useAuth from "./utils/useAuthHook";
 import { CgLogOut } from "react-icons/cg";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 
-const TopMenu = ({ isLoggedIn }) => {
+const TopMenu = () => {
+  const dispatch = useDispatch()
+  const isLoggedIn = useSelector(state => !!state.auth.id)
   const currentUser = useAuth();
+  
+  useEffect(() => {
+    dispatch(me())
+  }, [])
+
   return (
     <div className="menu-bar">
       <nav className="padding-div">
@@ -31,7 +39,8 @@ const TopMenu = ({ isLoggedIn }) => {
         ) : (
           <div className="right-text-div">
             {/* The navbar will show these links before you log in */}
-            <Link to="/login">Login</Link>
+
+            <Link to="/login">Login/Demo</Link>
             <Link to="/signup">Sign Up</Link>
           </div>
         )}
@@ -40,21 +49,5 @@ const TopMenu = ({ isLoggedIn }) => {
   );
 };
 
-/**
- * CONTAINER
- */
-const mapState = (state) => {
-  return {
-    isLoggedIn: !!state.auth.id,
-  };
-};
 
-const mapDispatch = (dispatch) => {
-  return {
-    handleClick() {
-      dispatch(logout());
-    },
-  };
-};
-
-export default connect(mapState, mapDispatch)(TopMenu);
+export default TopMenu

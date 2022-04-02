@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchSingleUser } from '../store/singleUserReducer';
-import { fetchFavors } from '../store/favors';
-import { Link } from 'react-router-dom';
 import VolunteeringCard from './VolunteeringCard';
 import FavorAskCard from './FavorAskCard';
 import { RiMapPinFill } from 'react-icons/ri';
@@ -11,7 +9,6 @@ export default function SingleUserView(props) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const loggedInId = useSelector((state) => state.auth.id);
-  const loggedIn = useSelector((state) => !!state.auth.id);
 
   useEffect(() => {
     dispatch(fetchSingleUser(props.match.params.id));

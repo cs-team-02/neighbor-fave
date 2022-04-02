@@ -3,10 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../store/usersReducer";
 import { fetchFavors } from "../store/favors";
 import { Link } from "react-router-dom";
-// import { FiStar } from "react-icons/fi";
 import { WiStars } from "react-icons/wi";
 import { RiStarSmileLine } from "react-icons/ri";
-const TopContributors = (props) => {
+const TopContributors = () => {
   const allUsers = useSelector((state) => state.users);
   const dispatch = useDispatch();
   const usersMostBids = allUsers.filter(

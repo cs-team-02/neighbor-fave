@@ -23,6 +23,12 @@ const AuthForm = ({ name, displayName }) => {
       dispatch(authenticateSignup({ name, username, address, password }));
     }
   };
+  const handleDemo =(e) => {
+    e.preventDefault();
+    const username = 'demo';
+    const password = '123';
+    dispatch(authenticate(username, password ));
+  }
 
   return (
     <div className='sign-form-wrapper'>
@@ -78,7 +84,6 @@ const AuthForm = ({ name, displayName }) => {
               <input
                 name='nameofuser'
                 type='text'
-                // className='sign-form-input'
                 placeholder='Your name'
                 required
               />
@@ -122,6 +127,9 @@ const AuthForm = ({ name, displayName }) => {
             </div>
           </>
         )}
+      <button onClick={(e)=>handleDemo(e)} className='medium-button'>
+            <b>Demo Login</b>
+        </button>
       </form>
     </div>
   );
