@@ -1,3 +1,6 @@
+body {
+  background-color: #94b49f;
+}
 @media screen and (display-mode: standalone) {
   header {
     height: 10px !important;
@@ -451,7 +454,7 @@ form div {
   width: 100%;
   margin-top: -1px;
 }
-.App {
+/* .App {
   width: 100vw;
   height: 100vh;
   background: #fff;
@@ -459,11 +462,11 @@ form div {
   font-family: 'Open Sans', sans-serif;
   display: grid;
   place-items: center;
-}
-body {
+} */
+/* body {
   margin: 0%;
   padding: 0%;
-}
+} */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
 
 .joinChatContainer {
@@ -511,13 +514,19 @@ body {
 }
 
 .chat-window {
-  width: 300px;
-  height: 420px;
+  width: 100%;
+  height: 300%;
+  /* position: absolute; */
+  background-color: #94b49f;
+  /* color: #212121;
+  font-family: 'Open Sans', sans-serif;
+  display: grid;
+  place-items: center; */
 }
 
-.chat-window p {
+/* .chat-window p {
   margin: 0;
-}
+} */
 .chat-window .chat-header {
   height: 45px;
   border-radius: 6px;
@@ -657,7 +666,7 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
-  background: #fff;
+  background-color: #94b49f;
   color: #212121;
   font-family: 'Open Sans', sans-serif;
   display: grid;
