@@ -21,7 +21,8 @@ const User = db.define('user', {
   ImageURL: {
     type: Sequelize.STRING,
     allowNull: false,
-    defaultValue:'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
+    defaultValue:
+      'https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png',
   },
   streetNumber: {
     type: Sequelize.STRING,
@@ -37,14 +38,13 @@ const User = db.define('user', {
   },
   zipcode: {
     type: Sequelize.STRING,
-  },  
+  },
   lat: {
     type: Sequelize.FLOAT,
-  },  
+  },
   lng: {
     type: Sequelize.FLOAT,
   },
- 
 });
 
 module.exports = User;
@@ -83,7 +83,7 @@ User.findByToken = async function (token) {
     }
     return user;
   } catch (ex) {
-    const error = Error('bad token');
+    const error = Error('Nice Try..');
     error.status = 401;
     throw error;
   }
