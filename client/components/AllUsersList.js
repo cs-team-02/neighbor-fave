@@ -61,53 +61,49 @@ export default function AllUsersList() {
     return <h3>Couldn't find any neighbors using this app...</h3>;
   } else {
     return (
-      <div className='side-padding-div'>
-        <div className='center-text-div'>
-          <button
-            className='small-button'
-            onClick={() => history.push(`/topContributors`)}
-          >
-            See Top Contributors
-          </button>
-          {/* <Link to='/topContributors'>
-            <div className='orange-button' id='top-contributors-link'>
+      <div className='list-wrapper'>
+        <div className='side-padding-div'>
+          <div className='center-text-div'>
+            <button
+              className='small-button'
+              onClick={() => history.push(`/topContributors`)}
+            >
               See Top Contributors
-            </div>
-          </Link> */}
-          <div className='spacer-div' />
-          <hr />
-        </div>
-        {neighborsFilter(users, loggedInId).map((user, index) => (
-          <div
-            key={index}
-            onClick={() => history.push(`/users/${user.id}`)}
-            className='clickable-div'
-          >
-            <div className='li-div'>
-              <div className='li-img-div'>
-                <img className='li-img' src={user.ImageURL} />
-              </div>
-              <div className='li-info-div'>
-                <div>
+            </button>
+
+            <div className='spacer-div' />
+            <hr />
+          </div>
+          {neighborsFilter(users, loggedInId).map((user, index) => (
+            <div
+              key={index}
+              onClick={() => history.push(`/users/${user.id}`)}
+              className='clickable-div'
+            >
+              <div className='li-div'>
+                <div className='li-img-div'>
+                  <img className='li-img' src={user.ImageURL} />
+                </div>
+                <div className='li-info-div'>
                   <div>
-                    {/* <Link to={`/users/${user.id}`}> */}
-                    <b>{user.name}</b>
-                    {/* </Link> */}
-                  </div>
-                  <div>
-                    <RiMapPinFill className='icon-small' /> {user.streetName}
-                  </div>
-                  <div>
-                    Asks: {openFavors(user.favors).length} | Volunteering:{' '}
-                    {openBids(user.bids).length}
+                    <div>
+                      {/* <Link to={`/users/${user.id}`}> */}
+                      <b>{user.name}</b>
+                      {/* </Link> */}
+                    </div>
+                    <div>
+                      <RiMapPinFill className='icon-small' /> {user.streetName}
+                    </div>
+                    <div>
+                      Asks: {openFavors(user.favors).length} | Volunteering:{' '}
+                      {openBids(user.bids).length}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            {/* <hr /> */}
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     );
   }

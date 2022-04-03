@@ -63,23 +63,15 @@ export default function AllFavorsList() {
     ));
   };
 
-  const sortFavorsByDate = function (favors) {
-    return favors.sort((a, b) => b.favorDate - a.favroDate);
-  };
-
   const renderButton = function (favor) {
     if (loggedInId === favor.authorId) {
       return (
-        <div className='orange-button'>
-          <Link to={`/favors/${favor.id}`}>
+        <div className='small-button-center-div'>
+          {/* <Link to={`/favors/${favor.id}`}>
             <b>Your ask: {renderVolunteersNumber(favor.bids.length)}</b>
-          </Link>
-        </div>
-      );
-    } else {
-      return (
-        <div className='center-text-div'>
-          {renderVolunteersNumber(favor.bids.length)}
+          </Link> */}
+          <div className='small-button'>Your ask!</div>
+          <div className='spacer-div' />
         </div>
       );
     }
@@ -93,33 +85,38 @@ export default function AllFavorsList() {
     return (
       <div>
         <Map favors={filterFavorsByNeighbors(favors)} />
-        <div className='side-padding-div'>
-          {filterFavorsByNeighbors(favors).map((favor) => (
-            <div
-              key={favor.id}
-              className='clickable-div'
-              onClick={() => history.push(`/favors/${favor.id}`)}
-            >
-              <div className='grey-box'>Favor needed: {favor.favorDate}</div>
-              <div className='singlefavor'>
-                <div>{favor.title}</div>
-                <div>{favor.description}</div>
-                <div>
-                  <RiMapPinFill className='icon-small' />{' '}
-                  {favor.author.streetName}
+        <div className='list-wrapper'>
+          <div className='side-padding-div'>
+            {filterFavorsByNeighbors(favors).map((favor) => (
+              <div
+                key={favor.id}
+                className='clickable-div'
+                onClick={() => history.push(`/favors/${favor.id}`)}
+              >
+                <div className='grey-box'>Favor needed: {favor.favorDate}</div>
+                <div className='spacer-div' />
+                <div className='singlefavor'>
+                  <div>
+                    <b>{favor.title}</b>
+                  </div>
+                  <div>{favor.description}</div>
+                  <div>
+                    <RiMapPinFill className='icon-small' />{' '}
+                    {favor.author.streetName}
+                  </div>
+                  <div className='grey-text'>
+                    {favor.authorId !== loggedInId &&
+                      distanceToUser(favor.author).toFixed(1) + ' miles away'}
+                  </div>
+                  <div>{renderButton(favor)}</div>
+                  <div className='tiny-img-wrap'>
+                    {renderVolunteerImages(favor.bids)}
+                  </div>
                 </div>
-                <div className='grey-text'>
-                  {favor.authorId !== loggedInId &&
-                    distanceToUser(favor.author).toFixed(1) + ' miles away'}
-                </div>
-                <div>{renderButton(favor)}</div>
-                <div className='tiny-img-wrap'>
-                  {renderVolunteerImages(favor.bids)}
-                </div>
-                {console.log('TYPE OF DATE', typeof favors[0].createdAt)}
+                <div className='spacer-div' />
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     );
