@@ -70,8 +70,9 @@ form div {
   max-height: 100px;
   z-index: 2;
   /* backdrop-filter: blur(5px); */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.205);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.205);
   margin: 0;
+  border-radius: 0px 0px 20px 20px;
 }
 #top-menu-div {
   height: auto;
@@ -101,6 +102,7 @@ form div {
   padding-bottom: 15px;
   box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.205);
   backdrop-filter: blur(5px);
+  border-radius: 20px 20px 0px 0px;
 }
 
 #navbar {
@@ -807,9 +809,38 @@ body {
 .medium-button {
   background-color: rgb(255, 210, 32);
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   font-size: 18px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.205);
+}
+.medium-button:hover {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.377);
+}
+
+.small-button {
+  background-color: rgb(255, 210, 32);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.205);
+}
+.small-button:hover {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.377);
+}
+
+.clickable-div {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.205);
+  margin-bottom: 7px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.clickable-div:hover {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.377);
 }
