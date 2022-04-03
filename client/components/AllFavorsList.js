@@ -4,6 +4,7 @@ import { fetchFavors } from '../store/favors';
 import Map from './Map';
 import { Link } from 'react-router-dom';
 import { RiMapPinFill } from 'react-icons/ri';
+import { useHistory } from 'react-router-dom';
 
 // RADIUS in miles exports to AllUsersList.js
 export const RADIUS = 5000;
@@ -14,6 +15,7 @@ export default function AllFavorsList() {
   const loggedInId = useSelector((state) => state.auth.id);
   const loggedInUser = useSelector((state) => state.auth);
   const loggedIn = useSelector((state) => !!state.auth.id);
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(fetchFavors());
@@ -57,7 +59,7 @@ export default function AllFavorsList() {
 
   const renderVolunteerImages = function (bids) {
     return bids.map((bid) => (
-      <img className="tiny-img" src={bid.volunteer.ImageURL} />
+      <img className='tiny-img' src={bid.volunteer.ImageURL} />
     ));
   };
 
@@ -68,7 +70,7 @@ export default function AllFavorsList() {
   const renderButton = function (favor) {
     if (loggedInId === favor.authorId) {
       return (
-        <div className="orange-button">
+        <div className='orange-button'>
           <Link to={`/favors/${favor.id}`}>
             <b>Your ask: {renderVolunteersNumber(favor.bids.length)}</b>
           </Link>
@@ -76,48 +78,49 @@ export default function AllFavorsList() {
       );
     } else {
       return (
-        <div className="center-text-div">
+        <div className='center-text-div'>
           {renderVolunteersNumber(favor.bids.length)}
         </div>
       );
     }
   };
 
-
   if (favors === undefined) {
     return <h3>Loading favors...</h3>;
   } else if (favors === 0) {
     return <h3>Looks like noone needs a favor...</h3>;
   } else {
-
     return (
       <div>
         <Map favors={filterFavorsByNeighbors(favors)} />
-        <div className="favors-list-wrapper"></div>
-        {filterFavorsByNeighbors(favors).map((favor) => (
-          <div key={favor.id} className="side-padding-div">
-            <hr />
-            <div className="grey-box">Favor needed: {favor.favorDate}</div>
-            <div className="singlefavor">
-              <Link to={`/favors/${favor.id}`}>
+        <div className='side-padding-div'>
+          {filterFavorsByNeighbors(favors).map((favor) => (
+            <div
+              key={favor.id}
+              className='clickable-div'
+              onClick={() => history.push(`/favors/${favor.id}`)}
+            >
+              <div className='grey-box'>Favor needed: {favor.favorDate}</div>
+              <div className='singlefavor'>
                 <div>{favor.title}</div>
                 <div>{favor.description}</div>
                 <div>
-                  <RiMapPinFill className="icon-small" /> {favor.author.streetName}
+                  <RiMapPinFill className='icon-small' />{' '}
+                  {favor.author.streetName}
                 </div>
-                <div className="grey-text">
+                <div className='grey-text'>
                   {favor.authorId !== loggedInId &&
                     distanceToUser(favor.author).toFixed(1) + ' miles away'}
                 </div>
                 <div>{renderButton(favor)}</div>
-                <div className="tiny-img-wrap">
+                <div className='tiny-img-wrap'>
                   {renderVolunteerImages(favor.bids)}
                 </div>
                 {console.log('TYPE OF DATE', typeof favors[0].createdAt)}
-              </Link>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     );
   }

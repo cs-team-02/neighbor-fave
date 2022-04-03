@@ -63,7 +63,12 @@ export default function AllUsersList() {
     return (
       <div className='side-padding-div'>
         <div className='center-text-div'>
-          <button className='small-button'>See Top Contributors</button>
+          <button
+            className='small-button'
+            onClick={() => history.push(`/topContributors`)}
+          >
+            See Top Contributors
+          </button>
           {/* <Link to='/topContributors'>
             <div className='orange-button' id='top-contributors-link'>
               See Top Contributors
