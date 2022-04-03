@@ -76,7 +76,7 @@ form div {
   top: 0;
   background: linear-gradient(to right, #22c1c3, #fdbb2d);
   width: 100%;
-  max-height: 100px;
+  max-height: 1000px;
   z-index: 2;
   /* backdrop-filter: blur(5px); */
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.205);
