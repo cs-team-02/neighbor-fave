@@ -100,6 +100,7 @@ export default function AllFavorsList() {
                     <b>{favor.title}</b>
                   </div>
                   <div>{favor.description}</div>
+                  <div className='spacer-div' />
                   <div>
                     <RiMapPinFill className='icon-small' />{' '}
                     {favor.author.streetName}
@@ -108,6 +109,7 @@ export default function AllFavorsList() {
                     {favor.authorId !== loggedInId &&
                       distanceToUser(favor.author).toFixed(1) + ' miles away'}
                   </div>
+                  <div className='spacer-div' />
                   <div>{renderButton(favor)}</div>
                   <div className='tiny-img-wrap'>
                     {renderVolunteerImages(favor.bids)}
