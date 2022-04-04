@@ -3,15 +3,16 @@ const {
   models: { Favor, User, Bid, Comment },
 } = require('../db');
 module.exports = router;
+const { requireToken } = require('./gatekeeping');
 
 // GET /api/users
-router.get('/', async (req, res, next) => {
+router.get('/', requireToken, async (req, res, next) => {
   try {
     const users = await User.findAll({
       // explicitly select only the id and username fields - even though
       // users' passwords are encrypted, it won't help if we just
       // send everything to anyone who asks!
-      // attributes: ['id', 'username', 'name', 'ImageURL', 'address'],
+      // attributes: ['id', 'username'],
       include: [{ model: Favor }, { model: Bid, include: { model: Favor } }],
     });
     res.json(users);
