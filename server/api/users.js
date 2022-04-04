@@ -6,7 +6,7 @@ module.exports = router;
 const { requireToken } = require('./gatekeeping');
 
 // GET /api/users
-router.get('/', requireToken, async (req, res, next) => {
+router.get('/', async (req, res, next) => {
   try {
     const users = await User.findAll({
       // explicitly select only the id and username fields - even though
