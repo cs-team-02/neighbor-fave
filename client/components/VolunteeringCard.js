@@ -28,9 +28,6 @@ export default function VolunteeringCard(props) {
     if (favor.author.id === loggedInId) {
       return (
         <div className='orange-button'>
-          {/* <Link to={`/profile`}>
-          <b>You asked for this favor!</b>
-        </Link> */}
           <b>Your favor ask</b>
         </div>
       );

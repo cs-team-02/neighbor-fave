@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchSingleUser } from '../store/singleUserReducer';
 import { logout } from '../store';
-import { fetchFavors } from '../store/favors';
-import { Link } from 'react-router-dom';
 import MyVolunteeringCard from './MyVolunteeringCard';
 import MyFavorAskCard from './MyFavorAskCard';
 import { RiMapPinFill } from 'react-icons/ri';
@@ -12,7 +10,6 @@ export default function UserProfile() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const loggedInId = useSelector((state) => state.auth.id);
-  const loggedIn = useSelector((state) => !!state.auth.id);
 
   useEffect(() => {
     dispatch(fetchSingleUser(loggedInId));

@@ -28,8 +28,6 @@ function CreateFavor() {
       await dispatch(fetchFavors())
     history.push('/favors');
   };
-  //const userLocation = [currentUser.lat, current.lng];
-
     return (
       <div className='xl-form'>
 

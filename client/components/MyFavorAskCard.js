@@ -10,11 +10,6 @@ export default function MyFavorAskCard(props) {
   const favor = props.favor;
   const loggedInId = props.loggedInId;
 
-  //   const renderVolunteerButton = function () {
-  //     if (favor.authorId === loggedInId) {
-  //     }
-  //   };
-
   const renderVolunteersNumber = function () {
     if (favor.bids.length === 1) {
       return <b>1 Volunteer</b>;

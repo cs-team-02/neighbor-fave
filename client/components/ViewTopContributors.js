@@ -3,10 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../store/usersReducer";
 import { fetchFavors } from "../store/favors";
 import { Link } from "react-router-dom";
-// import { FiStar } from "react-icons/fi";
 import { WiStars } from "react-icons/wi";
 import { RiStarSmileLine } from "react-icons/ri";
-const TopContributors = (props) => {
+const TopContributors = () => {
   const allUsers = useSelector((state) => state.users);
   const dispatch = useDispatch();
   const usersMostBids = allUsers.filter(
@@ -30,12 +29,14 @@ const TopContributors = (props) => {
 
   return (
     <div id="top-contributors-container">
-      <h1>Top contributors:</h1>
-      <h2>
+      <h3>Top Contributors:</h3>
+      <br></br>
+      <h4 className="grey-box">
         <RiStarSmileLine />
-        Most Favors <RiStarSmileLine />
-      </h2>
-      {/* <h4>(1+ favors)</h4> */}
+        Fulfilled Most Favors
+        <RiStarSmileLine />
+      </h4>
+      <hr></hr>
       {usersMostFulfilled.length ? (
         <div>
           {usersMostFulfilled
@@ -46,8 +47,8 @@ const TopContributors = (props) => {
                   <div className="contributor">
                     <img
                       className="top-con-img"
-                      height="40px"
-                      width="40px"
+                      height="30px"
+                      width="30px"
                       src={user.ImageURL}
                     />
                     {user.name} ({favorsDone(user)} favors done)
@@ -60,12 +61,11 @@ const TopContributors = (props) => {
       ) : (
         <div>No neighbors with more than 1 fulfilled favor right now</div>
       )}
-      <hr></hr>
 
-      <h2>
-        Offered most bids <WiStars />{" "}
-      </h2>
-      {/* <h4>(3+ bids)</h4> */}
+      <h4 className="grey-box">
+        <WiStars /> Offered most bids <WiStars />{" "}
+      </h4>
+      <hr></hr>
 
       {usersMostBids.length ? (
         <div>
@@ -78,8 +78,8 @@ const TopContributors = (props) => {
                     {" "}
                     <img
                       className="top-con-img"
-                      height="40px"
-                      width="40px"
+                      height="30px"
+                      width="30px"
                       src={user.ImageURL}
                     />
                     {user.name} ({bidsOffered(user)} bids)

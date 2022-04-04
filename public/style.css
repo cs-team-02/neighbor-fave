@@ -1,3 +1,9 @@
+@media screen and (display-mode: standalone) {
+  header {
+    height: 10px !important;
+  }
+}
+
 .leaflet-container {
   width: 100vw;
   height: 50vh;
@@ -17,7 +23,6 @@ hr {
 
 a {
   color: black;
-  /* border-style: dotted; */
 }
 
 a:hover {
@@ -28,11 +33,6 @@ a:hover {
 label {
   display: block;
 }
-
-/* nav a {
-  display: inline-block;
-  margin: 1em;
-} */
 
 form div {
   margin: 1em;
@@ -64,10 +64,10 @@ form div {
 .menu-bar {
   overflow: hidden;
   position: fixed;
-  top: 0;
-  background-color: rgb(255, 255, 255);
+  top: -10;
+  background: linear-gradient(to right, #22c1c3, #fdbb2d);
   width: 100%;
-  max-height: 100px;
+  max-height: 1000px;
   z-index: 2;
   /* backdrop-filter: blur(5px); */
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.205);
@@ -84,7 +84,6 @@ form div {
   justify-content: space-between;
   align-items: center;
   margin: 0;
-  /* border-style: dashed; */
 }
 .padding-div {
   padding: 10px 20px 10px 20px;
@@ -92,7 +91,7 @@ form div {
 
 #navbar-bottom-wrap {
   height: auto;
-  background-color: rgba(255, 210, 32, 0.8);
+  background: linear-gradient(to right, #22c1c3, #fdbb2d);
   overflow: hidden;
   position: fixed;
   bottom: 0;
@@ -115,21 +114,12 @@ form div {
 }
 
 .li-img-div {
-  /* border-width: 1px;
-  border-style: dotted; */
   width: 75px;
 }
 
-/* .li-info-div {
-  border-width: 1px;
-  border-style: dotted;
-} */
-
 .profile-img {
-  /* clip-path: circle(20px at center); */
   clip-path: circle(50px at center);
   width: 100px;
-  /* max-width: 10%; */
   height: auto;
   align-content: center;
 }
@@ -137,7 +127,6 @@ form div {
 .li-img {
   clip-path: circle(35px at center);
   width: 70px;
-  /* max-width: 100%; */
   height: auto;
 }
 
@@ -160,8 +149,6 @@ form div {
   justify-content: flex-start;
   align-items: center;
   margin: 0;
-  padding: 0;
-  /* border-style: dotted; */
 }
 
 .thumb-img {
@@ -199,8 +186,6 @@ form div {
   text-align: right;
   font-style: italic;
   color: grey;
-
-  /* padding: 2px; */
 }
 
 .spacer-div {
@@ -239,7 +224,6 @@ form div {
   background-color: rgba(255, 210, 32, 0.349);
   padding: 10px;
   border-radius: 7px;
-  /* border: 2px solid rgb(255, 210, 32); */
 }
 
 .orange-button {
@@ -272,39 +256,30 @@ form div {
 /* Top Contributor Styles */
 
 @media only screen and (max-width: 600px) {
-  /* body {
-    background-color: lightblue;
-  } */
   #favor-info-and-picture {
     display: flex;
     flex-direction: column;
   }
   #favor-info-and-picture > * {
     flex-grow: 1;
-    margin: 10px;
-    align-self: center;
   }
 }
 
 @media only screen and (min-width: 601px) {
-  /* body {
-    background-color: pink;
-  } */
   #favor-img-container {
     display: flex;
   }
   #favor-img-container img {
     flex: 0;
     align-self: flex-end;
+    margin: 20px;
   }
   #favor-info-and-picture {
     display: flex;
-    /* flex-wrap: wrap; */
     flex-direction: row;
   }
   #favor-info-and-picture * {
     flex-grow: 1;
-    margin: 10px;
   }
 
   #top-contributors-container {
@@ -317,10 +292,6 @@ form div {
     flex-direction: row;
     flex-wrap: wrap;
   }
-
-  /* #all-bids-container * {
-    flex: 1 1;
-  } */
 }
 
 #top-contributors-link {
@@ -329,24 +300,21 @@ form div {
   right: 10px;
   width: fit-content;
   margin: 10px;
-  font-size: large;
+  border: solid 1px black;
 }
 
 #top-contributors-container {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: large;
   margin: 2em;
-  padding: 10px;
-  /* background-color: rgb(226, 226, 226); */
   border-color: rgb(226, 226, 226);
-  border-style: outset;
-  border-radius: 25px;
+
+  border-radius: 7px;
 }
 
 #top-contributors-container * {
   margin: 5px;
-  padding: 2px;
+  /* padding: 2px; */
   text-decoration: none;
   font-weight: 500;
 }
@@ -358,9 +326,8 @@ form div {
 }
 
 .top-con-img {
-  clip-path: circle(25px at center);
-  width: 80px;
-  /* max-width: 100%; */
+  clip-path: circle(18px at center);
+  width: 36px;
   height: auto;
 }
 
@@ -369,29 +336,27 @@ form div {
 #single-favor-container {
   font-family: sans-serif;
   margin: 2em;
-
-  /* display: flex;
-  flex-direction: column; */
-  /* align-items: center; */
 }
 
 #single-favor-container img {
-  width: 80vw;
-  border-radius: 25px;
+  width: 90vw;
+  border-radius: 5px;
 }
 
 #favor-heading {
-  font-size: 27px;
+  font-weight: bold;
+  font-size: large;
+  font-style: oblique;
 }
 
 #single-favor-container > * {
-  margin: 10px 10px 10px 0px;
-  padding: 3px;
+  /* margin: 10px 10px 10px 0px; */
+  /* padding: 3px; */
 }
 
 #single-favor-container button {
-  font-size: large;
-  border-radius: 5px;
+  /* font-size: large; */
+  border-radius: 3px;
   background-color: rgb(255, 210, 32);
   text-align: center;
   padding: 2px;
@@ -405,28 +370,29 @@ form div {
   font-style: oblique;
 }
 #favor-status {
-  font-size: x-large;
+  font-style: italic;
 }
+
 /* Bid styles */
 
 #all-bids-container {
   background-color: rgb(226, 226, 226);
   border-style: 2px outset;
-  border-radius: 25px;
-  padding: 20px;
-}
-
-.single-bid-container {
-  border-radius: 25px;
-  width: 100 vw;
-  background-color: whitesmoke;
-  margin: 10px;
+  border-radius: 5px;
   padding: 10px;
 }
 
+.single-bid-container {
+  border-radius: 5px;
+  width: 100 vw;
+  background-color: whitesmoke;
+
+  padding: 5px;
+}
+
 .single-bid-container * {
-  padding: 7px;
-  font-size: large;
+  /* padding: 2px; */
+  /* font-size: large; */
   margin: 5px;
 }
 
@@ -441,7 +407,6 @@ form div {
   border-style: solid;
 }
 #bid-status {
-  /* font-size: x-large; */
   color: rgb(65, 65, 222);
 }
 
@@ -451,21 +416,21 @@ form div {
 .map {
   display: flex;
   width: 100%;
-  margin-top: -2px;
+  margin-top: -1px;
 }
-.App {
+/* .App {
   width: 100vw;
   height: 100vh;
   background: #fff;
   color: #212121;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   display: grid;
   place-items: center;
-}
-body {
+} */
+/* body {
   margin: 0%;
   padding: 0%;
-}
+} */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
 
 .joinChatContainer {
@@ -513,13 +478,19 @@ body {
 }
 
 .chat-window {
-  width: 300px;
-  height: 420px;
+  width: 100%;
+  height: 300%;
+  /* position: absolute; */
+  background-color: white;
+  /* color: #212121;
+  font-family: 'Open Sans', sans-serif;
+  display: grid;
+  place-items: center; */
 }
 
-.chat-window p {
+/* .chat-window p {
   margin: 0;
-}
+} */
 .chat-window .chat-header {
   height: 45px;
   border-radius: 6px;
@@ -659,7 +630,7 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
-  background: #fff;
+  background-color: #94b49f;
   color: #212121;
   font-family: 'Open Sans', sans-serif;
   display: grid;
@@ -674,93 +645,6 @@ body {
 }
 .createFavorMap {
   display: flex;
-}
-/* global styling */
-.leaflet-control-geosearch *,
-.leaflet-control-geosearch *:before,
-.leaflet-control-geosearch *:after {
-  box-sizing: border-box;
-}
-
-/* search form styling */
-.leaflet-control-geosearch form {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 36px;
-  border-radius: 0 4px 4px 0;
-  background-color: #fff;
-  background-clip: padding-box;
-  z-index: -1;
-  height: auto;
-  margin: 0;
-  padding: 0 8px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
-}
-
-.leaflet-geosearch-button form.open {
-  border-radius: 0 4px 4px 4px;
-}
-.leaflet-control-geosearch.active form {
-  display: block;
-}
-
-.leaflet-geosearch-button.active .leaflet-bar-part {
-  border-radius: 4px 0 0 4px;
-  width: 36px;
-}
-
-.leaflet-geosearch-button form {
-  max-width: 350px;
-}
-
-.leaflet-control-geosearch form input {
-  min-width: 200px;
-  width: 100%;
-  outline: none;
-  border: none;
-  margin: 0;
-  padding: 0;
-  font-size: 12px;
-  height: 26px;
-  border: none;
-  border-radius: 0 4px 4px 0;
-  text-indent: 8px;
-}
-
-.leaflet-touch .leaflet-geosearch-bar form {
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  box-shadow: none;
-}
-
-.leaflet-touch .leaflet-geosearch-bar form input {
-  height: 30px;
-}
-
-.leaflet-control-geosearch .results {
-  background: #fff;
-}
-
-.leaflet-control-geosearch .results > * {
-  line-height: 24px;
-  padding: 0 8px;
-  border: 1px solid transparent;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.leaflet-control-geosearch .results.active {
-  padding: 8px 0;
-  border-top: 1px solid #c6c6c6;
-}
-
-.leaflet-control-geosearch .results > .active,
-.leaflet-control-geosearch .results > :hover {
-  background-color: #f8f8f8;
-  border-color: #c6c6c6;
-  cursor: pointer;
 }
 .signup {
   width: 100%;
@@ -789,6 +673,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.geo-button:focus {
+  background-color: rgb(255, 210, 32);
 }
 
 .sign-form-wrapper {

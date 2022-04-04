@@ -11,7 +11,12 @@ const BidsList = (props) => {
     <div>
       {CurrentUser.id === favor.authorId ? (
         favor.bids.map((bid) => {
-          return <Bid key={bid.id} bid={bid} favor={favor} />;
+          return (
+            <>
+              <Bid key={bid.id} bid={bid} favor={favor} />
+              <hr></hr>
+            </>
+          );
         })
       ) : (
         <div id="list-of-bids">
