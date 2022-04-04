@@ -1,3 +1,9 @@
+@media screen and (display-mode: standalone) {
+  header {
+    height: 10px !important;
+  }
+}
+
 .leaflet-container {
   width: 100vw;
   height: 50vh;
@@ -58,10 +64,10 @@ form div {
 .menu-bar {
   overflow: hidden;
   position: fixed;
-  top: 0;
-  background-color: rgb(255, 255, 255);
+  top: -10;
+  background: linear-gradient(to right, #22c1c3, #fdbb2d);
   width: 100%;
-  max-height: 100px;
+  max-height: 1000px;
   z-index: 2;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.205);
   margin: 0;
@@ -83,7 +89,7 @@ form div {
 
 #navbar-bottom-wrap {
   height: auto;
-  background-color: rgba(255, 210, 32, 0.8);
+  background: linear-gradient(to right, #22c1c3, #fdbb2d);
   overflow: hidden;
   position: fixed;
   bottom: 0;
@@ -107,7 +113,6 @@ form div {
 .li-img-div {
   width: 75px;
 }
-
 
 .profile-img {
   clip-path: circle(50px at center);
@@ -288,8 +293,8 @@ form div {
 }
 
 #top-contributors-container {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 2em;
   border-color: rgb(226, 226, 226);
 
@@ -400,9 +405,9 @@ form div {
 .map {
   display: flex;
   width: 100%;
-  margin-top: -2px;
+  margin-top: -1px;
 }
-.App {
+/* .App {
   width: 100vw;
   height: 100vh;
   background: #fff;
@@ -410,12 +415,12 @@ form div {
   font-family: "Open Sans", sans-serif;
   display: grid;
   place-items: center;
-}
-body {
+} */
+/* body {
   margin: 0%;
   padding: 0%;
-}
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+} */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
 
 .joinChatContainer {
   position: relative;
@@ -433,7 +438,7 @@ body {
   margin-bottom: 1rem;
 }
 .joinChatContainer input {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   outline: 0;
   background: #ffd89b;
   width: 100%;
@@ -462,13 +467,19 @@ body {
 }
 
 .chat-window {
-  width: 300px;
-  height: 420px;
+  width: 100%;
+  height: 300%;
+  /* position: absolute; */
+  background-color: white;
+  /* color: #212121;
+  font-family: 'Open Sans', sans-serif;
+  display: grid;
+  place-items: center; */
 }
 
-.chat-window p {
+/* .chat-window p {
   margin: 0;
-}
+} */
 .chat-window .chat-header {
   height: 45px;
   border-radius: 6px;
@@ -582,7 +593,7 @@ body {
   border-right: 1px dotted #607d8b;
 
   outline: none;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .chat-window .chat-footer button {
@@ -608,9 +619,9 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
-  background: #fff;
+  background-color: #94b49f;
   color: #212121;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   display: grid;
   place-items: center;
 }
@@ -654,7 +665,6 @@ body {
 .geo-button:focus {
   background-color: rgb(255, 210, 32);
 }
-
 
 .sign-form-wrapper {
   display: flex;
