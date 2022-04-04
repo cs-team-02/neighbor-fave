@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchUsers } from "../store/usersReducer";
-import { Link } from "react-router-dom";
-import { RiMapPinFill } from "react-icons/ri";
-import { RADIUS } from "./AllFavorsList";
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchUsers } from '../store/usersReducer';
+import { Link } from 'react-router-dom';
+import { RiMapPinFill } from 'react-icons/ri';
+import { RADIUS } from './AllFavorsList';
+import { useHistory } from 'react-router-dom';
 
 export default function AllUsersList() {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ export default function AllUsersList() {
   const loggedInId = useSelector((state) => state.auth.id);
   const loggedInUser = useSelector((state) => state.auth);
   const loggedIn = useSelector((state) => !!state.auth.id);
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -25,14 +27,14 @@ export default function AllUsersList() {
   // can this be a custom hook to filter favors by status?
   const openFavors = function (favors) {
     const openFavors = favors.filter(
-      (favor) => favor.status === "OPEN" || favor.status === "ASSIGNED"
+      (favor) => favor.status === 'OPEN' || favor.status === 'ASSIGNED'
     );
     return openFavors;
   };
   // can this be a custom hook to filter bids by favor status?
   const openBids = function (bids) {
     const openBids = bids.filter(
-      (bid) => bid.favor.status === "OPEN" || bid.favor.status === "ASSIGNED"
+      (bid) => bid.favor.status === 'OPEN' || bid.favor.status === 'ASSIGNED'
     );
     return openBids;
   };
@@ -59,47 +61,50 @@ export default function AllUsersList() {
     return <h3>Couldn't find any neighbors using this app...</h3>;
   } else {
     return (
-      <>
-        <div>
-          <Link to="/topContributors">
-            <span className="orange-button" id="top-contributors-link">
-              See Top <br />
-              Contributors
-            </span>
-          </Link>
-        </div>
-        <br></br>
-        <br></br>
-        <div className="side-padding-div">
+      <div className='list-wrapper'>
+        <div className='side-padding-div'>
+          <div className='center-text-div'>
+            <button
+              className='small-button'
+              onClick={() => history.push(`/topContributors`)}
+            >
+              See Top Contributors
+            </button>
+
+            <div className='spacer-div' />
+            <hr />
+          </div>
           {neighborsFilter(users, loggedInId).map((user, index) => (
-            <div key={index}>
-              <div className="li-div">
-                <div className="li-img-div">
-                  <img className="li-img" src={user.ImageURL} />
+            <div
+              key={index}
+              onClick={() => history.push(`/users/${user.id}`)}
+              className='clickable-div'
+            >
+              <div className='li-div'>
+                <div className='li-img-div'>
+                  <img className='li-img' src={user.ImageURL} />
                 </div>
-                <div className="li-info-div">
+                <div className='li-info-div'>
                   <div>
                     <div>
-                      <Link to={`/users/${user.id}`}>
-                        <b>{user.name}</b>
-                      </Link>
+                      {/* <Link to={`/users/${user.id}`}> */}
+                      <b>{user.name}</b>
+                      {/* </Link> */}
                     </div>
                     <div>
-                      <RiMapPinFill className="icon-small" /> {user.streetName}
+                      <RiMapPinFill className='icon-small' /> {user.streetName}
                     </div>
                     <div>
-                      Asks: {openFavors(user.favors).length} | Volunteering:{" "}
+                      Asks: {openFavors(user.favors).length} | Volunteering:{' '}
                       {openBids(user.bids).length}
                     </div>
                   </div>
                 </div>
               </div>
-
-              <hr />
             </div>
           ))}
         </div>
-      </>
+      </div>
     );
   }
 }

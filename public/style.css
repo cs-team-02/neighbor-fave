@@ -69,8 +69,10 @@ form div {
   width: 100%;
   max-height: 1000px;
   z-index: 2;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.205);
+  /* backdrop-filter: blur(5px); */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.205);
   margin: 0;
+  border-radius: 0px 0px 20px 20px;
 }
 #top-menu-div {
   height: auto;
@@ -99,6 +101,7 @@ form div {
   padding-bottom: 15px;
   box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.205);
   backdrop-filter: blur(5px);
+  border-radius: 20px 20px 0px 0px;
 }
 
 #navbar {
@@ -136,7 +139,7 @@ form div {
 .tiny-img-wrap {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: end;
   gap: 1px;
 }
 
@@ -192,7 +195,12 @@ form div {
   height: 1px;
 }
 .side-padding-div {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
   padding: 15px;
+  width: 100%;
+  max-width: 600px;
 }
 
 .ask-card-div {
@@ -230,14 +238,17 @@ form div {
   width: auto;
   background-color: rgb(224, 224, 224);
   text-align: center;
-  border-radius: 4px;
+  border-radius: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 .test-class {
   border: rgb(10, 116, 0);
 }
-.favors-list-wrapper {
-  border-radius: 15px;
+.list-wrapper {
+  display: flex;
+  justify-content: center;
   padding: 0;
   margin: 0;
 }
@@ -625,8 +636,9 @@ form div {
   display: grid;
   place-items: center;
 }
-.singlefavor * {
-  text-decoration: none;
+.singlefavor {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .singleuser * {
   text-decoration: none;
@@ -692,9 +704,44 @@ form div {
 .medium-button {
   background-color: rgb(255, 210, 32);
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   font-size: 18px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.205);
+}
+.medium-button:hover {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.377);
+}
+
+.small-button {
+  background-color: rgb(255, 210, 32);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.205);
+  width: auto;
+}
+.small-button:hover {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.377);
+}
+.small-button-center-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.clickable-div {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.205);
+  margin-bottom: 7px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.clickable-div:hover {
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.377);
 }

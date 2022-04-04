@@ -4,6 +4,7 @@ import { fetchFavors } from '../store/favors';
 import Map from './Map';
 import { Link } from 'react-router-dom';
 import { RiMapPinFill } from 'react-icons/ri';
+import { useHistory } from 'react-router-dom';
 
 // RADIUS in miles exports to AllUsersList.js
 export const RADIUS = 5000;
@@ -13,6 +14,7 @@ export default function AllFavorsList() {
   let favors = useSelector((state) => state.favors);
   const loggedInId = useSelector((state) => state.auth.id);
   const loggedInUser = useSelector((state) => state.auth);
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(fetchFavors());
@@ -56,66 +58,67 @@ export default function AllFavorsList() {
 
   const renderVolunteerImages = function (bids) {
     return bids.map((bid, index) => (
-      <img className="tiny-img" key={index} src={bid.volunteer.ImageURL} />
+      <img className='tiny-img' key={index} src={bid.volunteer.ImageURL} />
     ));
-  };
-
-  const sortFavorsByDate = function (favors) {
-    return favors.sort((a, b) => b.favorDate - a.favroDate);
   };
 
   const renderButton = function (favor) {
     if (loggedInId === favor.authorId) {
       return (
-        <div className="orange-button">
-          <Link to={`/favors/${favor.id}`}>
+        <div className='small-button-center-div'>
+          {/* <Link to={`/favors/${favor.id}`}>
             <b>Your ask: {renderVolunteersNumber(favor.bids.length)}</b>
-          </Link>
-        </div>
-      );
-    } else {
-      return (
-        <div className="center-text-div">
-          {renderVolunteersNumber(favor.bids.length)}
+          </Link> */}
+          <div className='small-button'>Your ask!</div>
+          <div className='spacer-div' />
         </div>
       );
     }
   };
-
 
   if (favors === undefined) {
     return <h3>Loading favors...</h3>;
   } else if (favors === 0) {
     return <h3>Looks like no one needs a favor...</h3>;
   } else {
-
     return (
       <div>
         <Map favors={filterFavorsByNeighbors(favors)} />
-        <div className="favors-list-wrapper"></div>
-        {filterFavorsByNeighbors(favors).map((favor) => (
-          <div key={favor.id} className="side-padding-div">
-            <hr />
-            <div className="grey-box">Favor needed: {favor.favorDate}</div>
-            <div className="singlefavor">
-              <Link to={`/favors/${favor.id}`}>
-                <div>{favor.title}</div>
-                <div>{favor.description}</div>
-                <div>
-                  <RiMapPinFill className="icon-small" /> {favor.author.streetName}
+        <div className='list-wrapper'>
+          <div className='side-padding-div'>
+            {filterFavorsByNeighbors(favors).map((favor) => (
+              <div
+                key={favor.id}
+                className='clickable-div'
+                onClick={() => history.push(`/favors/${favor.id}`)}
+              >
+                <div className='grey-box'>Favor needed: {favor.favorDate}</div>
+                <div className='spacer-div' />
+                <div className='singlefavor'>
+                  <div>
+                    <b>{favor.title}</b>
+                  </div>
+                  <div>{favor.description}</div>
+                  <div className='spacer-div' />
+                  <div>
+                    <RiMapPinFill className='icon-small' />{' '}
+                    {favor.author.streetName}
+                  </div>
+                  <div className='grey-text'>
+                    {favor.authorId !== loggedInId &&
+                      distanceToUser(favor.author).toFixed(1) + ' miles away'}
+                  </div>
+                  <div className='spacer-div' />
+                  <div>{renderButton(favor)}</div>
+                  <div className='tiny-img-wrap'>
+                    {renderVolunteerImages(favor.bids)}
+                  </div>
                 </div>
-                <div className="grey-text">
-                  {favor.authorId !== loggedInId &&
-                    distanceToUser(favor.author).toFixed(1) + ' miles away'}
-                </div>
-                <div>{renderButton(favor)}</div>
-                <div className="tiny-img-wrap">
-                  {renderVolunteerImages(favor.bids)}
-                </div>
-              </Link>
-            </div>
+                <div className='spacer-div' />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     );
   }
