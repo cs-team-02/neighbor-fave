@@ -102,7 +102,7 @@ export default function AllFavorsList() {
                   <div className='spacer-div' />
                   <div>
                     <RiMapPinFill className='icon-small' />{' '}
-                    {favor.author.streetName}
+                    {favor.author.streetNumber} {favor.author.streetName}
                   </div>
                   <div className='grey-text'>
                     {favor.authorId !== loggedInId &&
