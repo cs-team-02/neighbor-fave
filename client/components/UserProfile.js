@@ -56,7 +56,8 @@ export default function UserProfile() {
             <b>{user.name}</b>
           </div>
           <div className='center-text-div'>
-            <RiMapPinFill className='icon-small' /> {user.address}
+            <RiMapPinFill className='icon-small' /> {user.streetNumber}{' '}
+            {user.streetName}
           </div>
           <div className='center-text-div'>
             <a href='#' onClick={handleClick}>

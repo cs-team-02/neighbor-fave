@@ -92,7 +92,8 @@ export default function AllUsersList() {
                       {/* </Link> */}
                     </div>
                     <div>
-                      <RiMapPinFill className='icon-small' /> {user.streetName}
+                      <RiMapPinFill className='icon-small' />{' '}
+                      {user.streetNumber} {user.streetName}
                     </div>
                     <div>
                       Asks: {openFavors(user.favors).length} | Volunteering:{' '}
