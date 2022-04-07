@@ -40,7 +40,7 @@
     <a href="https://github.com/cs-team-02/neighbor-fave"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/cs-team-02/neighbor-fave">View Demo</a>
+    <a href="#live-demo">View Demo</a>
     ·
     <a href="https://github.com/cs-team-02/neighbor-fave/issues">Report Bug</a>
     ·
