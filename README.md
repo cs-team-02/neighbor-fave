@@ -58,6 +58,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#wireframe">Wireframe</a></li>
         <li><a href="#live-demo">Live Demo</a></li>
       </ul>
     </li>
@@ -107,6 +108,14 @@ Need help with something? Post an “ask” to let your community know! Want to 
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+### Wireframe
+Here are our design concepts.
+<br />
+[Wireframe](https://miro.com/app/board/uXjVOEbpKsw=/?share_link_id=481586375100)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 
 ### Live Demo
 For ease of use we have included a demo account log in option on the sign in screen.
