@@ -206,7 +206,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * [Konstantin](https://github.com/ChiKonstantin)
 * [Sulaiman](https://github.com/sulaiman211)
 
-Project Link: [https://https://github.com/cs-team-02/neighbor-fave](https://https://github.com/cs-team-02/neighbor-fave)
+Project Link: [https://github.com/cs-team-02/neighbor-fave](https://https://github.com/cs-team-02/neighbor-fave)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
