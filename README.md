@@ -79,8 +79,9 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Neighbor-Fave Screen Shot][product-screenshot]](public/signing-screen.png)
+<div align="center">
+  <img src="public/signing-screen.png" alt="Logo" width="330" height="600">
+</div>
 
 NeighborFave links you with users who live nearby, creating a community that can rely on one another for neighborly things, like: borrowing a ladder or moving a couch. 
 
@@ -108,6 +109,13 @@ Need help with something? Post an “ask” to let your community know! Want to 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Live Demo
+For ease of use we have included a demo account log in option on the sign in screen.
+<br />
+![demo-gif][demogif]
+<br />
+please click the `Demo Login` button to access the demo account.
+<br />
+Access the deployed App here:
 [Live Demo](https://neighbor-fave.herokuapp.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -133,7 +141,6 @@ To get a local copy up and running follow these simple example steps.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
 [![Demo Video][thumbnail]](https://www.youtube.com/watch?v=X4i_PReaSVI&ab_channel=ChiKonstantin)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -211,5 +218,5 @@ Project Link: [https://https://github.com/cs-team-02/neighbor-fave](https://http
 [license-url]: https://https://github.com/cs-team-02/neighbor-fave/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: public/signing-screen.png
 [thumbnail]: public/cover.png
+[demogif]: public/giphy.gif
