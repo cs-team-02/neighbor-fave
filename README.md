@@ -201,9 +201,6 @@ Project Link: [https://https://github.com/cs-team-02/neighbor-fave](https://http
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/cs-team-02/neighbor-fave.svg?style=for-the-badge
