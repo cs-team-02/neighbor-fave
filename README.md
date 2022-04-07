@@ -28,7 +28,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://https://github.com/cs-team-02/neighbor-fave">
+  <a href="//https://github.com/cs-team-02/neighbor-fave">
     <img src="public/apple-icon-180.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -137,7 +137,7 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repo
    ```sh
-   git clone https://https://github.com/cs-team-02/neighbor-fave.git
+   git clone https://github.com/cs-team-02/neighbor-fave.git
    ```
 2. Install NPM packages
    ```sh
@@ -206,7 +206,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * [Konstantin](https://github.com/ChiKonstantin)
 * [Sulaiman](https://github.com/sulaiman211)
 
-Project Link: [https://https://github.com/cs-team-02/neighbor-fave](https://https://github.com/cs-team-02/neighbor-fave)
+Project Link: [https://github.com/cs-team-02/neighbor-fave](https://github.com/cs-team-02/neighbor-fave)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
