@@ -17,11 +17,11 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][https://github.com/cs-team-02/neighbor-fave/graphs/contributors]
-[![Forks][forks-shield]][https://github.com/cs-team-02/neighbor-fave/network/members]
-[![Stargazers][stars-shield]][https://github.com/cs-team-02/neighbor-fave/network/stargazers]
-[![Issues][issues-shield]][https://https://github.com/cs-team-02/neighbor-fave/issues]
-[![MIT License][license-shield]][https://github.com/cs-team-02/neighbor-fave/blob/main/LICENSE]
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
 
 
@@ -37,14 +37,14 @@
   <p align="center">
     The vision for Neighbor-Fave is to facilitate the creation and strengthening of community bonds through small acts of kindness. The app also promotes sustainability through pooled resources.
     <br />
-    <a href="https://https://github.com/cs-team-02/neighbor-fave"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/cs-team-02/neighbor-fave"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://https://github.com/cs-team-02/neighbor-fave">View Demo</a>
+    <a href="https://github.com/cs-team-02/neighbor-fave">View Demo</a>
     ·
-    <a href="https://https://github.com/cs-team-02/neighbor-fave/issues">Report Bug</a>
+    <a href="https://github.com/cs-team-02/neighbor-fave/issues">Report Bug</a>
     ·
-    <a href="https://https://github.com/cs-team-02/neighbor-fave/issues">Request Feature</a>
+    <a href="https://github.com/cs-team-02/neighbor-fave/issues">Request Feature</a>
   </p>
 </div>
 
@@ -58,6 +58,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#live-demo">Live Demo</a></li>
       </ul>
     </li>
     <li>
@@ -79,9 +80,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Neighbor-Fave Screen Shot][product-screenshot]](public/descriptionphoto.jpg)
+[![Neighbor-Fave Screen Shot][product-screenshot]](public/signing-screen.png)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+NeighborFave links you with users who live nearby, creating a community that can rely on one another for neighborly things, like: borrowing a ladder or moving a couch. 
+
+Need help with something? Post an “ask” to let your community know! Want to help out? Browse a map to connect with users in need.
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -103,12 +107,13 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+### Live Demo
+[Live Demo](https://neighbor-fave.herokuapp.com/)
 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### Installation
@@ -129,10 +134,7 @@ To get a local copy up and running follow these simple example steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
+[![Demo Video][thumbnail]](https://www.youtube.com/watch?v=X4i_PReaSVI&ab_channel=ChiKonstantin)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -147,7 +149,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Display user activity history
 - [ ] Utilizing Mobile device hardware for authentication
 
-See the [open issues](https://https://github.com/cs-team-02/neighbor-fave/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/cs-team-02/neighbor-fave/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -209,4 +211,5 @@ Project Link: [https://https://github.com/cs-team-02/neighbor-fave](https://http
 [license-url]: https://https://github.com/cs-team-02/neighbor-fave/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: public/signing-screen.png
+[thumbnail]: public/cover.png
