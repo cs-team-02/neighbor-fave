@@ -213,15 +213,15 @@ Project Link: [https://https://github.com/cs-team-02/neighbor-fave](https://http
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/cs-team-02/neighbor-fave.svg?style=for-the-badge
-[contributors-url]: https://https://github.com/cs-team-02/neighbor-fave/graphs/contributors
+[contributors-url]: https://github.com/cs-team-02/neighbor-fave/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/cs-team-02/neighbor-fave.svg?style=for-the-badge
-[forks-url]: https://https://github.com/cs-team-02/neighbor-fave/network/members
+[forks-url]: https://github.com/cs-team-02/neighbor-fave/network/members
 [stars-shield]: https://img.shields.io/github/stars/cs-team-02/neighbor-fave.svg?style=for-the-badge
-[stars-url]: https://https://github.com/cs-team-02/neighbor-fave/stargazers
+[stars-url]: https://github.com/cs-team-02/neighbor-fave/stargazers
 [issues-shield]: https://img.shields.io/github/issues/cs-team-02/neighbor-fave.svg?style=for-the-badge
-[issues-url]: https://https://github.com/cs-team-02/neighbor-fave/issues
+[issues-url]: https://github.com/cs-team-02/neighbor-fave/issues
 [license-shield]: https://img.shields.io/github/license/cs-team-02/neighbor-fave.svg?style=for-the-badge
-[license-url]: https://https://github.com/cs-team-02/neighbor-fave/blob/master/LICENSE.txt
+[license-url]: https://github.com/cs-team-02/neighbor-fave/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [thumbnail]: public/cover.png
