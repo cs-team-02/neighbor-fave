@@ -5,6 +5,7 @@ const {
   db,
   models: { User, Favor, Bid },
 } = require('../server/db');
+require("dotenv").config();
 
 /**
  * seed - this function clears the database, updates tables to
