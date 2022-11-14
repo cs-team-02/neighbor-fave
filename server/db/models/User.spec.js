@@ -26,10 +26,10 @@ describe("User model", () => {
       let user;
       beforeEach(
         async () =>
-          (user = await User.create({
-            username: "lucy",
-            password: "loo",
-          }))
+        (user = await User.create({
+          username: "lucy",
+          password: "loo",
+        }))
       );
       describe("with correct credentials", () => {
         it("returns a token", async () => {
