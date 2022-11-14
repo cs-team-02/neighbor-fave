@@ -125,7 +125,7 @@ For ease of use we have included a demo account log in option on the sign in scr
 please click the `Demo Login` button to access the demo account.
 <br />
 Access the deployed App here:
-[Live Demo](https://neighbor-fave.herokuapp.com/)
+[Live Demo](https://neighborfave.onrender.com)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
