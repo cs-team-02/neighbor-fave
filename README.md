@@ -204,7 +204,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * [Tedi](https://github.com/Tedicode)
 * [Kwame](https://github.com/kjgumbs)
 * [Konstantin](https://github.com/ChiKonstantin)
-* [Sulaiman](https://github.com/sulaiman211)
+* [Adam](https://github.com/adam-marey)
 
 Project Link: [https://github.com/cs-team-02/neighbor-fave](https://github.com/cs-team-02/neighbor-fave)
 
