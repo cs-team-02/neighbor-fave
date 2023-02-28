@@ -203,7 +203,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 * [Tedi](https://github.com/Tedicode)
 * [Kwame](https://github.com/kjgumbs)
-* [Konstantin](https://github.com/ChiKonstantin)
+* [Kostya](https://github.com/ChiKonstantin)
 * [Adam](https://github.com/adam-marey)
 
 Project Link: [https://github.com/cs-team-02/neighbor-fave](https://github.com/cs-team-02/neighbor-fave)
